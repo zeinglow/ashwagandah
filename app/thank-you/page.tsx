@@ -108,7 +108,7 @@ export default function ThankYou() {
         <div className="bg-white rounded-3xl shadow-2xl border border-emerald-100 overflow-hidden mb-8">
           <div className="bg-gradient-to-r from-emerald-500 to-green-600 text-white p-6 text-center">
             <h2 className="text-2xl font-bold">Order Confirmation</h2>
-            <p className="text-emerald-100 mt-1">We'll call you within 24 hours to confirm delivery details</p>
+            <p className="text-emerald-100 mt-1">We&apos;ll call you within 24 hours to confirm delivery details</p>
           </div>
           
           <div className="p-6 space-y-6">
@@ -180,7 +180,7 @@ export default function ThankYou() {
           <div className="text-3xl mb-3">🎁</div>
           <h2 className="text-2xl font-bold mb-4">Exclusive Bonus: Save 25% on Your Next Order!</h2>
           <p className="text-amber-100 mb-6">
-            Since you're now part of the Zeinglow family, we're giving you early access to reorder at a special price.
+            Since you&apos;re now part of the Zeinglow family, we&apos;re giving you early access to reorder at a special price.
           </p>
           
           <div className="bg-white/20 backdrop-blur rounded-2xl p-4 mb-6">

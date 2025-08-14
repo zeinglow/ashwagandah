@@ -1,6 +1,7 @@
 "use client";
 
 import Head from "next/head";
+import Image from "next/image";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -155,9 +156,11 @@ export default function Home() {
                 <div className="lg:hidden relative flex items-center justify-center py-8">
                   <div className="absolute -inset-8 bg-gradient-to-tr from-emerald-200/40 via-green-200/40 to-teal-300/40 rounded-full blur-3xl opacity-80 -z-10"></div>
                   <div className="relative">
-                    <img 
+                    <Image 
                       src="/product.png" 
                       alt="Zeinglow Ashwagandha Gummies - Mixed Berry, Sugar-Free, Vegan" 
+                      width={320}
+                      height={320}
                       className="w-full max-w-xs h-auto object-contain drop-shadow-2xl filter brightness-110 float-slow"
                     />
                     <div className="absolute -top-3 -right-3 bg-gradient-to-r from-emerald-500 to-green-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-premium cta-pulse">
@@ -257,9 +260,11 @@ export default function Home() {
                 <div className="absolute -inset-12 bg-gradient-to-tr from-emerald-200/40 via-green-200/40 to-teal-300/40 rounded-full blur-3xl opacity-80 -z-10"></div>
                 <div className="absolute -inset-6 bg-gradient-to-br from-emerald-300/20 via-green-300/20 to-emerald-400/20 rounded-full blur-2xl opacity-60 -z-10"></div>
                 <div className="relative">
-                  <img 
+                  <Image 
                     src="/product.png" 
                     alt="Zeinglow Ashwagandha Gummies - Mixed Berry, Sugar-Free, Vegan" 
+                    width={512}
+                    height={512}
                     className="w-full max-w-lg h-auto object-contain drop-shadow-2xl filter brightness-110 float-slow"
                   />
                   <div className="absolute -top-4 -right-4 bg-gradient-to-r from-emerald-500 to-green-600 text-white text-sm font-bold px-4 py-2 rounded-full shadow-premium cta-pulse">
@@ -275,7 +280,7 @@ export default function Home() {
                   <span className="text-white text-2xl">😰</span>
                 </div>
                 <h3 className="font-bold text-red-900 text-2xl mb-4">The Daily Struggle</h3>
-                <p className="text-red-800 leading-relaxed"><span className="font-bold">Physical tension, mental overwhelm, sleepless nights.</span> Your body holds stress like a vice grip. <span className="font-bold">Every muscle aches. Every thought races.</span> You're trapped in a cycle of exhaustion.</p>
+                <p className="text-red-800 leading-relaxed"><span className="font-bold">Physical tension, mental overwhelm, sleepless nights.</span> Your body holds stress like a vice grip. <span className="font-bold">Every muscle aches. Every thought races.</span> You&apos;re trapped in a cycle of exhaustion.</p>
               </div>
               <div className="rounded-3xl p-8 bg-gradient-to-br from-orange-50 to-amber-100 ring-1 ring-orange-200/60 shadow-xl">
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center mb-6 shadow-lg">
@@ -351,7 +356,7 @@ export default function Home() {
                     </div>
                     100% Sugar-Free Formula
                   </h3>
-                  <p className="text-emerald-700 font-medium">Natural sweetness that supports your body's healing. <span className="font-bold">No sugar crashes that trigger stress cycles.</span> Pure, clean relaxation.</p>
+                  <p className="text-emerald-700 font-medium">Natural sweetness that supports your body&apos;s healing. <span className="font-bold">No sugar crashes that trigger stress cycles.</span> Pure, clean relaxation.</p>
                 </div>
                 
                 <div className="mt-4 bg-gradient-to-br from-purple-50 to-indigo-50 border border-purple-200/50 rounded-2xl p-6 shadow-lg">
@@ -410,17 +415,17 @@ export default function Home() {
             <div className="mt-16 grid md:grid-cols-3 gap-8">
               <div className="glass rounded-3xl p-8 shadow-card">
                 <div className="flex items-center gap-2 text-emerald-500 text-xl mb-4">★★★★★</div>
-                <p className="text-slate-800 font-medium text-lg leading-relaxed">"<span className="font-bold text-emerald-700">I actually feel the tension melt away</span> in the evening—and I sleep deeper."</p>
+                <p className="text-slate-800 font-medium text-lg leading-relaxed">&ldquo;<span className="font-bold text-emerald-700">I actually feel the tension melt away</span> in the evening—and I sleep deeper.&rdquo;</p>
                 <p className="mt-4 text-sm font-semibold text-slate-600">— Sarah P., Project Manager</p>
               </div>
               <div className="glass rounded-3xl p-8 shadow-card ring-2 ring-emerald-200/30">
                 <div className="flex items-center gap-2 text-emerald-500 text-xl mb-4">★★★★★</div>
-                <p className="text-slate-800 font-medium text-lg leading-relaxed">"<span className="font-bold text-emerald-700">Calm focus without the crash.</span> I'm more present at work and at home."</p>
+                <p className="text-slate-800 font-medium text-lg leading-relaxed">&ldquo;<span className="font-bold text-emerald-700">Calm focus without the crash.</span> I&apos;m more present at work and at home.&rdquo;</p>
                 <p className="mt-4 text-sm font-semibold text-slate-600">— James R., New Dad</p>
               </div>
               <div className="glass rounded-3xl p-8 shadow-card">
                 <div className="flex items-center gap-2 text-emerald-500 text-xl mb-4">★★★★★</div>
-                <p className="text-slate-800 font-medium text-lg leading-relaxed">"<span className="font-bold text-emerald-700">The only nighttime routine I never skip</span>—finally, I wake up restored."</p>
+                <p className="text-slate-800 font-medium text-lg leading-relaxed">&ldquo;<span className="font-bold text-emerald-700">The only nighttime routine I never skip</span>—finally, I wake up restored.&rdquo;</p>
                 <p className="mt-4 text-sm font-semibold text-slate-600">— Priya K., Designer</p>
               </div>
             </div>
@@ -454,9 +459,11 @@ export default function Home() {
                 <span className="absolute -top-3 left-8 badge">Starter</span>
                 <div className="text-center">
                   <div className="h-28 flex items-center justify-center">
-                    <img 
+                    <Image 
                       src="/product.png" 
                       alt="1 Bottle of Zeinglow Ashwagandha Gummies" 
+                      width={96}
+                      height={96}
                       className="h-24 w-auto object-contain"
                     />
                   </div>
@@ -488,9 +495,11 @@ export default function Home() {
                 <span className="absolute -top-4 left-8 bg-gradient-to-r from-emerald-600 to-green-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">Best Seller</span>
                 <div className="text-center">
                   <div className="h-28 flex items-center justify-center">
-                    <img 
+                    <Image 
                       src="/producttwo.png" 
                       alt="2 Bottles of Zeinglow Ashwagandha Gummies" 
+                      width={96}
+                      height={96}
                       className="h-24 w-auto object-contain"
                     />
                   </div>
@@ -516,9 +525,11 @@ export default function Home() {
                 <span className="absolute -top-3 left-8 badge">Best Value</span>
                 <div className="text-center">
                   <div className="h-28 flex items-center justify-center">
-                    <img 
+                    <Image 
                       src="/productthree.png" 
                       alt="3 Bottles of Zeinglow Ashwagandha Gummies" 
+                      width={96}
+                      height={96}
                       className="h-24 w-auto object-contain"
                     />
                   </div>
@@ -573,8 +584,8 @@ export default function Home() {
                 </div>
               </div>
               <div className="glass rounded-3xl p-10 shadow-premium">
-                <h3 className="text-2xl font-extrabold text-emerald-800">60‑day calm‑or‑it's‑free promise</h3>
-                <p className="mt-4 text-slate-700 text-lg leading-relaxed">Try Zeinglow for 60 days. If you don't feel less stress, better focus, or deeper sleep, we'll refund you—no questions asked.</p>
+                <h3 className="text-2xl font-extrabold text-emerald-800">60‑day calm‑or‑it&apos;s‑free promise</h3>
+                <p className="mt-4 text-slate-700 text-lg leading-relaxed">Try Zeinglow for 60 days. If you don&apos;t feel less stress, better focus, or deeper sleep, we&apos;ll refund you—no questions asked.</p>
                 <a href="/checkout" className="btn-primary mt-8" data-cta="faq-cta" aria-label="Start 60-day trial">Start My 60‑Day Trial — Risk‑Free</a>
               </div>
             </div>
