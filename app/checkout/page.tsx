@@ -129,7 +129,7 @@ export default function Checkout() {
             {/* Sales Headline */}
             <div className="text-center lg:text-left">
               <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">
-                You're just <span className="text-emerald-600">ONE STEP</span> away from
+                You&apos;re just <span className="text-emerald-600">ONE STEP</span> away from
                 <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-green-600">
                   Daily Calm & Deep Sleep
@@ -357,7 +357,7 @@ export default function Checkout() {
         <div className="mt-12 bg-white rounded-3xl p-8 shadow-xl text-center border border-emerald-100">
           <div className="text-emerald-500 text-xl mb-3">★★★★★</div>
           <blockquote className="text-lg font-medium text-slate-800 mb-4">
-            "I was skeptical at first, but after just 2 weeks with Zeinglow, I sleep like a baby and wake up refreshed. Best investment in my wellbeing!"
+            &ldquo;I was skeptical at first, but after just 2 weeks with Zeinglow, I sleep like a baby and wake up refreshed. Best investment in my wellbeing!&rdquo;
           </blockquote>
           <cite className="text-sm font-semibold text-slate-600">— Fatima Al-Zahra, Dubai</cite>
         </div>

@@ -31,12 +31,7 @@ export default function Home() {
           name="description"
           content="Premium sugar-free, vegan Ashwagandha gummies for stress relief and natural relaxation. Mixed berry flavor, plant-based formula. Thousands already feeling calmer."
         />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
-        />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -174,7 +169,7 @@ export default function Home() {
                     Transform pain into peace. Turn tension into tranquility.
                   </p>
                   <p className="text-lg text-slate-600 leading-relaxed">
-                    <span className="font-semibold text-slate-800">Zeinglow's sugar-free Ashwagandha gummies</span> naturally melt away daily stress, ease physical tension, and help you unwind completely—so you can finally relax and restore.
+                    <span className="font-semibold text-slate-800">Zeinglow&apos;s sugar-free Ashwagandha gummies</span> naturally melt away daily stress, ease physical tension, and help you unwind completely—so you can finally relax and restore.
                   </p>
                 </div>
                 
