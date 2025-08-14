@@ -181,10 +181,10 @@ export default function Home() {
                       <span className="text-emerald-400">•</span>
                       <span className="font-semibold text-emerald-700">Mixed Berry Delight</span>
                     </div>
-                    <div className="flex items-center gap-3 text-slate-700">
+                  <div className="flex items-center gap-3 text-slate-700">
                       <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full"></div>
                       <span className="font-semibold text-slate-700">60 relaxation gummies per bottle</span>
-                      <span className="text-slate-400">•</span>
+                    <span className="text-slate-400">•</span>
                       <span className="font-semibold text-slate-700">Pure, natural ingredients</span>
                     </div>
                   </div>
@@ -207,8 +207,8 @@ export default function Home() {
                       </div>
                       <span>Join thousands feeling calmer</span>
                     </span>
-                  </a>
-                </div>
+          </a>
+        </div>
 
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-16">
                   <div className="glass rounded-3xl p-6 text-center shadow-card">
@@ -295,7 +295,128 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="benefits" className="py-20 sm:py-32 bg-gradient-to-b from-white to-emerald-50">
+        <section id="bundles" className="py-16 sm:py-24 bg-gradient-to-b from-white to-emerald-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-2xl mx-auto">
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent">Premium Quality Bundles</h2>
+              <p className="mt-3 text-lg text-slate-700"><span className="font-bold text-emerald-600">High demand</span>—choose the bundle that fits your relaxation journey.</p>
+              <div className="mt-6 bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-200/50 rounded-3xl p-8 shadow-premium">
+                <div className="flex items-center justify-center gap-3 text-emerald-800 font-semibold">
+                  <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
+                  <span className="font-bold">Premium quality formula</span> •
+                  <span className="font-bold">100% sugar-free</span> •
+                  60-day money-back guarantee on all bundles
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-16 grid md:grid-cols-3 gap-8">
+              <div className="relative glass rounded-3xl p-8 flex flex-col shadow-card">
+                <span className="absolute -top-3 left-8 badge">Starter</span>
+                <div className="text-center">
+                  <div className="h-28 flex items-center justify-center">
+                    <Image 
+                      src="/product.png" 
+                      alt="1 Bottle of Zeinglow Ashwagandha Gummies" 
+                      width={96}
+                      height={96}
+                      className="h-24 w-auto object-contain"
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold">1 Bottle</h3>
+                  <p className="text-slate-600 text-sm"><span className="font-bold text-emerald-700">100% Sugar-Free</span> • <span className="font-semibold">60 relaxation gummies</span> • <span className="font-semibold">Mixed Berry flavor</span></p>
+                  <div className="mt-4">
+                    <span className="text-3xl font-extrabold">AED 189</span>
+                    <p className="text-xs text-emerald-600 font-semibold mt-1">Perfect to try • <span className="font-bold">Limited stock</span></p>
+                  </div>
+                </div>
+                <div className="mt-6 space-y-2 text-sm text-slate-700">
+                  <p className="flex items-center gap-2">
+                    <span className="text-emerald-500">✓</span>
+                    <span className="font-semibold">Vegan & plant-based formula</span>
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <span className="text-emerald-500">✓</span>
+                    <span className="font-semibold">No artificial colors or flavors</span>
+                  </p>
+                </div>
+                <a href="/checkout" className="btn-primary mt-6" data-cta="bundle-1" aria-label="Get Zeinglow Ashwagandha Gummies">
+                  <span>Get 1 Bottle — AED 189</span>
+                  <span className="btn-subtext">30 days • Great to try</span>
+                </a>
+                <p className="mt-3 text-xs text-center text-slate-500">60‑day money‑back guarantee</p>
+              </div>
+
+              <div className="relative glass rounded-3xl p-8 flex flex-col shadow-premium ring-2 ring-emerald-300/50 scale-[1.02]">
+                <span className="absolute -top-4 left-8 bg-gradient-to-r from-emerald-600 to-green-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">Best Seller</span>
+                <div className="text-center">
+                  <div className="h-28 flex items-center justify-center">
+                    <Image 
+                      src="/producttwo.png" 
+                      alt="2 Bottles of Zeinglow Ashwagandha Gummies" 
+                      width={96}
+                      height={96}
+                      className="h-24 w-auto object-contain"
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold">2 Bottles</h3>
+                  <p className="text-slate-600 text-sm"><span className="font-bold text-emerald-700">60-day relaxation journey</span> • 120 sugar-free gummies</p>
+                  <div className="mt-4">
+                    <span className="text-3xl font-extrabold">AED 339</span>
+                    <p className="text-xs text-emerald-600 font-semibold mt-1">Most popular choice</p>
+                  </div>
+                </div>
+                <div className="mt-6 space-y-2 text-sm text-slate-700">
+                  <p>✓ Most popular</p>
+                  <p>✓ Consistent 60‑day journey</p>
+                </div>
+                <a href="/checkout" className="btn-primary mt-6" data-cta="bundle-2" aria-label="Get Zeinglow 2-bottle bundle">
+                  <span>Get 2 Bottles — AED 339</span>
+                  <span className="btn-subtext">60 days • Most popular</span>
+                </a>
+                <p className="mt-3 text-xs text-center text-slate-500">60‑day money‑back guarantee</p>
+              </div>
+
+              <div className="relative glass rounded-3xl p-8 flex flex-col shadow-card">
+                <span className="absolute -top-3 left-8 badge">Best Value</span>
+                <div className="text-center">
+                  <div className="h-28 flex items-center justify-center">
+                    <Image 
+                      src="/productthree.png" 
+                      alt="3 Bottles of Zeinglow Ashwagandha Gummies" 
+                      width={96}
+                      height={96}
+                      className="h-24 w-auto object-contain"
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold">3 Bottles</h3>
+                  <p className="text-slate-600 text-sm"><span className="font-bold text-emerald-700">90-day transformation</span> • 180 sugar-free gummies</p>
+                  <div className="mt-4">
+                    <span className="text-3xl font-extrabold">AED 479</span>
+                    <p className="text-xs text-emerald-600 font-semibold mt-1">Best value • Complete journey</p>
+                  </div>
+                </div>
+                <div className="mt-6 space-y-2 text-sm text-slate-700">
+                  <p>✓ Best value</p>
+                  <p>✓ Complete transformation</p>
+                </div>
+                <a href="/checkout" className="btn-primary mt-6" data-cta="bundle-3" aria-label="Get 3 bottles">
+                  <span>Get 3 Bottles — AED 479</span>
+                  <span className="btn-subtext">90 days • Best value</span>
+                </a>
+                <p className="mt-3 text-xs text-center text-slate-500">60‑day money‑back guarantee</p>
+              </div>
+            </div>
+
+            <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-4 text-sm text-slate-600">
+              <div className="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-8.5L2 8h7z"/></svg> 60‑Day Money‑Back Guarantee</div>
+              <div className="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-8.5L2 8h7z"/></svg> Secure Checkout</div>
+              <div className="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-8.5L2 8h7z"/></svg> Premium Quality Guaranteed</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="benefits" className="py-20 sm:py-32 bg-gradient-to-b from-emerald-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl">
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-emerald-700 to-green-700 bg-clip-text text-transparent">Transform Your Daily Experience</h2>
@@ -434,127 +555,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="bundles" className="py-16 sm:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-2xl mx-auto">
-              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent">Premium Quality Bundles</h2>
-              <p className="mt-3 text-lg text-slate-700"><span className="font-bold text-emerald-600">High demand</span>—choose the bundle that fits your relaxation journey.</p>
-              <div className="mt-6 bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-200/50 rounded-3xl p-8 shadow-premium">
-                <div className="flex items-center justify-center gap-3 text-emerald-800 font-semibold">
-                  <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
-                  <span className="font-bold">Premium quality formula</span> •
-                  <span className="font-bold">100% sugar-free</span> •
-                  60-day money-back guarantee on all bundles
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-16 grid md:grid-cols-3 gap-8">
-              <div className="relative glass rounded-3xl p-8 flex flex-col shadow-card">
-                <span className="absolute -top-3 left-8 badge">Starter</span>
-                <div className="text-center">
-                  <div className="h-28 flex items-center justify-center">
-                    <Image 
-                      src="/product.png" 
-                      alt="1 Bottle of Zeinglow Ashwagandha Gummies" 
-                      width={96}
-                      height={96}
-                      className="h-24 w-auto object-contain"
-                    />
-                  </div>
-                  <h3 className="text-xl font-bold">1 Bottle</h3>
-                  <p className="text-slate-600 text-sm"><span className="font-bold text-emerald-700">100% Sugar-Free</span> • <span className="font-semibold">60 relaxation gummies</span> • <span className="font-semibold">Mixed Berry flavor</span></p>
-                  <div className="mt-4">
-                    <span className="text-3xl font-extrabold">AED 189</span>
-                    <p className="text-xs text-emerald-600 font-semibold mt-1">Perfect to try • <span className="font-bold">Limited stock</span></p>
-                  </div>
-                </div>
-                <div className="mt-6 space-y-2 text-sm text-slate-700">
-                  <p className="flex items-center gap-2">
-                    <span className="text-emerald-500">✓</span>
-                    <span className="font-semibold">Vegan & plant-based formula</span>
-                  </p>
-                  <p className="flex items-center gap-2">
-                    <span className="text-emerald-500">✓</span>
-                    <span className="font-semibold">No artificial colors or flavors</span>
-                  </p>
-                </div>
-                <a href="/checkout" className="btn-primary mt-6" data-cta="bundle-1" aria-label="Get Zeinglow Ashwagandha Gummies">
-                  <span>Get 1 Bottle — AED 189</span>
-                  <span className="btn-subtext">30 days • Great to try</span>
-                </a>
-                <p className="mt-3 text-xs text-center text-slate-500">60‑day money‑back guarantee</p>
-              </div>
-
-              <div className="relative glass rounded-3xl p-8 flex flex-col shadow-premium ring-2 ring-emerald-300/50 scale-[1.02]">
-                <span className="absolute -top-4 left-8 bg-gradient-to-r from-emerald-600 to-green-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">Best Seller</span>
-                <div className="text-center">
-                  <div className="h-28 flex items-center justify-center">
-                    <Image 
-                      src="/producttwo.png" 
-                      alt="2 Bottles of Zeinglow Ashwagandha Gummies" 
-                      width={96}
-                      height={96}
-                      className="h-24 w-auto object-contain"
-                    />
-                  </div>
-                  <h3 className="text-xl font-bold">2 Bottles</h3>
-                  <p className="text-slate-600 text-sm"><span className="font-bold text-emerald-700">60-day relaxation journey</span> • 120 sugar-free gummies</p>
-                  <div className="mt-4">
-                    <span className="text-3xl font-extrabold">AED 339</span>
-                    <p className="text-xs text-emerald-600 font-semibold mt-1">Most popular choice</p>
-                  </div>
-                </div>
-                <div className="mt-6 space-y-2 text-sm text-slate-700">
-                  <p>✓ Most popular</p>
-                  <p>✓ Consistent 60‑day journey</p>
-                </div>
-                <a href="/checkout" className="btn-primary mt-6" data-cta="bundle-2" aria-label="Get Zeinglow 2-bottle bundle">
-                  <span>Get 2 Bottles — AED 339</span>
-                  <span className="btn-subtext">60 days • Most popular</span>
-                </a>
-                <p className="mt-3 text-xs text-center text-slate-500">60‑day money‑back guarantee</p>
-              </div>
-
-              <div className="relative glass rounded-3xl p-8 flex flex-col shadow-card">
-                <span className="absolute -top-3 left-8 badge">Best Value</span>
-                <div className="text-center">
-                  <div className="h-28 flex items-center justify-center">
-                    <Image 
-                      src="/productthree.png" 
-                      alt="3 Bottles of Zeinglow Ashwagandha Gummies" 
-                      width={96}
-                      height={96}
-                      className="h-24 w-auto object-contain"
-                    />
-                  </div>
-                  <h3 className="text-xl font-bold">3 Bottles</h3>
-                  <p className="text-slate-600 text-sm"><span className="font-bold text-emerald-700">90-day transformation</span> • 180 sugar-free gummies</p>
-                  <div className="mt-4">
-                    <span className="text-3xl font-extrabold">AED 479</span>
-                    <p className="text-xs text-emerald-600 font-semibold mt-1">Best value • Complete journey</p>
-                  </div>
-                </div>
-                <div className="mt-6 space-y-2 text-sm text-slate-700">
-                  <p>✓ Best value</p>
-                  <p>✓ Complete transformation</p>
-                </div>
-                <a href="/checkout" className="btn-primary mt-6" data-cta="bundle-3" aria-label="Get 3 bottles">
-                  <span>Get 3 Bottles — AED 479</span>
-                  <span className="btn-subtext">90 days • Best value</span>
-                </a>
-                <p className="mt-3 text-xs text-center text-slate-500">60‑day money‑back guarantee</p>
-              </div>
-            </div>
-
-            <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-4 text-sm text-slate-600">
-              <div className="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-8.5L2 8h7z"/></svg> 60‑Day Money‑Back Guarantee</div>
-              <div className="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-8.5L2 8h7z"/></svg> Secure Checkout</div>
-              <div className="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-8.5L2 8h7z"/></svg> Premium Quality Guaranteed</div>
-            </div>
-          </div>
-        </section>
-
         <section id="faq" className="py-20 sm:py-32 bg-gradient-to-b from-white to-emerald-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12">
@@ -600,8 +600,10 @@ export default function Home() {
           </div>
       </footer>
 
-        <div className="fixed bottom-0 inset-x-0 z-40 p-3 md:hidden">
-          <a href="/checkout" className="btn-primary shadow-xl" data-cta="sticky-mobile" aria-label="Get Zeinglow Ashwagandha Gummies">Get Zeinglow Now — Premium Quality</a>
+        <div className="fixed bottom-0 inset-x-0 z-40 p-2 md:hidden">
+          <a href="/checkout" className="block w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white text-center py-3 px-4 rounded-xl font-semibold text-sm shadow-lg hover:shadow-xl transition-all" data-cta="sticky-mobile" aria-label="Get Zeinglow Ashwagandha Gummies">
+            Shop Now
+          </a>
         </div>
 
         <div id="sticky-offer" className="hidden md:flex fixed bottom-4 inset-x-0 z-40 justify-center">
