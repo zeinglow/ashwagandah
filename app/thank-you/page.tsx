@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface OrderData {
   name: string;
@@ -66,14 +67,14 @@ export default function ThankYou() {
       <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/95 border-b border-emerald-100/50 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-green-600 shadow-xl flex items-center justify-center">
-                <div className="w-5 h-5 rounded-lg bg-white/30"></div>
-              </div>
-              <span className="text-xl font-extrabold tracking-tight">
-                <span className="text-emerald-700">Zein</span>
-                <span className="text-green-700">glow</span>
-              </span>
+            <div className="flex items-center">
+              <Image
+                src="/logozeinglow.png"
+                alt="Zeinglow"
+                width={120}
+                height={36}
+                className="h-9 w-auto"
+              />
             </div>
             <div className="text-sm text-emerald-600 font-medium">
               ✅ Order Confirmed

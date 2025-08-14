@@ -65,14 +65,14 @@ export default function Home() {
         <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/95 border-b border-emerald-100/50 shadow-lg">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-20">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-green-600 shadow-xl flex items-center justify-center">
-                  <div className="w-6 h-6 rounded-lg bg-white/30"></div>
-                </div>
-                <span className="text-2xl font-extrabold tracking-tight">
-                  <span className="text-emerald-700">Zein</span>
-                  <span className="text-green-700">glow</span>
-                </span>
+              <div className="flex items-center">
+                <Image
+                  src="/logozeinglow.png"
+                  alt="Zeinglow"
+                  width={160}
+                  height={48}
+                  className="h-12 w-auto"
+                />
               </div>
               <nav className="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-700">
                 <a href="#benefits" className="hover:text-emerald-700 transition-colors">Benefits</a>
