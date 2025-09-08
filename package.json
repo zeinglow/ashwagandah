@@ -4,16 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "prisma generate && next build",
+    "build": "npx prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "prisma generate",
+    "postinstall": "npx prisma generate",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
     "db:seed": "tsx lib/seed.ts",
     "db:seed-production": "tsx scripts/seed-production.ts",
     "db:setup": "npm run db:generate && npm run db:migrate && npm run db:seed",
-    "vercel-build": "prisma generate && prisma db push && npm run db:seed-production && next build"
+    "vercel-build": "npx prisma generate && npx prisma db push && npm run db:seed-production && next build"
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.7",

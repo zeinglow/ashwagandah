@@ -49,9 +49,11 @@ STACK_SECRET_SERVER_KEY=ssk_ea5a06btbsdd6ap6k2ynm2sn3kch6ag96e3yk2wxv96m0
 
 ### 2. Configure Build Settings
 Vercel will automatically detect Next.js and use our configured build commands:
-- **Build Command**: `prisma generate && next build` (from package.json)
-- **Install Command**: `npm install && prisma generate` (from vercel.json)
+- **Build Command**: `npx prisma generate && next build` (from package.json)
+- **Install Command**: `npm install` (automatic, runs postinstall script)
 - **Output Directory**: `.next` (automatic)
+
+The `postinstall` script will automatically run `npx prisma generate` after dependencies are installed.
 
 ### 3. Add Environment Variables
 1. In the Vercel dashboard, go to your project
@@ -73,10 +75,9 @@ Vercel will automatically detect Next.js and use our configured build commands:
 ### What Happens During Deployment:
 
 1. **Install Dependencies**: `npm install`
-2. **Generate Prisma Client**: `prisma generate` (via postinstall script)
-3. **Database Setup**: `prisma db push` (creates/updates tables)
-4. **Seed Database**: Creates admin user if not exists
-5. **Build Application**: `next build`
+2. **Generate Prisma Client**: `npx prisma generate` (via postinstall script)
+3. **Build Process**: `npx prisma generate && next build` (build command)
+4. **Runtime Database**: Schema is managed by your existing Neon database
 
 ### Key Files for Deployment:
 
