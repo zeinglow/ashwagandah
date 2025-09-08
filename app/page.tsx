@@ -14,6 +14,12 @@ export default function Home() {
     };
 
     window.addEventListener("scroll", handleScroll);
+    
+    // Track ViewContent event when the page loads
+    if (typeof window !== 'undefined' && window.fbq) {
+      window.fbq('track', 'ViewContent');
+    }
+    
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -77,6 +83,16 @@ export default function Home() {
               <div className="flex items-center space-x-4">
                 <a
                   href="/checkout"
+                  onClick={() => {
+                    if (typeof window !== 'undefined' && window.fbq) {
+                      window.fbq('track', 'AddToCart', {
+                        content_name: 'Ashwagandha Gummies',
+                        content_category: 'Health Supplements',
+                        value: 189,
+                        currency: 'AED'
+                      });
+                    }
+                  }}
                   className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 md:px-6 py-2 md:py-3 rounded-full font-semibold text-sm md:text-base transition-all transform hover:scale-105 shadow-lg"
                 >
                   Shop Now
@@ -164,6 +180,16 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
                     href="/checkout"
+                    onClick={() => {
+                      if (typeof window !== 'undefined' && window.fbq) {
+                        window.fbq('track', 'AddToCart', {
+                          content_name: 'Ashwagandha Gummies',
+                          content_category: 'Health Supplements',
+                          value: 189,
+                          currency: 'AED'
+                        });
+                      }
+                    }}
                     className="inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all transform hover:scale-105 shadow-xl"
                   >
                     Get Started - AED 189
@@ -329,6 +355,16 @@ export default function Home() {
                 </p>
                 <a
                   href="/checkout"
+                  onClick={() => {
+                    if (typeof window !== 'undefined' && window.fbq) {
+                      window.fbq('track', 'AddToCart', {
+                        content_name: 'Ashwagandha Gummies',
+                        content_category: 'Health Supplements',
+                        value: 189,
+                        currency: 'AED'
+                      });
+                    }
+                  }}
                   className="inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all transform hover:scale-105 shadow-xl"
                 >
                   Start Your Transformation Today
@@ -727,6 +763,16 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/checkout"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && window.fbq) {
+                    window.fbq('track', 'AddToCart', {
+                      content_name: 'Ashwagandha Gummies',
+                      content_category: 'Health Supplements',
+                      value: 189,
+                      currency: 'AED'
+                    });
+                  }
+                }}
                 className="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-emerald-600 px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-xl"
               >
                 Get Your Zeinglow Today
@@ -764,6 +810,16 @@ export default function Home() {
         <div className="fixed bottom-0 left-0 right-0 p-4 bg-white border-t md:hidden z-40">
           <a
             href="/checkout"
+            onClick={() => {
+              if (typeof window !== 'undefined' && window.fbq) {
+                window.fbq('track', 'AddToCart', {
+                  content_name: 'Ashwagandha Gummies',
+                  content_category: 'Health Supplements',
+                  value: 189,
+                  currency: 'AED'
+                });
+              }
+            }}
             className="block w-full bg-emerald-600 hover:bg-emerald-700 text-white text-center py-3 rounded-full font-semibold"
           >
             Get Zeinglow Now - AED 189

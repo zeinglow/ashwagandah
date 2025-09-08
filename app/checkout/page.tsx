@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
@@ -27,6 +27,13 @@ export default function Checkout() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<FormErrors>({});
+
+  // Track InitiateCheckout event when checkout page loads
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.fbq) {
+      window.fbq('track', 'InitiateCheckout');
+    }
+  }, []);
 
   const bundles: Record<string, { name: string; price: number; gummies: number; days: number }> = {
     "1-bottle": { name: "1 Bottle", price: 189, gummies: 60, days: 30 },
@@ -86,6 +93,14 @@ export default function Checkout() {
       }
 
       const result = await response.json();
+      
+      // Track Purchase event with bundle value
+      if (typeof window !== 'undefined' && window.fbq) {
+        window.fbq('track', 'Purchase', {
+          value: selectedBundle.price,
+          currency: 'AED'
+        });
+      }
       
       // Store order data in localStorage for thank-you page
       localStorage.setItem('orderData', JSON.stringify({
