@@ -1,10 +1,8 @@
 import { NextAuthOptions } from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
-import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import { prisma } from "./prisma"
 
 export const authOptions: NextAuthOptions = {
-  adapter: PrismaAdapter(prisma),
   providers: [
     CredentialsProvider({
       name: "credentials",
@@ -13,33 +11,54 @@ export const authOptions: NextAuthOptions = {
         password: { label: "Password", type: "password" }
       },
       async authorize(credentials) {
-        if (!credentials?.email || !credentials?.password) {
-          return null
-        }
-
-        const user = await prisma.user.findUnique({
-          where: {
-            email: credentials.email
+        try {
+          console.log('Auth attempt for:', credentials?.email)
+          
+          if (!credentials?.email || !credentials?.password) {
+            console.log('Missing credentials')
+            return null
           }
-        })
 
-        if (!user) {
+          const user = await prisma.user.findUnique({
+            where: {
+              email: credentials.email
+            }
+          })
+
+          if (!user) {
+            console.log('User not found:', credentials.email)
+            return null
+          }
+
+          console.log('User found:', user.email, 'Role:', user.role)
+
+          // Check if user is admin
+          if (user.role !== 'ADMIN') {
+            console.log('User is not admin:', user.role)
+            return null
+          }
+
+          // Simple password check - in production, use proper hashing
+          const adminPassword = process.env.ADMIN_PASSWORD
+          console.log('Password check - provided:', !!credentials.password, 'expected:', !!adminPassword)
+          
+          const isPasswordValid = credentials.password === adminPassword
+
+          if (!isPasswordValid) {
+            console.log('Invalid password')
+            return null
+          }
+
+          console.log('Auth successful for:', user.email)
+          return {
+            id: user.id,
+            email: user.email,
+            name: user.name,
+            role: user.role,
+          }
+        } catch (error) {
+          console.error('Auth error:', error)
           return null
-        }
-
-        // For demo purposes, we'll create a simple password check
-        // In production, you should hash passwords properly
-        const isPasswordValid = credentials.password === process.env.ADMIN_PASSWORD
-
-        if (!isPasswordValid) {
-          return null
-        }
-
-        return {
-          id: user.id,
-          email: user.email,
-          name: user.name,
-          role: user.role,
         }
       }
     })
