@@ -35,7 +35,7 @@ export default function AdminLogin() {
           setError("Access denied. Admin privileges required.");
         }
       }
-    } catch (error) {
+    } catch {
       setError("An error occurred. Please try again.");
     } finally {
       setIsLoading(false);

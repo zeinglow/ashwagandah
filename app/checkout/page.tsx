@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { MetaCAPI } from "@/lib/meta-capi-client";
 
 interface FormData {
   name: string;
@@ -30,9 +31,8 @@ export default function Checkout() {
 
   // Track InitiateCheckout event when checkout page loads
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.fbq) {
-      window.fbq('track', 'InitiateCheckout');
-    }
+    // Send both Pixel and CAPI events
+    MetaCAPI.trackInitiateCheckout({}, 189);
   }, []);
 
   const bundles: Record<string, { name: string; price: number; gummies: number; days: number }> = {
@@ -94,13 +94,17 @@ export default function Checkout() {
 
       const result = await response.json();
       
-      // Track Purchase event with bundle value
-      if (typeof window !== 'undefined' && window.fbq) {
-        window.fbq('track', 'Purchase', {
-          value: selectedBundle.price,
-          currency: 'AED'
-        });
-      }
+      // Track Purchase event with CAPI (includes Pixel with deduplication)
+      await MetaCAPI.trackPurchase(
+        {
+          email: formData.email,
+          phone: formData.phone,
+          firstName: formData.name.split(' ')[0],
+          lastName: formData.name.split(' ').slice(1).join(' ') || undefined,
+        },
+        selectedBundle.price,
+        'AED'
+      );
       
       // Store order data in localStorage for thank-you page
       localStorage.setItem('orderData', JSON.stringify({

@@ -3,6 +3,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { MetaCAPI } from "@/lib/meta-capi-client";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,10 +16,8 @@ export default function Home() {
 
     window.addEventListener("scroll", handleScroll);
     
-    // Track ViewContent event when the page loads
-    if (typeof window !== 'undefined' && window.fbq) {
-      window.fbq('track', 'ViewContent');
-    }
+    // Track ViewContent event with CAPI (includes Pixel with deduplication)
+    MetaCAPI.trackViewContent({}, 'Ashwagandha Gummies', 'Health Supplements');
     
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -83,16 +82,9 @@ export default function Home() {
               <div className="flex items-center space-x-4">
                 <a
                   href="/checkout"
-                  onClick={() => {
-                    if (typeof window !== 'undefined' && window.fbq) {
-                      window.fbq('track', 'AddToCart', {
-                        content_name: 'Ashwagandha Gummies',
-                        content_category: 'Health Supplements',
-                        value: 189,
-                        currency: 'AED'
-                      });
-                    }
-                  }}
+                    onClick={() => {
+                      MetaCAPI.trackAddToCart({}, 189, 'AED', 'Ashwagandha Gummies');
+                    }}
                   className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 md:px-6 py-2 md:py-3 rounded-full font-semibold text-sm md:text-base transition-all transform hover:scale-105 shadow-lg"
                 >
                   Shop Now
@@ -181,14 +173,7 @@ export default function Home() {
                   <a
                     href="/checkout"
                     onClick={() => {
-                      if (typeof window !== 'undefined' && window.fbq) {
-                        window.fbq('track', 'AddToCart', {
-                          content_name: 'Ashwagandha Gummies',
-                          content_category: 'Health Supplements',
-                          value: 189,
-                          currency: 'AED'
-                        });
-                      }
+                      MetaCAPI.trackAddToCart({}, 189, 'AED', 'Ashwagandha Gummies');
                     }}
                     className="inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all transform hover:scale-105 shadow-xl"
                   >
@@ -351,20 +336,13 @@ export default function Home() {
                   Every day without proper stress management costs you
                 </p>
                 <p className="text-gray-600 mb-6">
-                  Your health, relationships, and peace of mind can't wait another day
+                  Your health, relationships, and peace of mind can&apos;t wait another day
                 </p>
                 <a
                   href="/checkout"
-                  onClick={() => {
-                    if (typeof window !== 'undefined' && window.fbq) {
-                      window.fbq('track', 'AddToCart', {
-                        content_name: 'Ashwagandha Gummies',
-                        content_category: 'Health Supplements',
-                        value: 189,
-                        currency: 'AED'
-                      });
-                    }
-                  }}
+                    onClick={() => {
+                      MetaCAPI.trackAddToCart({}, 189, 'AED', 'Ashwagandha Gummies');
+                    }}
                   className="inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all transform hover:scale-105 shadow-xl"
                 >
                   Start Your Transformation Today
@@ -695,7 +673,7 @@ export default function Home() {
                       <span key={i}>{star}</span>
                     ))}
                   </div>
-                  <p className="text-gray-700 mb-4">"{review.review}"</p>
+                  <p className="text-gray-700 mb-4">&ldquo;{review.review}&rdquo;</p>
                   <div>
                     <p className="font-semibold">{review.name}</p>
                     <p className="text-sm text-gray-500">{review.role}</p>
@@ -757,22 +735,15 @@ export default function Home() {
               Ready to Transform Your Life?
             </h2>
             <p className="text-xl mb-8 text-emerald-100 max-w-2xl mx-auto">
-              Join thousands who've discovered the power of natural stress relief. 
+              Join thousands who&apos;ve discovered the power of natural stress relief. 
               60-day guarantee means you have nothing to lose.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/checkout"
-                onClick={() => {
-                  if (typeof window !== 'undefined' && window.fbq) {
-                    window.fbq('track', 'AddToCart', {
-                      content_name: 'Ashwagandha Gummies',
-                      content_category: 'Health Supplements',
-                      value: 189,
-                      currency: 'AED'
-                    });
-                  }
-                }}
+                    onClick={() => {
+                      MetaCAPI.trackAddToCart({}, 189, 'AED', 'Ashwagandha Gummies');
+                    }}
                 className="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-emerald-600 px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-xl"
               >
                 Get Your Zeinglow Today
@@ -810,16 +781,9 @@ export default function Home() {
         <div className="fixed bottom-0 left-0 right-0 p-4 bg-white border-t md:hidden z-40">
           <a
             href="/checkout"
-            onClick={() => {
-              if (typeof window !== 'undefined' && window.fbq) {
-                window.fbq('track', 'AddToCart', {
-                  content_name: 'Ashwagandha Gummies',
-                  content_category: 'Health Supplements',
-                  value: 189,
-                  currency: 'AED'
-                });
-              }
-            }}
+                    onClick={() => {
+                      MetaCAPI.trackAddToCart({}, 189, 'AED', 'Ashwagandha Gummies');
+                    }}
             className="block w-full bg-emerald-600 hover:bg-emerald-700 text-white text-center py-3 rounded-full font-semibold"
           >
             Get Zeinglow Now - AED 189
