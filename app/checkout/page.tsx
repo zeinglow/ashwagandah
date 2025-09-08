@@ -62,18 +62,46 @@ export default function Checkout() {
 
     setIsSubmitting(true);
     
-    // Simulate order processing
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    // Store order data in localStorage for thank-you page
-    localStorage.setItem('orderData', JSON.stringify({
-      ...formData,
-      bundle: selectedBundle,
-      orderNumber: `ZG${Date.now()}`,
-      orderDate: new Date().toLocaleDateString()
-    }));
-    
-    router.push('/thank-you');
+    try {
+      // Save order to database
+      const response = await fetch('/api/orders', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          bundle: formData.bundle,
+          bundleName: selectedBundle.name,
+          price: selectedBundle.price,
+          gummies: selectedBundle.gummies,
+          days: selectedBundle.days,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit order');
+      }
+
+      const result = await response.json();
+      
+      // Store order data in localStorage for thank-you page
+      localStorage.setItem('orderData', JSON.stringify({
+        ...formData,
+        bundle: selectedBundle,
+        orderNumber: result.order.orderNumber,
+        orderDate: new Date().toLocaleDateString()
+      }));
+      
+      router.push('/thank-you');
+    } catch (error) {
+      console.error('Error submitting order:', error);
+      alert('There was an error submitting your order. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -184,7 +212,14 @@ export default function Checkout() {
               <div className="flex items-center gap-4 mb-4">
                 <div className="flex -space-x-2">
                   {[1,2,3,4,5].map(i => (
-                    <div key={i} className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-green-500 border-2 border-white"></div>
+                    <Image
+                      key={i}
+                      src={`/avatar/avatar${i}.png`}
+                      alt={`Customer ${i}`}
+                      width={40}
+                      height={40}
+                      className="w-10 h-10 rounded-full border-2 border-white"
+                    />
                   ))}
                 </div>
                 <div>
