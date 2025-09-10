@@ -39,7 +39,7 @@ export default function Home() {
         <meta property="og:type" content="product" />
         
         {/* Preload critical images */}
-        <link rel="preload" as="image" href="/product.png" />
+        <link rel="preload" as="image" href="/beargummies.png" />
         <link rel="preload" as="image" href="/logozeinglow.png" />
       </Head>
 
@@ -206,7 +206,7 @@ export default function Home() {
                 <div className="relative mx-auto max-w-md">
                   <div className="absolute inset-0 bg-gradient-to-br from-emerald-200 to-emerald-400 rounded-full blur-3xl opacity-30" />
                   <Image
-                    src="/product.png"
+                    src="/beargummies.png"
                     alt="Zeinglow Ashwagandha Gummies"
                     width={500}
                     height={500}
@@ -368,7 +368,7 @@ export default function Home() {
                   <p className="text-gray-600 mb-4">Try it out</p>
                   <div className="h-32 flex items-center justify-center mb-6">
                     <Image 
-                      src="/product.png" 
+                      src="/beargummies.png" 
                       alt="1 Bottle" 
                       width={100} 
                       height={100} 
@@ -394,14 +394,14 @@ export default function Home() {
                   <div className="h-32 flex items-center justify-center mb-6">
                     <div className="flex -space-x-4">
                       <Image 
-                        src="/product.png" 
+                        src="/beargummies.png" 
                         alt="2 Bottles" 
                         width={100} 
                         height={100} 
                         className="object-contain"
                       />
                       <Image 
-                        src="/product.png" 
+                        src="/beargummies.png" 
                         alt="2 Bottles" 
                         width={100} 
                         height={100} 
@@ -426,21 +426,21 @@ export default function Home() {
                   <div className="h-32 flex items-center justify-center mb-6">
                     <div className="flex -space-x-6">
                       <Image 
-                        src="/product.png" 
+                        src="/beargummies.png" 
                         alt="3 Bottles" 
                         width={80} 
                         height={80} 
                         className="object-contain"
                       />
                       <Image 
-                        src="/product.png" 
+                        src="/beargummies.png" 
                         alt="3 Bottles" 
                         width={80} 
                         height={80} 
                         className="object-contain z-10"
                       />
                       <Image 
-                        src="/product.png" 
+                        src="/beargummies.png" 
                         alt="3 Bottles" 
                         width={80} 
                         height={80} 
