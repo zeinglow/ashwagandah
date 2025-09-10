@@ -634,7 +634,7 @@ export default function Home() {
         <section id="reviews" className="py-16 md:py-24 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Real People, Real Results</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Customers Are Saying</h2>
               <div className="flex items-center justify-center gap-2 text-lg">
                 <div className="flex text-yellow-400">
                   {"★★★★★".split("").map((star, i) => (
@@ -652,32 +652,44 @@ export default function Home() {
                   name: "Sarah M.",
                   role: "Verified Buyer",
                   review: "I was skeptical, but these actually work! I feel calmer during the day and sleep so much better.",
-                  rating: 5
+                  rating: 5,
+                  image: "/ash1.jpg"
                 },
                 {
                   name: "Ahmed K.",
                   role: "Verified Buyer",
                   review: "No more afternoon crashes. I have steady energy all day and my stress levels are way down.",
-                  rating: 5
+                  rating: 5,
+                  image: "/ash2.jpg"
                 },
                 {
                   name: "Priya R.",
                   role: "Verified Buyer",
                   review: "Finally something that helps with anxiety without making me drowsy. Game changer!",
-                  rating: 5
+                  rating: 5,
+                  image: "/ash3.jpg"
                 }
               ].map((review, index) => (
                 <div key={index} className="bg-white rounded-xl p-6 shadow-lg">
+                  <div className="flex items-center mb-4">
+                    <Image
+                      src={review.image}
+                      alt={review.name}
+                      width={50}
+                      height={50}
+                      className="w-12 h-12 rounded-full object-cover mr-3"
+                    />
+                    <div>
+                      <p className="font-semibold">{review.name}</p>
+                      <p className="text-sm text-gray-500">{review.role}</p>
+                    </div>
+                  </div>
                   <div className="flex text-yellow-400 mb-3">
                     {Array(review.rating).fill("★").map((star, i) => (
                       <span key={i}>{star}</span>
                     ))}
                   </div>
-                  <p className="text-gray-700 mb-4">&ldquo;{review.review}&rdquo;</p>
-                  <div>
-                    <p className="font-semibold">{review.name}</p>
-                    <p className="text-sm text-gray-500">{review.role}</p>
-                  </div>
+                  <p className="text-gray-700">&ldquo;{review.review}&rdquo;</p>
                 </div>
               ))}
             </div>
