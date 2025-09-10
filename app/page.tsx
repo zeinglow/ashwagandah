@@ -1,13 +1,29 @@
 "use client";
 
-import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { MetaCAPI } from "@/lib/meta-capi-client";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [timeLeft, setTimeLeft] = useState({
+    hours: 7,
+    minutes: 0,
+    seconds: 0
+  });
+
+  const smoothScrollTo = (elementId: string) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+    setIsMobileMenuOpen(false); // Close mobile menu after clicking
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,26 +38,31 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Countdown timer effect
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft((prevTime) => {
+        const totalSeconds = prevTime.hours * 3600 + prevTime.minutes * 60 + prevTime.seconds;
+        
+        if (totalSeconds <= 0) {
+          // Reset to 7 hours when it reaches 0
+          return { hours: 7, minutes: 0, seconds: 0 };
+        }
+        
+        const newTotalSeconds = totalSeconds - 1;
+        const hours = Math.floor(newTotalSeconds / 3600);
+        const minutes = Math.floor((newTotalSeconds % 3600) / 60);
+        const seconds = newTotalSeconds % 60;
+        
+        return { hours, minutes, seconds };
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <>
-      <Head>
-        <title>Zeinglow Ashwagandha Gummies - Natural Stress Relief & Better Sleep</title>
-        <meta
-          name="description"
-          content="Premium sugar-free Ashwagandha gummies for natural stress relief, better sleep, and daily calm. Vegan, plant-based formula with KSM-66®. 60-day guarantee."
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://zeinglow.com" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="Zeinglow Ashwagandha Gummies - Natural Stress Relief" />
-        <meta property="og:description" content="Transform stress into calm with premium sugar-free Ashwagandha gummies. 100% vegan, clinically studied ingredients." />
-        <meta property="og:type" content="product" />
-        
-        {/* Preload critical images */}
-        <link rel="preload" as="image" href="/beargummies.png" />
-        <link rel="preload" as="image" href="/logozeinglow.png" />
-      </Head>
 
       <div className="min-h-screen bg-gradient-to-b from-emerald-50 via-white to-emerald-50">
         {/* Optimized Header */}
@@ -64,18 +85,30 @@ export default function Home() {
 
               {/* Desktop Navigation */}
               <nav className="hidden md:flex items-center space-x-8">
-                <a href="#benefits" className="text-gray-700 hover:text-emerald-600 transition-colors font-medium">
+                <button 
+                  onClick={() => smoothScrollTo('benefits')} 
+                  className="text-gray-700 hover:text-emerald-600 transition-colors font-medium cursor-pointer"
+                >
                   Benefits
-                </a>
-                <a href="#ingredients" className="text-gray-700 hover:text-emerald-600 transition-colors font-medium">
+                </button>
+                <button 
+                  onClick={() => smoothScrollTo('ingredients')} 
+                  className="text-gray-700 hover:text-emerald-600 transition-colors font-medium cursor-pointer"
+                >
                   Ingredients
-                </a>
-                <a href="#reviews" className="text-gray-700 hover:text-emerald-600 transition-colors font-medium">
+                </button>
+                <button 
+                  onClick={() => smoothScrollTo('reviews')} 
+                  className="text-gray-700 hover:text-emerald-600 transition-colors font-medium cursor-pointer"
+                >
                   Reviews
-                </a>
-                <a href="#faq" className="text-gray-700 hover:text-emerald-600 transition-colors font-medium">
+                </button>
+                <button 
+                  onClick={() => smoothScrollTo('faq')} 
+                  className="text-gray-700 hover:text-emerald-600 transition-colors font-medium cursor-pointer"
+                >
                   FAQ
-                </a>
+                </button>
               </nav>
 
               {/* CTA Button */}
@@ -108,10 +141,30 @@ export default function Home() {
             {isMobileMenuOpen && (
               <div className="md:hidden bg-white border-t">
                 <div className="px-4 py-4 space-y-3">
-                  <a href="#benefits" className="block py-2 text-gray-700 hover:text-emerald-600">Benefits</a>
-                  <a href="#ingredients" className="block py-2 text-gray-700 hover:text-emerald-600">Ingredients</a>
-                  <a href="#reviews" className="block py-2 text-gray-700 hover:text-emerald-600">Reviews</a>
-                  <a href="#faq" className="block py-2 text-gray-700 hover:text-emerald-600">FAQ</a>
+                  <button 
+                    onClick={() => smoothScrollTo('benefits')} 
+                    className="block py-2 text-gray-700 hover:text-emerald-600 w-full text-left"
+                  >
+                    Benefits
+                  </button>
+                  <button 
+                    onClick={() => smoothScrollTo('ingredients')} 
+                    className="block py-2 text-gray-700 hover:text-emerald-600 w-full text-left"
+                  >
+                    Ingredients
+                  </button>
+                  <button 
+                    onClick={() => smoothScrollTo('reviews')} 
+                    className="block py-2 text-gray-700 hover:text-emerald-600 w-full text-left"
+                  >
+                    Reviews
+                  </button>
+                  <button 
+                    onClick={() => smoothScrollTo('faq')} 
+                    className="block py-2 text-gray-700 hover:text-emerald-600 w-full text-left"
+                  >
+                    FAQ
+                  </button>
                 </div>
               </div>
             )}
@@ -119,104 +172,695 @@ export default function Home() {
         </header>
 
         {/* Hero Section - Simplified and Optimized */}
-        <section className="pt-24 md:pt-32 pb-16 md:pb-24 overflow-hidden">
-          <div className="container mx-auto px-4">
+        <section className="pt-24 md:pt-32 pb-16 md:pb-24 overflow-hidden relative">
+          {/* Animated Cloud Background with Framer Motion */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {/* Real Cloud Images - Bigger and More */}
+            {/* Cloud 1 - Top Left Large */}
+            <motion.div
+              className="absolute top-12 left-4 w-48 h-32 md:w-60 md:h-40"
+              animate={{
+                y: [0, -15, -8, -20, 0],
+                x: [0, 8, -6, 12, 0],
+                rotate: [0, 2, -1, 3, 0],
+              }}
+              transition={{
+                duration: 12,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            >
+              <Image
+                src="/cloude1.png"
+                alt=""
+                width={240}
+                height={160}
+                className="w-full h-full object-contain opacity-65"
+              />
+            </motion.div>
+
+            {/* Cloud 2 - Top Right Large */}
+            <motion.div
+              className="absolute top-8 right-6 w-44 h-28 md:w-56 md:h-36"
+              animate={{
+                y: [0, -18, -12, -22, 0],
+                x: [0, -10, 6, -8, 0],
+                rotate: [0, -2, 1, -3, 0],
+              }}
+              transition={{
+                duration: 14,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 2
+              }}
+            >
+              <Image
+                src="/cloude2.png"
+                alt=""
+                width={224}
+                height={144}
+                className="w-full h-full object-contain opacity-55"
+              />
+            </motion.div>
+
+            {/* Cloud 3 - Top Center */}
+            <motion.div
+              className="absolute top-4 left-1/3 w-40 h-26 md:w-48 md:h-32"
+              animate={{
+                y: [0, -12, -18, -10, 0],
+                x: [0, 6, -8, 4, 0],
+                rotate: [0, 1, -2, 2, 0],
+              }}
+              transition={{
+                duration: 16,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 4
+              }}
+            >
+              <Image
+                src="/cloude1.png"
+                alt=""
+                width={192}
+                height={128}
+                className="w-full h-full object-contain opacity-45"
+              />
+            </motion.div>
+
+            {/* Cloud 4 - Mid Right */}
+            <motion.div
+              className="absolute top-32 right-1/4 w-36 h-24 md:w-44 md:h-30"
+              animate={{
+                y: [0, -14, -20, -16, 0],
+                x: [0, -6, 10, -4, 0],
+                rotate: [0, -1, 2, -1, 0],
+              }}
+              transition={{
+                duration: 10,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 6
+              }}
+            >
+              <Image
+                src="/cloude2.png"
+                alt=""
+                width={176}
+                height={120}
+                className="w-full h-full object-contain opacity-40"
+              />
+            </motion.div>
+
+            {/* Cloud 5 - Mid Left */}
+            <motion.div
+              className="absolute top-48 left-16 w-32 h-22 md:w-40 md:h-28"
+              animate={{
+                y: [0, -16, -10, -18, 0],
+                x: [0, 8, -4, 6, 0],
+                rotate: [0, 2, -1, 1, 0],
+              }}
+              transition={{
+                duration: 13,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 8
+              }}
+            >
+              <Image
+                src="/cloude1.png"
+                alt=""
+                width={160}
+                height={112}
+                className="w-full h-full object-contain opacity-50"
+              />
+            </motion.div>
+
+            {/* Cloud 6 - Bottom Center */}
+            <motion.div
+              className="absolute top-56 left-1/2 transform -translate-x-1/2 w-28 h-20 md:w-36 md:h-26"
+              animate={{
+                y: [0, -12, -16, -8, 0],
+                x: [0, -4, 8, -6, 0],
+                rotate: [0, -1, 2, -2, 0],
+              }}
+              transition={{
+                duration: 11,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 10
+              }}
+            >
+              <Image
+                src="/cloude2.png"
+                alt=""
+                width={144}
+                height={104}
+                className="w-full h-full object-contain opacity-35"
+              />
+            </motion.div>
+
+            {/* Cloud 7 - Right Side Upper */}
+            <motion.div
+              className="absolute top-20 right-4 w-38 h-26 md:w-46 md:h-32"
+              animate={{
+                y: [0, -18, -14, -22, 0],
+                x: [0, -8, 4, -12, 0],
+                rotate: [0, -2, 1, -3, 0],
+              }}
+              transition={{
+                duration: 15,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 3
+              }}
+            >
+              <Image
+                src="/cloude1.png"
+                alt=""
+                width={184}
+                height={128}
+                className="w-full h-full object-contain opacity-52"
+              />
+            </motion.div>
+
+            {/* Cloud 8 - Right Side Lower */}
+            <motion.div
+              className="absolute top-44 right-8 w-34 h-24 md:w-42 md:h-30"
+              animate={{
+                y: [0, -15, -20, -12, 0],
+                x: [0, -6, 8, -10, 0],
+                rotate: [0, 1, -2, 2, 0],
+              }}
+              transition={{
+                duration: 12,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 7
+              }}
+            >
+              <Image
+                src="/cloude2.png"
+                alt=""
+                width={168}
+                height={120}
+                className="w-full h-full object-contain opacity-48"
+              />
+            </motion.div>
+
+            {/* Additional smaller CSS clouds for depth */}
+            <motion.div 
+              className="absolute top-32 left-20 w-16 h-8 bg-white/15 rounded-full blur-sm"
+              animate={{
+                y: [0, -8, -12, -6, 0],
+                x: [0, -3, 5, -2, 0],
+              }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1
+              }}
+            />
+            
+            <motion.div 
+              className="absolute top-52 right-16 w-20 h-10 bg-white/20 rounded-full blur-sm"
+              animate={{
+                y: [0, -10, -14, -8, 0],
+                x: [0, 5, -7, 3, 0],
+              }}
+              transition={{
+                duration: 9,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 3
+              }}
+            />
+            
+            {/* Cloud 3 */}
+            <motion.div 
+              className="absolute top-60 left-1/4 w-28 h-14 bg-white/15 rounded-full blur-sm"
+              animate={{
+                y: [0, -20, -12, -16, 0],
+                x: [0, -6, 8, -4, 0],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1.5
+              }}
+            />
+            <motion.div 
+              className="absolute top-56 left-1/3 w-18 h-9 bg-white/10 rounded-full blur-sm"
+              animate={{
+                y: [0, -14, -18, -10, 0],
+                x: [0, 7, -5, 9, 0],
+              }}
+              transition={{
+                duration: 6.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 3
+              }}
+            />
+            
+            {/* Cloud 4 */}
+            <motion.div 
+              className="absolute top-40 right-1/3 w-20 h-10 bg-white/20 rounded-full blur-sm"
+              animate={{
+                y: [0, -12, -16, -8, 0],
+                x: [0, -4, 6, -8, 0],
+              }}
+              transition={{
+                duration: 8.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 4
+              }}
+            />
+            
+            {/* Cloud 5 - Mobile friendly */}
+            <motion.div 
+              className="absolute top-72 right-10 w-16 h-8 bg-white/15 rounded-full blur-sm"
+              animate={{
+                y: [0, -10, -14, -6, 0],
+                x: [0, 4, -6, 2, 0],
+              }}
+              transition={{
+                duration: 7.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 2.5
+              }}
+            />
+            
+            {/* Floating particles with more complex animations */}
+            <motion.div 
+              className="absolute top-24 left-1/2 w-2 h-2 bg-emerald-200/30 rounded-full"
+              animate={{
+                y: [0, -35, -20, -40, 0],
+                scale: [1, 1.2, 0.8, 1.1, 1],
+                opacity: [0.3, 0.8, 0.5, 0.9, 0.3],
+              }}
+              transition={{
+                duration: 12,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div 
+              className="absolute top-48 right-1/4 w-1.5 h-1.5 bg-emerald-100/40 rounded-full"
+              animate={{
+                y: [0, -25, -35, -15, 0],
+                scale: [1, 0.9, 1.3, 1.05, 1],
+                opacity: [0.4, 0.7, 0.9, 0.5, 0.4],
+              }}
+              transition={{
+                duration: 10,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1.5
+              }}
+            />
+            <motion.div 
+              className="absolute top-36 left-1/5 w-2.5 h-2.5 bg-white/20 rounded-full"
+              animate={{
+                y: [0, -30, -45, -25, 0],
+                scale: [1, 1.1, 0.9, 1.2, 1],
+                opacity: [0.2, 0.6, 0.8, 0.4, 0.2],
+              }}
+              transition={{
+                duration: 14,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 3.5
+              }}
+            />
+          </div>
+          
+          <div className="container mx-auto px-4 relative z-10">
             <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
               {/* Content */}
-              <div className="order-2 md:order-1">
+              <motion.div 
+                className="order-2 md:order-1"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
                 {/* Trust Badges */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  <span className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-sm font-medium">
+                <motion.div 
+                  className="flex flex-wrap gap-2 mb-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                >
+                  <motion.span 
+                    className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-sm font-medium"
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.4, delay: 0.4 }}
+                  >
                     ✓ 100% Sugar-Free
-                  </span>
-                  <span className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-sm font-medium">
+                  </motion.span>
+                  <motion.span 
+                    className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-sm font-medium"
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.4, delay: 0.6 }}
+                  >
                     ✓ Vegan & Plant-Based
-                  </span>
-                </div>
+                  </motion.span>
+                </motion.div>
 
                 {/* Headline */}
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+                <motion.h1 
+                  className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6"
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                >
                   Find Your Calm,
-                  <span className="text-emerald-600 block">Sleep Deeply Tonight</span>
-                </h1>
+                  <motion.span 
+                    className="text-emerald-600 block"
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                  >
+                    Sleep Deeply Tonight
+                  </motion.span>
+                </motion.h1>
 
                 {/* Subheadline */}
-                <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
+                <motion.p 
+                  className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+                >
                   Premium Ashwagandha gummies that naturally melt away stress and tension. 
                   <span className="font-semibold text-gray-800"> Wake up refreshed, not groggy.</span>
-                </p>
+                </motion.p>
 
                 {/* Benefits List */}
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-start">
+                <motion.ul 
+                  className="space-y-3 mb-8"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
+                >
+                  <motion.li 
+                    className="flex items-start"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 0.8 }}
+                  >
                     <svg className="w-6 h-6 text-emerald-500 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                     <span className="text-gray-700">Feel the difference in just 7 days or less</span>
-                  </li>
-                  <li className="flex items-start">
+                  </motion.li>
+                  <motion.li 
+                    className="flex items-start"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 0.9 }}
+                  >
                     <svg className="w-6 h-6 text-emerald-500 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                     <span className="text-gray-700">Sugar-free & gluten-free - guilt-free wellness</span>
-                  </li>
-                  <li className="flex items-start">
+                  </motion.li>
+                  <motion.li 
+                    className="flex items-start"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 1.0 }}
+                  >
                     <svg className="w-6 h-6 text-emerald-500 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                     <span className="text-gray-700">Risk-free with our 60-day happiness promise</span>
-                  </li>
-                </ul>
+                  </motion.li>
+                </motion.ul>
 
                 {/* Single CTA Button */}
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <a
+                <motion.div 
+                  className="flex flex-col sm:flex-row gap-4"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.1, ease: "easeOut" }}
+                >
+                  <motion.a
                     href="/checkout"
                     onClick={() => {
                       MetaCAPI.trackAddToCart({}, 189, 'AED', 'Ashwagandha Gummies');
                     }}
                     className="inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all transform hover:scale-105 shadow-xl"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                   >
-                    Get Started - AED 189
-                  </a>
-                </div>
+                    Order Now - AED 189
+                  </motion.a>
+                </motion.div>
 
                 {/* Social Proof */}
-                <div className="mt-8 flex items-center space-x-6">
+                <motion.div 
+                  className="mt-8 flex items-center space-x-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.3, ease: "easeOut" }}
+                >
                   <div className="flex -space-x-2">
                     {[1,2,3,4,5].map((i) => (
-                      <Image
+                      <motion.div
                         key={i}
+                        initial={{ scale: 0, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 0.3, delay: 1.4 + (i * 0.1) }}
+                      >
+                        <Image
                         src={`/avatar/avatar${i}.png`}
                         alt={`Customer ${i}`}
                         width={40}
                         height={40}
                         className="w-10 h-10 rounded-full border-2 border-white object-cover"
                       />
+                      </motion.div>
                     ))}
                   </div>
                   <p className="text-sm text-gray-600">
                     <span className="font-semibold text-gray-900">3,000+ happy customers</span> feeling calmer
                   </p>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
 
               {/* Product Image */}
-              <div className="order-1 md:order-2 relative">
+              <motion.div 
+                className="order-1 md:order-2 relative"
+                initial={{ opacity: 0, scale: 0.8, y: 50 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+              >
                 <div className="relative mx-auto max-w-xs md:max-w-sm">
-                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-200 to-emerald-400 rounded-full blur-3xl opacity-30" />
+                  <motion.div 
+                    className="absolute inset-0 bg-gradient-to-br from-emerald-200 to-emerald-400 rounded-full blur-3xl opacity-30"
+                    animate={{
+                      scale: [1, 1.05, 1],
+                      opacity: [0.3, 0.4, 0.3],
+                    }}
+                    transition={{
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
+                  <motion.div
+                    animate={{
+                      y: [0, -8, 0],
+                      rotate: [0, 2, -2, 0],
+                    }}
+                    transition={{
+                      duration: 6,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  >
                   <Image
-                    src="/beargummies.png"
+                      src="/beargummies.png"
                     alt="Zeinglow Ashwagandha Gummies"
-                    width={400}
-                    height={400}
-                    className="relative z-10 w-full h-auto max-w-[280px] md:max-w-[350px] mx-auto"
+                      width={400}
+                      height={400}
+                      className="relative z-10 w-full h-auto max-w-[280px] md:max-w-[350px] mx-auto"
                     priority
                   />
-                  <div className="absolute -top-2 -right-2 md:-top-4 md:-right-4 bg-red-500 text-white px-2 py-1 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-bold animate-pulse">
+                  </motion.div>
+                  <motion.div 
+                    className="absolute -top-2 -right-2 md:-top-4 md:-right-4 bg-red-500 text-white px-2 py-1 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-bold"
+                    initial={{ scale: 0, rotate: -180 }}
+                    animate={{ scale: 1, rotate: 0 }}
+                    transition={{ duration: 0.6, delay: 1.2, ease: "backOut" }}
+                  >
+                    <motion.span
+                      animate={{
+                        scale: [1, 1.1, 1],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    >
                     Limited Stock
+                    </motion.span>
+                  </motion.div>
+                  </div>
+              </motion.div>
+                </div>
+              </div>
+        </section>
+
+        {/* Mobile-Only Quick Order Section */}
+        <section className="md:hidden py-12 bg-white border-t border-emerald-100">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-6">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Ready to Start Your Journey?</h3>
+              <p className="text-gray-600">Choose your bundle and order now</p>
+            </div>
+
+            {/* Mobile Bundle Cards */}
+            <div className="space-y-4 max-w-sm mx-auto">
+              {/* Starter */}
+              <motion.div 
+                className="bg-white rounded-2xl p-4 border-2 border-gray-200 shadow-lg relative"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="absolute -top-2 -right-2 bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+                  10% OFF
+                </div>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h4 className="font-bold text-lg">1 Bottle</h4>
+                    <p className="text-sm text-gray-600">30-day supply</p>
+                    <div className="flex items-center gap-2 mt-1">
+                      <span className="text-sm text-gray-400 line-through">AED 210</span>
+                      <span className="text-xl font-bold text-emerald-600">AED 189</span>
+                    </div>
+                  </div>
+                  <a
+                    href="/checkout"
+                    onClick={() => {
+                      MetaCAPI.trackAddToCart({}, 189, 'AED', 'Ashwagandha Gummies');
+                    }}
+                    className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-full font-semibold text-sm transition-colors"
+                  >
+                    Order Now
+                  </a>
+                </div>
+              </motion.div>
+
+              {/* Best Value */}
+              <motion.div 
+                className="bg-emerald-600 text-white rounded-2xl p-4 shadow-lg relative transform scale-105"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                <div className="absolute -top-2 -right-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+                  20% OFF
+                </div>
+                <div className="absolute -top-2 -left-2 bg-yellow-400 text-gray-900 text-xs font-bold px-2 py-1 rounded-full">
+                  MOST POPULAR
+                </div>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h4 className="font-bold text-lg">2 Bottles</h4>
+                    <p className="text-sm text-emerald-100">60-day supply</p>
+                    <div className="flex items-center gap-2 mt-1">
+                      <span className="text-sm text-emerald-200 line-through">AED 424</span>
+                      <span className="text-xl font-bold">AED 339</span>
+                    </div>
+                  </div>
+                  <a
+                    href="/checkout"
+                    onClick={() => {
+                      MetaCAPI.trackAddToCart({}, 339, 'AED', 'Ashwagandha Gummies');
+                    }}
+                    className="bg-white hover:bg-gray-100 text-emerald-600 px-4 py-2 rounded-full font-semibold text-sm transition-colors"
+                  >
+                    Order Now
+                  </a>
+                </div>
+              </motion.div>
+
+              {/* Premium */}
+              <motion.div 
+                className="bg-white rounded-2xl p-4 border-2 border-gray-200 shadow-lg relative"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <div className="absolute -top-2 -right-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+                  30% OFF
+                </div>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h4 className="font-bold text-lg">3 Bottles</h4>
+                    <p className="text-sm text-gray-600">90-day supply</p>
+                    <div className="flex items-center gap-2 mt-1">
+                      <span className="text-sm text-gray-400 line-through">AED 684</span>
+                      <span className="text-xl font-bold text-emerald-600">AED 479</span>
+                    </div>
+                  </div>
+                  <a
+                    href="/checkout"
+                    onClick={() => {
+                      MetaCAPI.trackAddToCart({}, 479, 'AED', 'Ashwagandha Gummies');
+                    }}
+                    className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-full font-semibold text-sm transition-colors"
+                  >
+                    Order Now
+                  </a>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Mobile Trust Badges */}
+            <div className="flex justify-center gap-4 mt-6 text-xs text-gray-600">
+              <div className="flex items-center gap-1">
+                <svg className="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <span>60-Day Guarantee</span>
+              </div>
+              <div className="flex items-center gap-1">
+                <svg className="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+                  <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z" />
+                </svg>
+                <span>Free Shipping</span>
+              </div>
+            </div>
+
+            {/* Mobile Timer */}
+            <div className="mt-6 bg-gradient-to-r from-red-50 to-orange-50 border border-red-200 rounded-xl p-4 max-w-sm mx-auto">
+              <div className="text-center">
+                <div className="text-red-600 font-bold text-sm mb-2">⏰ LIMITED TIME OFFER</div>
+                <div className="flex items-center justify-center space-x-2 text-lg font-mono font-bold text-red-600">
+                  <div className="bg-red-600 text-white px-2 py-1 rounded">
+                    {String(timeLeft.hours).padStart(2, '0')}
+                  </div>
+                  <span>:</span>
+                  <div className="bg-red-600 text-white px-2 py-1 rounded">
+                    {String(timeLeft.minutes).padStart(2, '0')}
+                  </div>
+                  <span>:</span>
+                  <div className="bg-red-600 text-white px-2 py-1 rounded">
+                    {String(timeLeft.seconds).padStart(2, '0')}
                   </div>
                 </div>
+                <div className="text-xs text-red-600 mt-1">UP TO 30% OFF ENDS SOON</div>
               </div>
             </div>
           </div>
@@ -358,11 +1002,43 @@ export default function Home() {
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Choose Your Bundle</h2>
               <p className="text-lg text-gray-600">Save more with larger bundles • Free shipping on all orders</p>
+              
+              {/* Urgency Timer */}
+              <div className="mt-6 bg-gradient-to-r from-red-50 to-orange-50 border-2 border-red-200 rounded-2xl p-6 max-w-md mx-auto">
+                <div className="flex items-center justify-center mb-3">
+                  <svg className="w-6 h-6 text-red-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span className="text-red-600 font-bold text-lg">LIMITED TIME OFFER</span>
+                </div>
+                <div className="text-3xl font-bold text-red-700 mb-2">
+                  UP TO 30% OFF
+                </div>
+                <div className="flex items-center justify-center space-x-4 text-2xl font-mono font-bold text-red-600">
+                  <div className="bg-red-600 text-white px-3 py-2 rounded-lg">
+                    {String(timeLeft.hours).padStart(2, '0')}
+                  </div>
+                  <span>:</span>
+                  <div className="bg-red-600 text-white px-3 py-2 rounded-lg">
+                    {String(timeLeft.minutes).padStart(2, '0')}
+                  </div>
+                  <span>:</span>
+                  <div className="bg-red-600 text-white px-3 py-2 rounded-lg">
+                    {String(timeLeft.seconds).padStart(2, '0')}
+                  </div>
+                </div>
+                <div className="text-sm text-red-600 mt-2 font-medium">
+                  Hours : Minutes : Seconds
+                </div>
+              </div>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {/* Starter */}
-              <div className="bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl transition-shadow">
+              <div className="bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl transition-shadow relative">
+                <div className="absolute -top-3 -right-3 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                  10% OFF
+                </div>
                 <div className="text-center">
                   <h3 className="text-xl font-bold mb-2">Starter</h3>
                   <p className="text-gray-600 mb-4">Try it out</p>
@@ -375,16 +1051,23 @@ export default function Home() {
                       className="object-contain"
                     />
                   </div>
-                  <div className="text-3xl font-bold mb-1">AED 189</div>
-                  <p className="text-sm text-gray-500 mb-6">1 bottle • 30-day supply</p>
-                  <a href="/checkout" className="block w-full bg-gray-800 hover:bg-gray-900 text-white py-3 rounded-full font-semibold transition-colors">
-                    Select
+                  <div className="mb-2">
+                    <span className="text-lg text-gray-400 line-through mr-2">AED 210</span>
+                    <div className="text-3xl font-bold text-emerald-600">AED 189</div>
+                  </div>
+                  <p className="text-sm text-gray-500 mb-2">1 bottle • 30-day supply</p>
+                  <p className="text-xs text-orange-600 font-semibold mb-4">Save AED 21</p>
+                  <a href="/checkout" className="block w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-full font-semibold transition-colors">
+                    Order Now
                   </a>
                 </div>
               </div>
 
               {/* Most Popular */}
-              <div className="bg-emerald-600 text-white rounded-2xl p-6 transform scale-105 shadow-2xl">
+              <div className="bg-emerald-600 text-white rounded-2xl p-6 transform scale-105 shadow-2xl relative">
+                <div className="absolute -top-3 -right-3 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                  20% OFF
+                </div>
                 <div className="bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full inline-block mb-4">
                   MOST POPULAR
                 </div>
@@ -409,17 +1092,23 @@ export default function Home() {
                       />
                     </div>
                   </div>
-                  <div className="text-3xl font-bold mb-1">AED 339</div>
-                  <p className="text-sm text-emerald-100 mb-6">2 bottles • 60-day supply</p>
-                  <p className="text-xs mb-4 font-semibold">Save AED 39</p>
+                  <div className="mb-2">
+                    <span className="text-lg text-emerald-200 line-through mr-2">AED 424</span>
+                    <div className="text-3xl font-bold">AED 339</div>
+                  </div>
+                  <p className="text-sm text-emerald-100 mb-2">2 bottles • 60-day supply</p>
+                  <p className="text-xs mb-4 font-semibold text-yellow-300">Save AED 85</p>
                   <a href="/checkout" className="block w-full bg-white hover:bg-gray-100 text-emerald-600 py-3 rounded-full font-semibold transition-colors">
-                    Select Best Deal
+                    Order Best Deal
                   </a>
                 </div>
               </div>
 
               {/* Premium */}
-              <div className="bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl transition-shadow">
+              <div className="bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl transition-shadow relative">
+                <div className="absolute -top-3 -right-3 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                  30% OFF
+                </div>
                 <div className="text-center">
                   <h3 className="text-xl font-bold mb-2">Premium</h3>
                   <p className="text-gray-600 mb-4">Maximum savings</p>
@@ -448,11 +1137,14 @@ export default function Home() {
                       />
                     </div>
                   </div>
-                  <div className="text-3xl font-bold mb-1">AED 479</div>
-                  <p className="text-sm text-gray-500 mb-6">3 bottles • 90-day supply</p>
-                  <p className="text-xs text-emerald-600 font-semibold mb-4">Save AED 88</p>
-                  <a href="/checkout" className="block w-full bg-gray-800 hover:bg-gray-900 text-white py-3 rounded-full font-semibold transition-colors">
-                    Select
+                  <div className="mb-2">
+                    <span className="text-lg text-gray-400 line-through mr-2">AED 684</span>
+                    <div className="text-3xl font-bold text-emerald-600">AED 479</div>
+                  </div>
+                  <p className="text-sm text-gray-500 mb-2">3 bottles • 90-day supply</p>
+                  <p className="text-xs text-red-600 font-semibold mb-4">Save AED 205</p>
+                  <a href="/checkout" className="block w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-full font-semibold transition-colors">
+                    Order Now
                   </a>
                 </div>
               </div>
@@ -772,12 +1464,12 @@ export default function Home() {
               >
                 Get Your Zeinglow Today
               </a>
-              <a
-                href="#pricing"
+              <button
+                onClick={() => smoothScrollTo('pricing')}
                 className="inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-emerald-600 px-8 py-4 rounded-full font-bold text-lg transition-all"
               >
                 View Bundles & Save
-              </a>
+              </button>
             </div>
             <p className="mt-8 text-emerald-100">
               🔒 Secure checkout • 📦 Fast shipping • ✅ 60-day guarantee
