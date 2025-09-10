@@ -653,27 +653,30 @@ export default function Home() {
                   role: "Verified Buyer",
                   review: "I was skeptical, but these actually work! I feel calmer during the day and sleep so much better.",
                   rating: 5,
-                  image: "/ash1.jpg"
+                  avatar: "/avatar/avatar1.png",
+                  experienceImage: "/ash1.jpg"
                 },
                 {
                   name: "Ahmed K.",
                   role: "Verified Buyer",
                   review: "No more afternoon crashes. I have steady energy all day and my stress levels are way down.",
                   rating: 5,
-                  image: "/ash2.jpg"
+                  avatar: "/avatar/avatar2.png",
+                  experienceImage: "/ash2.jpg"
                 },
                 {
                   name: "Priya R.",
                   role: "Verified Buyer",
                   review: "Finally something that helps with anxiety without making me drowsy. Game changer!",
                   rating: 5,
-                  image: "/ash3.jpg"
+                  avatar: "/avatar/avatar3.png",
+                  experienceImage: "/ash3.jpg"
                 }
               ].map((review, index) => (
                 <div key={index} className="bg-white rounded-xl p-6 shadow-lg">
                   <div className="flex items-center mb-4">
                     <Image
-                      src={review.image}
+                      src={review.avatar}
                       alt={review.name}
                       width={50}
                       height={50}
@@ -689,7 +692,16 @@ export default function Home() {
                       <span key={i}>{star}</span>
                     ))}
                   </div>
-                  <p className="text-gray-700">&ldquo;{review.review}&rdquo;</p>
+                  <p className="text-gray-700 mb-4">&ldquo;{review.review}&rdquo;</p>
+                  <div className="mt-4">
+                    <Image
+                      src={review.experienceImage}
+                      alt={`${review.name}'s experience with Zeinglow`}
+                      width={300}
+                      height={200}
+                      className="w-full h-48 object-cover rounded-lg"
+                    />
+                  </div>
                 </div>
               ))}
             </div>
