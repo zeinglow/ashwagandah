@@ -203,17 +203,17 @@ export default function Home() {
 
               {/* Product Image */}
               <div className="order-1 md:order-2 relative">
-                <div className="relative mx-auto max-w-md">
+                <div className="relative mx-auto max-w-xs md:max-w-sm">
                   <div className="absolute inset-0 bg-gradient-to-br from-emerald-200 to-emerald-400 rounded-full blur-3xl opacity-30" />
                   <Image
                     src="/beargummies.png"
                     alt="Zeinglow Ashwagandha Gummies"
-                    width={500}
-                    height={500}
-                    className="relative z-10 w-full h-auto"
+                    width={400}
+                    height={400}
+                    className="relative z-10 w-full h-auto max-w-[280px] md:max-w-[350px] mx-auto"
                     priority
                   />
-                  <div className="absolute -top-4 -right-4 bg-red-500 text-white px-4 py-2 rounded-full text-sm font-bold animate-pulse">
+                  <div className="absolute -top-2 -right-2 md:-top-4 md:-right-4 bg-red-500 text-white px-2 py-1 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-bold animate-pulse">
                     Limited Stock
                   </div>
                 </div>
