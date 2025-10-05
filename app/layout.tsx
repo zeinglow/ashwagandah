@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Noto_Kufi_Arabic } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import Script from "next/script";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
+const notoKufiArabic = Noto_Kufi_Arabic({
+  subsets: ["arabic"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-noto-kufi",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Ashwagandha Gummies – Calm, Focus & Better Sleep",
+  title: "حلوى الأشواغاندا – هدوء وتركيز ونوم أفضل",
   description:
-    "Conversion‑optimized landing page for a single-product Ashwagandha gummy with bundles, social proof, persuasive sales content, and animated botanical SVG background.",
+    "صفحة هبوط محسنة للتحويل لحلوى الأشواغاندا الواحدة مع باقات وإثبات اجتماعي ومحتوى مبيعات مقنع وخلفية نباتية متحركة.",
 };
 
 export default function RootLayout({
@@ -21,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ar" dir="rtl">
       <head>
         {/* Preload critical images */}
         <link rel="preload" as="image" href="/beargummies.png" />
@@ -55,7 +57,7 @@ export default function RootLayout({
         </noscript>
       </head>
       <body
-        className={`${inter.variable} font-sans antialiased`}
+        className={`${notoKufiArabic.variable} font-arabic antialiased`}
       >
         <Providers>
           {children}

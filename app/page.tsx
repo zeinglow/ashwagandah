@@ -89,25 +89,25 @@ export default function Home() {
                   onClick={() => smoothScrollTo('benefits')} 
                   className="text-gray-700 hover:text-emerald-600 transition-colors font-medium cursor-pointer"
                 >
-                  Benefits
+                  الفوائد
                 </button>
                 <button 
                   onClick={() => smoothScrollTo('ingredients')} 
                   className="text-gray-700 hover:text-emerald-600 transition-colors font-medium cursor-pointer"
                 >
-                  Ingredients
+                  المكونات
                 </button>
                 <button 
                   onClick={() => smoothScrollTo('reviews')} 
                   className="text-gray-700 hover:text-emerald-600 transition-colors font-medium cursor-pointer"
                 >
-                  Reviews
+                  التقييمات
                 </button>
                 <button 
                   onClick={() => smoothScrollTo('faq')} 
                   className="text-gray-700 hover:text-emerald-600 transition-colors font-medium cursor-pointer"
                 >
-                  FAQ
+                  الأسئلة الشائعة
                 </button>
               </nav>
 
@@ -120,7 +120,7 @@ export default function Home() {
                     }}
                   className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 md:px-6 py-2 md:py-3 rounded-full font-semibold text-sm md:text-base transition-all transform hover:scale-105 shadow-lg"
                 >
-                  Shop Now
+                  تسوق الآن
                 </a>
                 
                 {/* Mobile Menu Button */}
@@ -143,27 +143,27 @@ export default function Home() {
                 <div className="px-4 py-4 space-y-3">
                   <button 
                     onClick={() => smoothScrollTo('benefits')} 
-                    className="block py-2 text-gray-700 hover:text-emerald-600 w-full text-left"
+                    className="block py-2 text-gray-700 hover:text-emerald-600 w-full text-right"
                   >
-                    Benefits
+                    الفوائد
                   </button>
                   <button 
                     onClick={() => smoothScrollTo('ingredients')} 
-                    className="block py-2 text-gray-700 hover:text-emerald-600 w-full text-left"
+                    className="block py-2 text-gray-700 hover:text-emerald-600 w-full text-right"
                   >
-                    Ingredients
+                    المكونات
                   </button>
                   <button 
                     onClick={() => smoothScrollTo('reviews')} 
-                    className="block py-2 text-gray-700 hover:text-emerald-600 w-full text-left"
+                    className="block py-2 text-gray-700 hover:text-emerald-600 w-full text-right"
                   >
-                    Reviews
+                    التقييمات
                   </button>
                   <button 
                     onClick={() => smoothScrollTo('faq')} 
-                    className="block py-2 text-gray-700 hover:text-emerald-600 w-full text-left"
+                    className="block py-2 text-gray-700 hover:text-emerald-600 w-full text-right"
                   >
-                    FAQ
+                    الأسئلة الشائعة
                   </button>
                 </div>
               </div>
@@ -520,7 +520,7 @@ export default function Home() {
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 0.4, delay: 0.4 }}
                   >
-                    ✓ 100% Sugar-Free
+                    ✓ خالي من السكر 100%
                   </motion.span>
                   <motion.span 
                     className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-sm font-medium"
@@ -528,7 +528,7 @@ export default function Home() {
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 0.4, delay: 0.6 }}
                   >
-                    ✓ Vegan & Plant-Based
+                    ✓ نباتي وطبيعي
                   </motion.span>
                 </motion.div>
 
@@ -539,14 +539,14 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
                 >
-                  Find Your Calm,
+                  استعد راحة جسدك
                   <motion.span 
                     className="text-emerald-600 block"
                     initial={{ opacity: 0, x: -30 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
                   >
-                    Sleep Deeply Tonight
+                    واستمتع بنوم عميق ومريح
                   </motion.span>
                 </motion.h1>
 
@@ -557,8 +557,8 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
                 >
-                  Premium Ashwagandha gummies that naturally melt away stress and tension. 
-                  <span className="font-semibold text-gray-800"> Wake up refreshed, not groggy.</span>
+                  حلوى الأشواغاندا الطبيعية التي تساعد جسمك على الاسترخاء والتعافي من ضغوط الحياة اليومية.
+                  <span className="font-semibold text-gray-800"> راحة حقيقية، تعافي أفضل، حياة أهدأ.</span>
                 </motion.p>
 
                 {/* Benefits List */}
@@ -577,7 +577,7 @@ export default function Home() {
                     <svg className="w-6 h-6 text-emerald-500 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-gray-700">Feel the difference in just 7 days or less</span>
+                    <span className="text-gray-700">يساعد جسمك على الاسترخاء العميق والتعافي الطبيعي</span>
                   </motion.li>
                   <motion.li 
                     className="flex items-start"
@@ -588,7 +588,7 @@ export default function Home() {
                     <svg className="w-6 h-6 text-emerald-500 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-gray-700">Sugar-free & gluten-free - guilt-free wellness</span>
+                    <span className="text-gray-700">يخفف آلام وتوتر العضلات بعد يوم طويل ومرهق</span>
                   </motion.li>
                   <motion.li 
                     className="flex items-start"
@@ -599,7 +599,7 @@ export default function Home() {
                     <svg className="w-6 h-6 text-emerald-500 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-gray-700">Risk-free with our 60-day happiness promise</span>
+                    <span className="text-gray-700">يدعم راحة الجسم ويحسن جودة النوم والاستيقاظ المنعش</span>
                   </motion.li>
                 </motion.ul>
 
@@ -619,7 +619,7 @@ export default function Home() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    Order Now - AED 189
+                    اطلب الآن - 189 درهم
                   </motion.a>
                 </motion.div>
 
@@ -649,7 +649,7 @@ export default function Home() {
                     ))}
                   </div>
                   <p className="text-sm text-gray-600">
-                    <span className="font-semibold text-gray-900">3,000+ happy customers</span> feeling calmer
+                    <span className="font-semibold text-gray-900">3000+ عميل سعيد</span> يشعرون بالهدوء
                   </p>
                 </motion.div>
               </motion.div>
@@ -723,8 +723,8 @@ export default function Home() {
         <section className="md:hidden py-12 bg-white border-t border-emerald-100">
           <div className="container mx-auto px-4">
             <div className="text-center mb-6">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Ready to Start Your Journey?</h3>
-              <p className="text-gray-600">Choose your bundle and order now</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">هل أنت مستعد لبدء رحلتك؟</h3>
+              <p className="text-gray-600">اختر باقتك واطلب الآن</p>
             </div>
 
             {/* Mobile Bundle Cards */}
@@ -741,8 +741,8 @@ export default function Home() {
                 </div>
                 <div className="flex items-center justify-between">
                   <div>
-                    <h4 className="font-bold text-lg">1 Bottle</h4>
-                    <p className="text-sm text-gray-600">30-day supply</p>
+                    <h4 className="font-bold text-lg">1 عبوة</h4>
+                    <p className="text-sm text-gray-600">مخزون 30 يوم</p>
                     <div className="flex items-center gap-2 mt-1">
                       <span className="text-sm text-gray-400 line-through">AED 210</span>
                       <span className="text-xl font-bold text-emerald-600">AED 189</span>
@@ -755,7 +755,7 @@ export default function Home() {
                     }}
                     className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-full font-semibold text-sm transition-colors"
                   >
-                    Order Now
+                    اطلب الآن
                   </a>
                 </div>
               </motion.div>
@@ -771,12 +771,12 @@ export default function Home() {
                   20% OFF
                 </div>
                 <div className="absolute -top-2 -left-2 bg-yellow-400 text-gray-900 text-xs font-bold px-2 py-1 rounded-full">
-                  MOST POPULAR
+                  الأكثر شعبية
                 </div>
                 <div className="flex items-center justify-between">
                   <div>
-                    <h4 className="font-bold text-lg">2 Bottles</h4>
-                    <p className="text-sm text-emerald-100">60-day supply</p>
+                    <h4 className="font-bold text-lg">2 عبوة</h4>
+                    <p className="text-sm text-emerald-100">مخزون 60 يوم</p>
                     <div className="flex items-center gap-2 mt-1">
                       <span className="text-sm text-emerald-200 line-through">AED 424</span>
                       <span className="text-xl font-bold">AED 339</span>
@@ -789,7 +789,7 @@ export default function Home() {
                     }}
                     className="bg-white hover:bg-gray-100 text-emerald-600 px-4 py-2 rounded-full font-semibold text-sm transition-colors"
                   >
-                    Order Now
+                    اطلب الآن
                   </a>
                 </div>
               </motion.div>
@@ -806,8 +806,8 @@ export default function Home() {
                 </div>
                 <div className="flex items-center justify-between">
                   <div>
-                    <h4 className="font-bold text-lg">3 Bottles</h4>
-                    <p className="text-sm text-gray-600">90-day supply</p>
+                    <h4 className="font-bold text-lg">3 عبوات</h4>
+                    <p className="text-sm text-gray-600">مخزون 90 يوم</p>
                     <div className="flex items-center gap-2 mt-1">
                       <span className="text-sm text-gray-400 line-through">AED 684</span>
                       <span className="text-xl font-bold text-emerald-600">AED 479</span>
@@ -820,7 +820,7 @@ export default function Home() {
                     }}
                     className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-full font-semibold text-sm transition-colors"
                   >
-                    Order Now
+                    اطلب الآن
                   </a>
                 </div>
               </motion.div>
@@ -832,21 +832,21 @@ export default function Home() {
                 <svg className="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <span>60-Day Guarantee</span>
+                <span>ضمان 60 يوم</span>
               </div>
               <div className="flex items-center gap-1">
                 <svg className="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
                   <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z" />
                 </svg>
-                <span>Free Shipping</span>
+                <span>شحن مجاني</span>
               </div>
             </div>
 
             {/* Mobile Timer */}
             <div className="mt-6 bg-gradient-to-r from-red-50 to-orange-50 border border-red-200 rounded-xl p-4 max-w-sm mx-auto">
               <div className="text-center">
-                <div className="text-red-600 font-bold text-sm mb-2">⏰ LIMITED TIME OFFER</div>
+                <div className="text-red-600 font-bold text-sm mb-2">⏰ عرض محدود الوقت</div>
                 <div className="flex items-center justify-center space-x-2 text-lg font-mono font-bold text-red-600">
                   <div className="bg-red-600 text-white px-2 py-1 rounded">
                     {String(timeLeft.hours).padStart(2, '0')}
@@ -860,7 +860,7 @@ export default function Home() {
                     {String(timeLeft.seconds).padStart(2, '0')}
                   </div>
                 </div>
-                <div className="text-xs text-red-600 mt-1">UP TO 30% OFF ENDS SOON</div>
+                <div className="text-xs text-red-600 mt-1">حتى 30% خصم ينتهي قريبًا</div>
               </div>
             </div>
           </div>
@@ -872,10 +872,10 @@ export default function Home() {
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                  The Hidden Cost of Chronic Stress
+                  جسمك يحتاج إلى الراحة والتعافي
                 </h2>
                 <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                  Every day you wait, stress compounds—affecting your health, relationships, and success
+                  الإرهاق المستمر وقلة الراحة يؤثران على راحة جسمك وقدرته على التعافي الطبيعي
                 </p>
               </div>
               
@@ -889,23 +889,23 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
-                    <h3 className="font-bold text-xl mb-3 text-gray-900">Your Current Reality</h3>
+                    <h3 className="font-bold text-xl mb-3 text-gray-900">عندما يفتقد جسمك للراحة</h3>
                     <ul className="space-y-2 text-gray-600 text-sm">
                       <li className="flex items-start">
                         <span className="text-red-500 mr-2">•</span>
-                        Waking up already exhausted
+                        تستيقظ مرهقًا رغم النوم
                       </li>
                       <li className="flex items-start">
                         <span className="text-red-500 mr-2">•</span>
-                        Snapping at loved ones
+                        آلام وتصلب في العضلات
                       </li>
                       <li className="flex items-start">
                         <span className="text-red-500 mr-2">•</span>
-                        Mind racing at 3 AM
+                        عدم القدرة على الاسترخاء
                       </li>
                       <li className="flex items-start">
                         <span className="text-red-500 mr-2">•</span>
-                        Constant physical tension
+                        إرهاق جسدي مستمر
                       </li>
                     </ul>
                   </div>
@@ -920,23 +920,23 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                       </svg>
                     </div>
-                    <h3 className="font-bold text-xl mb-3 text-gray-900">The Ripple Effect</h3>
+                    <h3 className="font-bold text-xl mb-3 text-gray-900">تأثيره على حياتك</h3>
                     <ul className="space-y-2 text-gray-600 text-sm">
                       <li className="flex items-start">
                         <span className="text-orange-500 mr-2">•</span>
-                        Missed promotions at work
+                        صعوبة التركيز والإنتاجية
                       </li>
                       <li className="flex items-start">
                         <span className="text-orange-500 mr-2">•</span>
-                        Strained relationships
+                        تراجع مستوى الطاقة والنشاط
                       </li>
                       <li className="flex items-start">
                         <span className="text-orange-500 mr-2">•</span>
-                        Declining health markers
+                        ضعف جهاز المناعة
                       </li>
                       <li className="flex items-start">
                         <span className="text-orange-500 mr-2">•</span>
-                        Lost years of quality life
+                        فقدان الاستمتاع بالحياة
                       </li>
                     </ul>
                   </div>
@@ -951,23 +951,23 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                       </svg>
                     </div>
-                    <h3 className="font-bold text-xl mb-3 text-gray-900">Your Life with Zeinglow</h3>
+                    <h3 className="font-bold text-xl mb-3 text-gray-900">مع زينغلو... الفرق واضح</h3>
                     <ul className="space-y-2 text-gray-600 text-sm">
                       <li className="flex items-start">
                         <span className="text-emerald-500 mr-2">✓</span>
-                        <span className="font-medium">Wake up energized</span>
+                        <span className="font-medium">جسم مسترخٍ ومرتاح</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-emerald-500 mr-2">✓</span>
-                        <span className="font-medium">Handle stress with ease</span>
+                        <span className="font-medium">تعافي سريع من الإجهاد</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-emerald-500 mr-2">✓</span>
-                        <span className="font-medium">Deep, restorative sleep</span>
+                        <span className="font-medium">نوم هادئ ومريح</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-emerald-500 mr-2">✓</span>
-                        <span className="font-medium">Present with loved ones</span>
+                        <span className="font-medium">صحة أفضل وحيوية دائمة</span>
                       </li>
                     </ul>
                   </div>
@@ -977,10 +977,10 @@ export default function Home() {
               {/* Urgency Message */}
               <div className="mt-12 text-center bg-gradient-to-r from-emerald-50 to-green-50 rounded-2xl p-8 border border-emerald-200">
                 <p className="text-lg font-semibold text-gray-900 mb-2">
-                  Every day without proper stress management costs you
+                  جسمك يستحق الراحة والتعافي اللذين يحتاجهما
                 </p>
                 <p className="text-gray-600 mb-6">
-                  Your health, relationships, and peace of mind can&apos;t wait another day
+                  لا تؤجل راحة جسمك وصحتك... ابدأ رحلة التعافي والاسترخاء اليوم
                 </p>
                 <a
                   href="/checkout"
@@ -989,7 +989,7 @@ export default function Home() {
                     }}
                   className="inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all transform hover:scale-105 shadow-xl"
                 >
-                  Start Your Transformation Today
+                  ابدأ تحولك اليوم
                 </a>
               </div>
             </div>
@@ -1000,8 +1000,8 @@ export default function Home() {
         <section id="pricing" className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Choose Your Bundle</h2>
-              <p className="text-lg text-gray-600">Save more with larger bundles • Free shipping on all orders</p>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">اختر باقتك</h2>
+              <p className="text-lg text-gray-600">وفر أكثر مع الباقات الأكبر • شحن مجاني على جميع الطلبات</p>
               
               {/* Urgency Timer */}
               <div className="mt-6 bg-gradient-to-r from-red-50 to-orange-50 border-2 border-red-200 rounded-2xl p-6 max-w-md mx-auto">
@@ -1009,10 +1009,10 @@ export default function Home() {
                   <svg className="w-6 h-6 text-red-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span className="text-red-600 font-bold text-lg">LIMITED TIME OFFER</span>
+                  <span className="text-red-600 font-bold text-lg">عرض محدود الوقت</span>
                 </div>
                 <div className="text-3xl font-bold text-red-700 mb-2">
-                  UP TO 30% OFF
+                  حتى 30% خصم
                 </div>
                 <div className="flex items-center justify-center space-x-4 text-2xl font-mono font-bold text-red-600">
                   <div className="bg-red-600 text-white px-3 py-2 rounded-lg">
@@ -1028,7 +1028,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="text-sm text-red-600 mt-2 font-medium">
-                  Hours : Minutes : Seconds
+                  ساعات : دقائق : ثواني
                 </div>
               </div>
             </div>
@@ -1040,8 +1040,8 @@ export default function Home() {
                   10% OFF
                 </div>
                 <div className="text-center">
-                  <h3 className="text-xl font-bold mb-2">Starter</h3>
-                  <p className="text-gray-600 mb-4">Try it out</p>
+                  <h3 className="text-xl font-bold mb-2">المبتدئ</h3>
+                  <p className="text-gray-600 mb-4">جربها</p>
                   <div className="h-32 flex items-center justify-center mb-6">
                     <Image 
                       src="/beargummies.png" 
@@ -1055,10 +1055,10 @@ export default function Home() {
                     <span className="text-lg text-gray-400 line-through mr-2">AED 210</span>
                     <div className="text-3xl font-bold text-emerald-600">AED 189</div>
                   </div>
-                  <p className="text-sm text-gray-500 mb-2">1 bottle • 30-day supply</p>
-                  <p className="text-xs text-orange-600 font-semibold mb-4">Save AED 21</p>
+                  <p className="text-sm text-gray-500 mb-2">1 عبوة • مخزون 30 يوم</p>
+                  <p className="text-xs text-orange-600 font-semibold mb-4">وفر 21 درهم</p>
                   <a href="/checkout" className="block w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-full font-semibold transition-colors">
-                    Order Now
+                    اطلب الآن
                   </a>
                 </div>
               </div>
@@ -1069,11 +1069,11 @@ export default function Home() {
                   20% OFF
                 </div>
                 <div className="bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full inline-block mb-4">
-                  MOST POPULAR
+                  الأكثر شعبية
                 </div>
                 <div className="text-center">
-                  <h3 className="text-xl font-bold mb-2">Best Value</h3>
-                  <p className="text-emerald-100 mb-4">Recommended</p>
+                  <h3 className="text-xl font-bold mb-2">أفضل قيمة</h3>
+                  <p className="text-emerald-100 mb-4">موصى به</p>
                   <div className="h-32 flex items-center justify-center mb-6">
                     <div className="flex -space-x-4">
                       <Image 
@@ -1096,10 +1096,10 @@ export default function Home() {
                     <span className="text-lg text-emerald-200 line-through mr-2">AED 424</span>
                     <div className="text-3xl font-bold">AED 339</div>
                   </div>
-                  <p className="text-sm text-emerald-100 mb-2">2 bottles • 60-day supply</p>
-                  <p className="text-xs mb-4 font-semibold text-yellow-300">Save AED 85</p>
+                  <p className="text-sm text-emerald-100 mb-2">2 عبوة • مخزون 60 يوم</p>
+                  <p className="text-xs mb-4 font-semibold text-yellow-300">وفر 85 درهم</p>
                   <a href="/checkout" className="block w-full bg-white hover:bg-gray-100 text-emerald-600 py-3 rounded-full font-semibold transition-colors">
-                    Order Best Deal
+                    اطلب أفضل عرض
                   </a>
                 </div>
               </div>
@@ -1110,8 +1110,8 @@ export default function Home() {
                   30% OFF
                 </div>
                 <div className="text-center">
-                  <h3 className="text-xl font-bold mb-2">Premium</h3>
-                  <p className="text-gray-600 mb-4">Maximum savings</p>
+                  <h3 className="text-xl font-bold mb-2">بريميوم</h3>
+                  <p className="text-gray-600 mb-4">أقصى وفورات</p>
                   <div className="h-32 flex items-center justify-center mb-6">
                     <div className="flex -space-x-6">
                       <Image 
@@ -1141,10 +1141,10 @@ export default function Home() {
                     <span className="text-lg text-gray-400 line-through mr-2">AED 684</span>
                     <div className="text-3xl font-bold text-emerald-600">AED 479</div>
                   </div>
-                  <p className="text-sm text-gray-500 mb-2">3 bottles • 90-day supply</p>
-                  <p className="text-xs text-red-600 font-semibold mb-4">Save AED 205</p>
+                  <p className="text-sm text-gray-500 mb-2">3 عبوات • مخزون 90 يوم</p>
+                  <p className="text-xs text-red-600 font-semibold mb-4">وفر 205 درهم</p>
                   <a href="/checkout" className="block w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-full font-semibold transition-colors">
-                    Order Now
+                    اطلب الآن
                   </a>
                 </div>
               </div>
@@ -1156,20 +1156,20 @@ export default function Home() {
                 <svg className="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <span className="text-sm font-medium">60-Day Guarantee</span>
+                <span className="text-sm font-medium">ضمان 60 يوم</span>
               </div>
               <div className="flex items-center gap-2 text-gray-600">
                 <svg className="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <span className="text-sm font-medium">Secure Checkout</span>
+                <span className="text-sm font-medium">دفع آمن</span>
               </div>
               <div className="flex items-center gap-2 text-gray-600">
                 <svg className="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
                   <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z" />
                 </svg>
-                <span className="text-sm font-medium">Fast Shipping</span>
+                <span className="text-sm font-medium">شحن سريع</span>
               </div>
             </div>
           </div>
@@ -1179,8 +1179,8 @@ export default function Home() {
         <section id="benefits" className="py-16 md:py-24 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Life-Changing Benefits</h2>
-              <p className="text-lg text-gray-600">Experience the transformation thousands are raving about</p>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">فوائد تغير الحياة</h2>
+              <p className="text-lg text-gray-600">اختبر التحول الذي يتحدث عنه الآلاف</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -1191,8 +1191,8 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                     </svg>
                   ),
-                  title: "Instant Calm",
-                  description: "Feel tension melt away within 30-60 minutes"
+                  title: "استرخاء عميق",
+                  description: "اشعر براحة جسمك وعضلاتك خلال 30-60 دقيقة"
                 },
                 {
                   icon: (
@@ -1200,8 +1200,8 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                     </svg>
                   ),
-                  title: "Deep Sleep",
-                  description: "Fall asleep faster, stay asleep longer"
+                  title: "نوم هادئ ومريح",
+                  description: "نم بعمق واستيقظ بجسم مرتاح ومتجدد"
                 },
                 {
                   icon: (
@@ -1209,8 +1209,8 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   ),
-                  title: "Natural Energy",
-                  description: "Wake up refreshed without grogginess"
+                  title: "تعافي طبيعي",
+                  description: "ساعد جسمك على التعافي والاستشفاء الذاتي"
                 },
                 {
                   icon: (
@@ -1218,8 +1218,8 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                   ),
-                  title: "Laser Focus",
-                  description: "Clear mind and improved concentration"
+                  title: "هدوء ذهني",
+                  description: "عقل صافٍ وهادئ خالٍ من التوتر"
                 },
                 {
                   icon: (
@@ -1227,8 +1227,8 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
                   ),
-                  title: "Stress Resilience",
-                  description: "Handle daily challenges with ease"
+                  title: "مرونة جسدية",
+                  description: "جسم أكثر قدرة على مواجهة الإجهاد اليومي"
                 },
                 {
                   icon: (
@@ -1236,8 +1236,8 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   ),
-                  title: "Better Mood",
-                  description: "Feel positive and balanced throughout the day"
+                  title: "راحة نفسية",
+                  description: "اشعر بالهدوء والراحة النفسية والتوازن"
                 }
               ].map((benefit, index) => (
                 <div key={index} className="text-center">
@@ -1257,43 +1257,43 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Pure, Powerful Ingredients</h2>
-                <p className="text-lg text-gray-600">Science-backed formula for real results</p>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">مكونات نقية وقوية</h2>
+                <p className="text-lg text-gray-600">تركيبة مدعومة علميًا لنتائج حقيقية</p>
               </div>
 
               <div className="bg-gray-50 rounded-2xl p-8 shadow-lg">
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
-                    <h3 className="font-bold text-xl mb-4 text-emerald-600">KSM-66® Ashwagandha (600mg)</h3>
+                    <h3 className="font-bold text-xl mb-4 text-emerald-600">KSM-66® أشواغاندا (600 مغ)</h3>
                     <p className="text-gray-700 mb-4">
-                      The gold standard of Ashwagandha extracts. Clinically proven to:
+                      المعيار الذهبي لمستخلصات الأشواغاندا. مثبت علميًا:
                     </p>
                     <ul className="space-y-2 text-gray-600">
                       <li className="flex items-start">
                         <span className="text-emerald-500 mr-2">✓</span>
-                        Reduce cortisol levels by up to 30%
+                        يقلل مستويات الكورتيزول بنسبة تصل إلى 30%
                       </li>
                       <li className="flex items-start">
                         <span className="text-emerald-500 mr-2">✓</span>
-                        Improve sleep quality in 8 weeks
+                        يحسن جودة النوم في 8 أسابيع
                       </li>
                       <li className="flex items-start">
                         <span className="text-emerald-500 mr-2">✓</span>
-                        Enhance focus and mental clarity
+                        يعزز التركيز والوضوح الذهني
                       </li>
                     </ul>
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-xl mb-4 text-emerald-600">What Makes Us Different</h3>
+                    <h3 className="font-bold text-xl mb-4 text-emerald-600">ما يجعلنا مختلفين</h3>
                     <div className="space-y-3">
                       <div className="flex items-start">
                         <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mr-3">
                           <span className="text-emerald-600 font-bold text-sm">1</span>
                         </div>
                         <div>
-                          <p className="font-semibold">100% Sugar-Free</p>
-                          <p className="text-sm text-gray-600">No crashes, no cavities</p>
+                          <p className="font-semibold">100% خالي من السكر</p>
+                          <p className="text-sm text-gray-600">لا انهيار، لا تسوس</p>
                         </div>
                       </div>
                       <div className="flex items-start">
@@ -1301,8 +1301,8 @@ export default function Home() {
                           <span className="text-emerald-600 font-bold text-sm">2</span>
                         </div>
                         <div>
-                          <p className="font-semibold">Vegan & Plant-Based</p>
-                          <p className="text-sm text-gray-600">No gelatin or animal products</p>
+                          <p className="font-semibold">نباتي وطبيعي</p>
+                          <p className="text-sm text-gray-600">لا جيلاتين أو منتجات حيوانية</p>
                         </div>
                       </div>
                       <div className="flex items-start">
@@ -1310,8 +1310,8 @@ export default function Home() {
                           <span className="text-emerald-600 font-bold text-sm">3</span>
                         </div>
                         <div>
-                          <p className="font-semibold">3rd Party Tested</p>
-                          <p className="text-sm text-gray-600">Verified purity and potency</p>
+                          <p className="font-semibold">مختبر من طرف ثالث</p>
+                          <p className="text-sm text-gray-600">نقاء وفعالية متحققة</p>
                         </div>
                       </div>
                     </div>
@@ -1326,7 +1326,7 @@ export default function Home() {
         <section id="reviews" className="py-16 md:py-24 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Customers Are Saying</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">ماذا يقول عملاؤنا</h2>
               <div className="flex items-center justify-center gap-2 text-lg">
                 <div className="flex text-yellow-400">
                   {"★★★★★".split("").map((star, i) => (
@@ -1334,7 +1334,7 @@ export default function Home() {
                   ))}
                 </div>
                 <span className="font-semibold">4.8/5</span>
-                <span className="text-gray-600">from 3,000+ reviews</span>
+                <span className="text-gray-600">من 3000+ تقييم</span>
               </div>
             </div>
 
@@ -1342,24 +1342,24 @@ export default function Home() {
               {[
                 {
                   name: "Sarah M.",
-                  role: "Verified Buyer",
-                  review: "I was skeptical, but these actually work! I feel calmer during the day and sleep so much better.",
+                  role: "مشترٍ متحقق",
+                  review: "كنت متشككة، لكن هذه تعمل بالفعل! أشعر بالهدوء أثناء اليوم وأنام بشكل أفضل بكثير.",
                   rating: 5,
                   avatar: "/avatar/avatar1.png",
                   experienceImage: "/ash1.jpg"
                 },
                 {
                   name: "Ahmed K.",
-                  role: "Verified Buyer",
-                  review: "No more afternoon crashes. I have steady energy all day and my stress levels are way down.",
+                  role: "مشترٍ متحقق",
+                  review: "لا مزيد من انهيار بعد الظهر. لدي طاقة ثابتة طوال اليوم ومستويات التوتر أقل بكثير.",
                   rating: 5,
                   avatar: "/avatar/avatar2.png",
                   experienceImage: "/ash2.jpg"
                 },
                 {
                   name: "Priya R.",
-                  role: "Verified Buyer",
-                  review: "Finally something that helps with anxiety without making me drowsy. Game changer!",
+                  role: "مشترٍ متحقق",
+                  review: "أخيرًا شيء يساعد في القلق بدون أن يجعلني نعسانة. يغير قواعد اللعبة!",
                   rating: 5,
                   avatar: "/avatar/avatar3.png",
                   experienceImage: "/ash3.jpg"
@@ -1405,30 +1405,30 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-                Frequently Asked Questions
+                الأسئلة الشائعة
               </h2>
 
               <div className="space-y-4">
                 {[
                   {
-                    question: "How quickly will I see results?",
-                    answer: "Most customers report feeling calmer within the first week. For best results, we recommend consistent use for at least 30 days."
+                    question: "كم بسرعة سأرى النتائج؟",
+                    answer: "يذكر معظم العملاء شعورهم بالهدوء في الأسبوع الأول. للحصول على أفضل النتائج، نوصي بالاستخدام المنتظم لمدة 30 يومًا على الأقل."
                   },
                   {
-                    question: "Is this safe to take daily?",
-                    answer: "Yes! Ashwagandha is a natural adaptogen that's been used safely for thousands of years. Our formula is non-habit forming and safe for daily use."
+                    question: "هل هذا آمن للاستخدام اليومي؟",
+                    answer: "نعم! الأشواغاندا هي مادة متكيفة طبيعية تُستخدم بأمان منذ آلاف السنين. تركيبتنا غير مسببة للإدمان وآمنة للاستخدام اليومي."
                   },
                   {
-                    question: "What if it doesn't work for me?",
-                    answer: "We offer a 60-day money-back guarantee. If you're not completely satisfied, we'll refund your purchase - no questions asked."
+                    question: "ماذا لو لم تعمل معي؟",
+                    answer: "نقدم ضمان استرداد المال لمدة 60 يومًا. إذا لم تكن راضٍ تمامًا، سنعيد مالك - بدون أسئلة."
                   },
                   {
-                    question: "Can I take this with other supplements?",
-                    answer: "Generally yes, but we recommend consulting with your healthcare provider if you're taking medications or have health conditions."
+                    question: "هل يمكنني تناول هذا مع مكملات أخرى؟",
+                    answer: "بشكل عام نعم، لكن نوصي باستشارة مقدم الرعاية الصحية إذا كنت تتناول أدوية أو لديك حالات صحية."
                   },
                   {
-                    question: "How many gummies should I take?",
-                    answer: "Take 2 gummies daily. You can take them any time, but many prefer taking them in the evening for better sleep."
+                    question: "كم حبة يجب أن آخذ؟",
+                    answer: "تناول حبتين يوميًا. يمكنك تناولهما في أي وقت، لكن العديد يفضل تناولهما في المساء لنوم أفضل."
                   }
                 ].map((faq, index) => (
                   <details key={index} className="bg-gray-50 rounded-xl p-6 cursor-pointer group">
@@ -1448,11 +1448,11 @@ export default function Home() {
         <section className="py-16 md:py-24 bg-gradient-to-br from-emerald-600 to-emerald-700 text-white">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Transform Your Life?
+              هل أنت مستعد لتغيير حياتك؟
             </h2>
             <p className="text-xl mb-8 text-emerald-100 max-w-2xl mx-auto">
-              Join thousands who&apos;ve discovered the power of natural stress relief. 
-              60-day guarantee means you have nothing to lose.
+              انضم إلى الآلاف الذين اكتشفوا قوة تخفيف التوتر الطبيعي.
+              ضمان 60 يومًا يعني أنه ليس لديك ما تخسره.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -1462,17 +1462,17 @@ export default function Home() {
                     }}
                 className="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-emerald-600 px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-xl"
               >
-                Get Your Zeinglow Today
+                احصل على زينغلو اليوم
               </a>
               <button
                 onClick={() => smoothScrollTo('pricing')}
                 className="inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-emerald-600 px-8 py-4 rounded-full font-bold text-lg transition-all"
               >
-                View Bundles & Save
+                عرض الباقات ووفر
               </button>
             </div>
             <p className="mt-8 text-emerald-100">
-              🔒 Secure checkout • 📦 Fast shipping • ✅ 60-day guarantee
+              🔒 دفع آمن • 📦 شحن سريع • ✅ ضمان 60 يوم
             </p>
           </div>
         </section>
@@ -1485,9 +1485,9 @@ export default function Home() {
                 © {new Date().getFullYear()} Zeinglow. All rights reserved.
               </p>
               <div className="flex gap-6 mt-4 md:mt-0">
-                <a href="/privacy" className="text-sm text-gray-400 hover:text-white">Privacy Policy</a>
-                <a href="/terms" className="text-sm text-gray-400 hover:text-white">Terms of Service</a>
-                <a href="/contact" className="text-sm text-gray-400 hover:text-white">Contact</a>
+                <a href="/privacy" className="text-sm text-gray-400 hover:text-white">سياسة الخصوصية</a>
+                <a href="/terms" className="text-sm text-gray-400 hover:text-white">الشروط والأحكام</a>
+                <a href="/contact" className="text-sm text-gray-400 hover:text-white">اتصل بنا</a>
               </div>
             </div>
           </div>
@@ -1502,7 +1502,7 @@ export default function Home() {
                     }}
             className="block w-full bg-emerald-600 hover:bg-emerald-700 text-white text-center py-3 rounded-full font-semibold"
           >
-            Get Zeinglow Now - AED 189
+            احصل على زينغلو الآن - 189 درهم
           </a>
         </div>
       </div>

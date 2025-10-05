@@ -65,9 +65,9 @@ export default function Checkout() {
   }, []);
 
   const bundles: Record<string, { name: string; price: number; originalPrice: number; gummies: number; days: number; discount: string; savings: number }> = {
-    "1-bottle": { name: "1 Bottle", price: 189, originalPrice: 210, gummies: 60, days: 30, discount: "10%", savings: 21 },
-    "2-bottles": { name: "2 Bottles", price: 339, originalPrice: 424, gummies: 120, days: 60, discount: "20%", savings: 85 },
-    "3-bottles": { name: "3 Bottles", price: 479, originalPrice: 684, gummies: 180, days: 90, discount: "30%", savings: 205 },
+    "1-bottle": { name: "1 عبوة", price: 189, originalPrice: 210, gummies: 60, days: 30, discount: "10%", savings: 21 },
+    "2-bottles": { name: "2 عبوة", price: 339, originalPrice: 424, gummies: 120, days: 60, discount: "20%", savings: 85 },
+    "3-bottles": { name: "3 عبوات", price: 479, originalPrice: 684, gummies: 180, days: 90, discount: "30%", savings: 205 },
   };
 
   const selectedBundle = bundles[formData.bundle];
@@ -184,7 +184,7 @@ export default function Checkout() {
               />
             </div>
             <div className="text-sm text-slate-600 font-medium">
-              🔒 Secure Checkout
+              🔒 دفع آمن
             </div>
           </div>
         </div>
@@ -196,10 +196,10 @@ export default function Checkout() {
           <div className="text-center mb-4">
             <div className="flex items-center justify-center gap-2 text-sm font-bold mb-2">
               <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
-              <span>⚡ LIMITED TIME: Only {stockLeft} bottles left in stock!</span>
+              <span>⚡ وقت محدود: بقي {stockLeft} عبوات فقط في المخزون!</span>
               <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
             </div>
-            <div className="text-lg font-bold mb-3">UP TO 30% OFF ENDS IN:</div>
+            <div className="text-lg font-bold mb-3">حتى 30% خصم ينتهي في:</div>
             <div className="flex items-center justify-center space-x-4 text-2xl font-mono font-bold">
               <div className="bg-white text-red-600 px-3 py-2 rounded-lg">
                 {String(timeLeft.hours).padStart(2, '0')}
@@ -214,22 +214,22 @@ export default function Checkout() {
               </div>
             </div>
             <div className="text-sm mt-2 opacity-90">
-              Hours : Minutes : Seconds
+              ساعات : دقائق : ثواني
             </div>
           </div>
         </div>
 
         {/* Sales Headline */}
-        <div className="text-center lg:text-left mb-8">
+        <div className="text-center mb-8">
           <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">
-            You&apos;re just <span className="text-emerald-600">ONE STEP</span> away from
+            أنت على بُعد <span className="text-emerald-600">خطوة واحدة</span> فقط من
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-green-600">
-              Daily Calm & Deep Sleep
+              راحة الجسم والتعافي الطبيعي
             </span>
           </h1>
           <p className="text-lg text-slate-700">
-            Join 3,000+ customers who transformed their stress into serenity
+            انضم إلى 3000+ عميل يستمتعون بجسم مسترخٍ ونوم عميق
           </p>
         </div>
 
@@ -239,7 +239,7 @@ export default function Checkout() {
           <div className="space-y-8">
             {/* Bundle Selection */}
             <div className="bg-white rounded-3xl p-6 shadow-xl border border-emerald-100">
-              <h3 className="text-xl font-bold text-slate-900 mb-4">Select Your Relaxation Journey:</h3>
+              <h3 className="text-xl font-bold text-slate-900 mb-4">اختر رحلة الاسترخاء:</h3>
               <div className="space-y-3">
                 {Object.entries(bundles).map(([key, bundle]) => (
                   <label key={key} className="flex items-center p-4 rounded-2xl border-2 cursor-pointer transition-all hover:bg-emerald-50 relative" 
@@ -263,17 +263,17 @@ export default function Checkout() {
                     <div className="flex-1 flex items-center justify-between">
                       <div>
                         <div className="font-bold text-lg text-slate-900">{bundle.name}</div>
-                        <div className="text-sm text-slate-600">{bundle.gummies} gummies • {bundle.days} days supply</div>
+                        <div className="text-sm text-slate-600">{bundle.gummies} حبة • مخزون {bundle.days} يوم</div>
                         {key === "2-bottles" && (
                           <span className="inline-block bg-emerald-500 text-white text-xs font-bold px-2 py-1 rounded-full mt-1">
-                            MOST POPULAR
+                            الأكثر شعبية
                           </span>
                         )}
                       </div>
                       <div className="text-right">
                         <div className="text-sm text-slate-400 line-through">AED {bundle.originalPrice}</div>
                         <div className="text-2xl font-extrabold text-emerald-600">AED {bundle.price}</div>
-                        <div className="text-xs text-red-600 font-semibold">Save AED {bundle.savings}</div>
+                        <div className="text-xs text-red-600 font-semibold">وفر {bundle.savings} درهم</div>
                       </div>
                     </div>
                   </label>
@@ -297,13 +297,13 @@ export default function Checkout() {
                   ))}
                 </div>
                 <div>
-                  <div className="font-bold text-emerald-800">Sarah & 2,847 others</div>
-                  <div className="text-sm text-emerald-600">ordered in the last 24 hours</div>
+                  <div className="font-bold text-emerald-800">سارة و 2847 آخرين</div>
+                  <div className="text-sm text-emerald-600">طلبوا في آخر 24 ساعة</div>
                 </div>
               </div>
               <div className="flex items-center text-emerald-600 mb-3">
                 <span className="text-xl">★★★★★</span>
-                <span className="ml-2 font-semibold">4.8/5 from verified customers</span>
+                <span className="ml-2 font-semibold">4.8/5 من عملاء متحققين</span>
               </div>
               
               {/* Live Activity */}
@@ -346,8 +346,8 @@ export default function Checkout() {
             <div className="bg-white rounded-3xl shadow-2xl border border-emerald-100 overflow-hidden">
               {/* Order Summary Header */}
               <div className="bg-gradient-to-r from-emerald-500 to-green-600 text-white p-6 text-center">
-                <h2 className="text-2xl font-bold mb-2">Complete Your Order</h2>
-                <p className="text-emerald-100">Cash on Delivery • No Payment Required Now</p>
+                <h2 className="text-2xl font-bold mb-2">أكمل طلبك</h2>
+                <p className="text-emerald-100">دفع عند الاستلام • لا حاجة للدفع الآن</p>
               </div>
 
               <div className="p-6 space-y-6">
@@ -358,14 +358,14 @@ export default function Checkout() {
                     <span className="font-bold text-emerald-600">AED {selectedBundle.price}</span>
                   </div>
                   <div className="text-sm text-slate-600 mb-3">
-                    {selectedBundle.gummies} gummies • {selectedBundle.days} days supply
+                    {selectedBundle.gummies} حبة • مخزون {selectedBundle.days} يوم
                   </div>
                   <div className="border-t border-emerald-200 pt-3 flex justify-between items-center">
-                    <span className="font-bold text-lg text-slate-900">Total:</span>
+                    <span className="font-bold text-lg text-slate-900">المجموع:</span>
                     <span className="font-extrabold text-2xl text-emerald-600">AED {selectedBundle.price}</span>
                   </div>
                   <div className="text-center text-sm text-emerald-600 font-medium mt-2">
-                    ✓ Free delivery included
+                    ✓ شحن مجاني متضمن
                   </div>
                 </div>
 
@@ -373,7 +373,7 @@ export default function Checkout() {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-2">
-                      Full Name *
+                      الاسم الكامل *
                     </label>
                     <input
                       type="text"
@@ -384,14 +384,14 @@ export default function Checkout() {
                       className={`w-full px-4 py-3 rounded-xl border-2 transition-colors ${
                         errors.name ? 'border-red-300 bg-red-50' : 'border-slate-200 focus:border-emerald-500'
                       } focus:outline-none`}
-                      placeholder="Enter your full name"
+                      placeholder="أدخل اسمك الكامل"
                     />
                     {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
                   </div>
 
                   <div>
                     <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2">
-                      Email Address *
+                      عنوان البريد الإلكتروني *
                     </label>
                     <input
                       type="email"
@@ -409,7 +409,7 @@ export default function Checkout() {
 
                   <div>
                     <label htmlFor="phone" className="block text-sm font-semibold text-slate-700 mb-2">
-                      Phone Number *
+                      رقم الهاتف *
                     </label>
                     <input
                       type="tel"
@@ -432,8 +432,8 @@ export default function Checkout() {
                         <span className="text-white font-bold text-sm">💰</span>
                       </div>
                       <div>
-                        <div className="font-bold text-amber-800">Cash on Delivery (COD)</div>
-                        <div className="text-sm text-amber-700">Pay when you receive your order</div>
+                        <div className="font-bold text-amber-800">دفع عنح الاستلام</div>
+                        <div className="text-sm text-amber-700">ادفع عندما تستلم طلبك</div>
                       </div>
                     </div>
                   </div>
@@ -447,11 +447,11 @@ export default function Checkout() {
                     {isSubmitting ? (
                       <div className="flex items-center justify-center gap-2">
                         <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                        Processing...
+                        معالجة...
                       </div>
                     ) : (
                       <div className="flex items-center justify-center gap-2">
-                        <span>Complete Order - AED {selectedBundle.price}</span>
+                        <span>أكمل الطلب - {selectedBundle.price} درهم</span>
                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                         </svg>
@@ -460,14 +460,14 @@ export default function Checkout() {
                   </button>
 
                   <div className="text-center text-xs text-slate-500">
-                    By completing this order, you agree to our terms & conditions
+                    بإكمال هذا الطلب، أنت توافق على شروطنا وأحكامنا
                   </div>
                 </form>
 
                 {/* Final Push */}
                 <div className="bg-green-50 border border-green-200 rounded-xl p-4 text-center">
-                  <div className="font-bold text-green-800 mb-1">🎯 Start feeling calmer in just 1-2 weeks!</div>
-                  <div className="text-sm text-green-700">Join thousands who chose relaxation over stress</div>
+                  <div className="font-bold text-green-800 mb-1">🎯 ابدأ في الشعور بالهدوء في أسبوع إلى أسبوعين فقط!</div>
+                  <div className="text-sm text-green-700">انضم إلى الآلاف الذين اختاروا الاسترخاء بدلاً من التوتر</div>
                 </div>
               </div>
             </div>
@@ -496,7 +496,7 @@ export default function Checkout() {
                 </div>
                 <div className="flex items-center text-emerald-600 mb-3">
                   <span className="text-xl">★★★★★</span>
-                  <span className="ml-2 font-semibold">4.8/5 from verified customers</span>
+                  <span className="ml-2 font-semibold">4.8/5 من عملاء متحققين</span>
                 </div>
                 
                 {/* Live Activity */}
@@ -539,9 +539,9 @@ export default function Checkout() {
         <div className="mt-12 bg-white rounded-3xl p-8 shadow-xl text-center border border-emerald-100">
           <div className="text-emerald-500 text-xl mb-3">★★★★★</div>
           <blockquote className="text-lg font-medium text-slate-800 mb-4">
-            &ldquo;I was skeptical at first, but after just 2 weeks with Zeinglow, I sleep like a baby and wake up refreshed. Best investment in my wellbeing!&rdquo;
+            &ldquo;كنت متشككة في البداية، لكن بعد أسبوعين فقط مع زينغلو، أنام مثل الطفل وأستيقظ منتعشة. أفضل استثمار في عافيتي!&rdquo;
           </blockquote>
-          <cite className="text-sm font-semibold text-slate-600">— Fatima Al-Zahra, Dubai</cite>
+          <cite className="text-sm font-semibold text-slate-600">— فاطمة الزهراء، دبي</cite>
         </div>
       </div>
     </div>
