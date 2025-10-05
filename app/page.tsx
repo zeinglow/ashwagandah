@@ -1264,7 +1264,7 @@ export default function Home() {
               <div className="bg-gray-50 rounded-2xl p-8 shadow-lg">
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
-                    <h3 className="font-bold text-xl mb-4 text-emerald-600">KSM-66® أشواغاندا (300 مغ)</h3>
+                    <h3 className="font-bold text-xl mb-4 text-emerald-600">أشواغاندا (300 مغ)</h3>
                     <p className="text-gray-700 mb-4">
                       المعيار الذهبي لمستخلصات الأشواغاندا. مثبت علميًا:
                     </p>
@@ -1293,7 +1293,7 @@ export default function Home() {
                         </div>
                         <div>
                           <p className="font-semibold">100% خالي من السكر</p>
-                          <p className="text-sm text-gray-600">بدون تسوس أو أضرار للأسنان</p>
+                          <p className="text-sm text-gray-600">مناسب لمرضى السكري والصحة العامة</p>
                         </div>
                       </div>
                       <div className="flex items-start">
