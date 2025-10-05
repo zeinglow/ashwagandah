@@ -654,19 +654,19 @@ export default function Home() {
                 </motion.div>
               </motion.div>
 
-              {/* Product Image */}
+              {/* Hero Image */}
               <motion.div 
                 className="order-1 md:order-2 relative"
                 initial={{ opacity: 0, scale: 0.8, y: 50 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
               >
-                <div className="relative mx-auto max-w-xs md:max-w-sm">
+                <div className="relative mx-auto max-w-md md:max-w-lg">
                   <motion.div 
-                    className="absolute inset-0 bg-gradient-to-br from-emerald-200 to-emerald-400 rounded-full blur-3xl opacity-30"
+                    className="absolute inset-0 bg-gradient-to-br from-emerald-200 to-emerald-400 rounded-3xl blur-3xl opacity-20"
                     animate={{
                       scale: [1, 1.05, 1],
-                      opacity: [0.3, 0.4, 0.3],
+                      opacity: [0.2, 0.3, 0.2],
                     }}
                     transition={{
                       duration: 4,
@@ -674,45 +674,14 @@ export default function Home() {
                       ease: "easeInOut"
                     }}
                   />
-                  <motion.div
-                    animate={{
-                      y: [0, -8, 0],
-                      rotate: [0, 2, -2, 0],
-                    }}
-                    transition={{
-                      duration: 6,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  >
                   <Image
-                      src="/beargummies.png"
-                    alt="Zeinglow Ashwagandha Gummies"
-                      width={400}
-                      height={400}
-                      className="relative z-10 w-full h-auto max-w-[280px] md:max-w-[350px] mx-auto"
+                    src="/ash.jpg"
+                    alt="راحة وتعافي طبيعي"
+                    width={600}
+                    height={600}
+                    className="relative z-10 w-full h-auto rounded-3xl shadow-2xl"
                     priority
                   />
-                  </motion.div>
-                  <motion.div 
-                    className="absolute -top-2 -right-2 md:-top-4 md:-right-4 bg-red-500 text-white px-2 py-1 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-bold"
-                    initial={{ scale: 0, rotate: -180 }}
-                    animate={{ scale: 1, rotate: 0 }}
-                    transition={{ duration: 0.6, delay: 1.2, ease: "backOut" }}
-                  >
-                    <motion.span
-                      animate={{
-                        scale: [1, 1.1, 1],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                      }}
-                    >
-                    كمية محدودة
-                    </motion.span>
-                  </motion.div>
                   </div>
               </motion.div>
                 </div>
@@ -869,7 +838,7 @@ export default function Home() {
         {/* Elegant Problem-Solution Section */}
         <section className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
           <div className="container mx-auto px-4">
-            <div className="max-w-5xl mx-auto">
+            <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                   جسمك يحتاج إلى الراحة والتعافي
@@ -879,97 +848,114 @@ export default function Home() {
                 </p>
               </div>
               
-              <div className="grid md:grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
+                {/* Content - Left Side */}
+                <div className="space-y-4">
                 {/* Current Reality */}
-                <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-red-100 to-red-50 rounded-2xl transform rotate-1 group-hover:rotate-2 transition-transform"></div>
-                  <div className="relative bg-white rounded-2xl p-8 shadow-lg border border-red-100">
-                    <div className="w-14 h-14 bg-red-100 rounded-2xl flex items-center justify-center mb-6">
-                      <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="relative bg-white rounded-xl p-6 shadow-lg border border-red-100">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
-                    <h3 className="font-bold text-xl mb-3 text-gray-900">عندما يفتقد جسمك للراحة</h3>
-                    <ul className="space-y-2 text-gray-600 text-sm">
-                      <li className="flex items-start">
-                        <span className="text-red-500 mr-2">•</span>
-                        تستيقظ مرهقًا رغم النوم
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-red-500 mr-2">•</span>
-                        آلام وتصلب في العضلات
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-red-500 mr-2">•</span>
-                        عدم القدرة على الاسترخاء
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-red-500 mr-2">•</span>
-                        إرهاق جسدي مستمر
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                {/* The Real Impact */}
-                <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-orange-100 to-orange-50 rounded-2xl transform -rotate-1 group-hover:-rotate-2 transition-transform"></div>
-                  <div className="relative bg-white rounded-2xl p-8 shadow-lg border border-orange-100">
-                    <div className="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-6">
-                      <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                      </svg>
+                    <div>
+                      <h3 className="font-bold text-lg mb-2 text-gray-900">عندما يفتقد جسمك للراحة</h3>
+                      <ul className="space-y-1 text-gray-600 text-sm">
+                        <li className="flex items-start">
+                          <span className="text-red-500 mr-2">•</span>
+                          تستيقظ مرهقًا رغم النوم
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-red-500 mr-2">•</span>
+                          آلام وتصلب في العضلات
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-red-500 mr-2">•</span>
+                          إرهاق جسدي مستمر
+                        </li>
+                      </ul>
                     </div>
-                    <h3 className="font-bold text-xl mb-3 text-gray-900">تأثيره على حياتك</h3>
-                    <ul className="space-y-2 text-gray-600 text-sm">
-                      <li className="flex items-start">
-                        <span className="text-orange-500 mr-2">•</span>
-                        صعوبة التركيز والإنتاجية
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-orange-500 mr-2">•</span>
-                        تراجع مستوى الطاقة والنشاط
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-orange-500 mr-2">•</span>
-                        ضعف جهاز المناعة
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-orange-500 mr-2">•</span>
-                        فقدان الاستمتاع بالحياة
-                      </li>
-                    </ul>
                   </div>
                 </div>
 
                 {/* Your New Life */}
-                <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-100 to-emerald-50 rounded-2xl transform rotate-1 group-hover:rotate-2 transition-transform"></div>
-                  <div className="relative bg-white rounded-2xl p-8 shadow-lg border-2 border-emerald-200">
-                    <div className="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6">
-                      <svg className="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="relative bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl p-6 shadow-xl text-white">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                       </svg>
                     </div>
-                    <h3 className="font-bold text-xl mb-3 text-gray-900">مع زينغلو... الفرق واضح</h3>
-                    <ul className="space-y-2 text-gray-600 text-sm">
-                      <li className="flex items-start">
-                        <span className="text-emerald-500 mr-2">✓</span>
-                        <span className="font-medium">جسم مسترخٍ ومرتاح</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-emerald-500 mr-2">✓</span>
-                        <span className="font-medium">تعافي سريع من الإجهاد</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-emerald-500 mr-2">✓</span>
-                        <span className="font-medium">نوم هادئ ومريح</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-emerald-500 mr-2">✓</span>
-                        <span className="font-medium">صحة أفضل وحيوية دائمة</span>
-                      </li>
-                    </ul>
+                    <div>
+                      <h3 className="font-bold text-lg mb-2">مع زينغلو... الفرق واضح</h3>
+                      <ul className="space-y-1 text-emerald-50 text-sm">
+                        <li className="flex items-start">
+                          <span className="mr-2">✓</span>
+                          <span className="font-medium">جسم مسترخٍ ومرتاح</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="mr-2">✓</span>
+                          <span className="font-medium">تعافي سريع من الإجهاد</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="mr-2">✓</span>
+                          <span className="font-medium">نوم هادئ وطاقة دائمة</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                </div>
+
+                {/* Product Image - Right Side */}
+                <div className="relative">
+                  <div className="relative mx-auto max-w-md">
+                    <motion.div 
+                      className="absolute inset-0 bg-gradient-to-br from-emerald-200 to-emerald-400 rounded-full blur-3xl opacity-30"
+                      animate={{
+                        scale: [1, 1.05, 1],
+                        opacity: [0.3, 0.4, 0.3],
+                      }}
+                      transition={{
+                        duration: 4,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    />
+                    <motion.div
+                      animate={{
+                        y: [0, -8, 0],
+                        rotate: [0, 2, -2, 0],
+                      }}
+                      transition={{
+                        duration: 6,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    >
+                      <Image
+                        src="/beargummies.png"
+                        alt="Zeinglow Ashwagandha Gummies"
+                        width={400}
+                        height={400}
+                        className="relative z-10 w-full h-auto max-w-[350px] mx-auto"
+                      />
+                    </motion.div>
+                    <div className="absolute -top-2 -right-2 md:-top-4 md:-right-4 bg-red-500 text-white px-2 py-1 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-bold">
+                      <motion.span
+                        animate={{
+                          scale: [1, 1.1, 1],
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }}
+                      >
+                        كمية محدودة
+                      </motion.span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1417,10 +1403,6 @@ export default function Home() {
                   {
                     question: "هل هذا آمن للاستخدام اليومي؟",
                     answer: "نعم! الأشواغاندا هي مادة متكيفة طبيعية تُستخدم بأمان منذ آلاف السنين. تركيبتنا غير مسببة للإدمان وآمنة للاستخدام اليومي."
-                  },
-                  {
-                    question: "ماذا لو لم تعمل معي؟",
-                    answer: "نقدم ضمان استرداد المال لمدة 60 يومًا. إذا لم تكن راضٍ تمامًا، سنعيد مالك - بدون أسئلة."
                   },
                   {
                     question: "هل يمكنني تناول هذا مع مكملات أخرى؟",
