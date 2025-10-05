@@ -710,7 +710,7 @@ export default function Home() {
                         ease: "easeInOut"
                       }}
                     >
-                    Limited Stock
+                    كمية محدودة
                     </motion.span>
                   </motion.div>
                   </div>
@@ -1264,7 +1264,7 @@ export default function Home() {
               <div className="bg-gray-50 rounded-2xl p-8 shadow-lg">
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
-                    <h3 className="font-bold text-xl mb-4 text-emerald-600">KSM-66® أشواغاندا (600 مغ)</h3>
+                    <h3 className="font-bold text-xl mb-4 text-emerald-600">KSM-66® أشواغاندا (300 مغ)</h3>
                     <p className="text-gray-700 mb-4">
                       المعيار الذهبي لمستخلصات الأشواغاندا. مثبت علميًا:
                     </p>
@@ -1275,7 +1275,7 @@ export default function Home() {
                       </li>
                       <li className="flex items-start">
                         <span className="text-emerald-500 mr-2">✓</span>
-                        يحسن جودة النوم في 8 أسابيع
+                        يحسن جودة النوم في أسبوع
                       </li>
                       <li className="flex items-start">
                         <span className="text-emerald-500 mr-2">✓</span>
@@ -1293,7 +1293,7 @@ export default function Home() {
                         </div>
                         <div>
                           <p className="font-semibold">100% خالي من السكر</p>
-                          <p className="text-sm text-gray-600">لا انهيار، لا تسوس</p>
+                          <p className="text-sm text-gray-600">بدون تسوس أو أضرار للأسنان</p>
                         </div>
                       </div>
                       <div className="flex items-start">
@@ -1310,8 +1310,8 @@ export default function Home() {
                           <span className="text-emerald-600 font-bold text-sm">3</span>
                         </div>
                         <div>
-                          <p className="font-semibold">مختبر من طرف ثالث</p>
-                          <p className="text-sm text-gray-600">نقاء وفعالية متحققة</p>
+                          <p className="font-semibold">تعافي الجسم الطبيعي</p>
+                          <p className="text-sm text-gray-600">استيقظ بطاقة ونشاط كل صباح</p>
                         </div>
                       </div>
                     </div>
