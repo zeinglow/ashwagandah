@@ -229,11 +229,14 @@ function AshwagandhaCheckoutContent() {
         <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/95 border-b border-[#d4af37]/20 shadow-lg">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
-              <Link href="/ahswagandha" className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full gradient-gold flex items-center justify-center">
-                  <span className="font-playfair font-bold text-[#4a3c5a] text-lg">Z</span>
-                </div>
-                <span className="font-playfair text-xl font-bold text-[#4a3c5a]">ZeinGlow</span>
+              <Link href="/ahswagandha" className="flex items-center">
+                <Image
+                  src="/logozeinglow.png"
+                  alt="ZeinGlow"
+                  width={140}
+                  height={42}
+                  className="h-9 w-auto"
+                />
               </Link>
               <div className="text-sm text-[#4a3c5a] font-medium flex items-center gap-2">
                 <i className="fas fa-lock text-[#d4af37]" />

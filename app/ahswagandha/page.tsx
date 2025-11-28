@@ -146,11 +146,14 @@ export default function AshwagandhaLandingPage() {
           <div className="max-w-7xl mx-auto px-6 py-4">
             <div className="flex items-center justify-between">
               {/* Logo */}
-              <Link href="/ahswagandha" className="flex items-center gap-3 group">
-                <div className="w-12 h-12 rounded-full gradient-gold flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <span className="font-playfair font-bold text-primary text-xl">Z</span>
-                </div>
-                <span className="font-playfair text-2xl font-bold text-white">ZeinGlow</span>
+              <Link href="/ahswagandha" className="flex items-center group">
+                <Image
+                  src="/logo-zeinglow-white.png"
+                  alt="ZeinGlow"
+                  width={150}
+                  height={45}
+                  className="h-10 w-auto group-hover:scale-105 transition-transform duration-300"
+                />
               </Link>
 
               {/* Desktop Menu */}
@@ -772,11 +775,14 @@ export default function AshwagandhaLandingPage() {
             <div className="grid md:grid-cols-4 gap-10 mb-12">
               {/* Brand */}
               <div className="md:col-span-2">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 rounded-full gradient-gold flex items-center justify-center">
-                    <span className="font-playfair font-bold text-[#4a3c5a] text-xl">Z</span>
-                  </div>
-                  <span className="font-playfair text-2xl font-bold text-white">ZeinGlow</span>
+                <div className="mb-6">
+                  <Image
+                    src="/logo-zeinglow-white.png"
+                    alt="ZeinGlow"
+                    width={150}
+                    height={45}
+                    className="h-10 w-auto"
+                  />
                 </div>
                 <p className="text-white/60 leading-relaxed mb-6 max-w-md">
                   Premium Ashwagandha Sleep &amp; Relax Gummies. Natural wellness solutions for modern life. Sleep better, live better.
