@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
+import { sendOrderNotification } from '@/lib/notifications'
 
 // GET - Fetch all orders (admin only)
 export async function GET() {
@@ -53,6 +54,15 @@ export async function POST(request: NextRequest) {
         status: 'PENDING'
       }
     })
+
+    // Send push notification for new order (non-blocking)
+    sendOrderNotification({
+      orderNumber,
+      name,
+      phone,
+      bundleName,
+      price,
+    }).catch(err => console.error('Notification error:', err));
 
     return NextResponse.json({ 
       success: true, 
