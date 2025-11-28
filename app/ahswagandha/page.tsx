@@ -140,7 +140,7 @@ export default function AshwagandhaLandingPage() {
         ::-webkit-scrollbar-thumb { background: #4a3c5a; border-radius: 5px; }
       `}</style>
 
-      <div className="font-raleway">
+      <div dir="ltr" className="font-raleway text-left">
         {/* Navigation */}
         <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-[#2a2035]/95 backdrop-blur-lg shadow-lg' : ''}`}>
           <div className="max-w-7xl mx-auto px-6 py-4">

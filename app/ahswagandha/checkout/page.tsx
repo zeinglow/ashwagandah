@@ -224,7 +224,7 @@ function AshwagandhaCheckoutContent() {
         .border-primary { border-color: #4a3c5a; }
       `}</style>
 
-      <div className="min-h-screen bg-cream font-raleway">
+      <div dir="ltr" className="min-h-screen bg-cream font-raleway text-left">
         {/* Header */}
         <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/95 border-b border-[#d4af37]/20 shadow-lg">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

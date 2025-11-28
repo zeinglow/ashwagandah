@@ -61,7 +61,7 @@ export default function AshwagandhaThankYou() {
           .gradient-gold { background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 50%, #d4af37 100%); }
           .bg-cream { background-color: #faf8f5; }
         `}</style>
-        <div className="min-h-screen bg-cream flex items-center justify-center font-raleway">
+        <div dir="ltr" className="min-h-screen bg-cream flex items-center justify-center font-raleway text-left">
           <div className="text-center">
             <div className="w-16 h-16 border-4 border-[#d4af37] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
             <p className="text-gray-600">Loading your order confirmation...</p>
@@ -102,7 +102,7 @@ export default function AshwagandhaThankYou() {
         .bg-primary-dark { background-color: #2a2035; }
       `}</style>
 
-      <div className="min-h-screen bg-cream font-raleway">
+      <div dir="ltr" className="min-h-screen bg-cream font-raleway text-left">
         {/* Header */}
         <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/95 border-b border-[#d4af37]/20 shadow-lg">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
