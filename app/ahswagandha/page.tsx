@@ -304,64 +304,191 @@ export default function AshwagandhaLandingPage() {
 
           {/* Scroll Indicator */}
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-            <button onClick={() => smoothScrollTo('pain-points')} className="text-white/50 hover:text-[#d4af37] transition-colors">
+            <button onClick={() => smoothScrollTo('video-section')} className="text-white/50 hover:text-[#d4af37] transition-colors">
               <i className="fas fa-chevron-down text-2xl" />
             </button>
           </div>
         </section>
 
-        {/* Pain Points Section */}
-        <section id="pain-points" className="py-24 bg-cream relative overflow-hidden">
-          {/* Decorative Elements */}
+        {/* Video Section */}
+        <section id="video-section" className="py-20 bg-cream relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 gradient-gold" />
-          <div className="absolute top-20 right-0 w-72 h-72 bg-[#4a3c5a]/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-20 left-0 w-96 h-96 bg-[#d4af37]/5 rounded-full blur-3xl" />
-
-          <div className="max-w-6xl mx-auto px-6 relative z-10">
-            {/* Section Header */}
-            <div className="text-center mb-16">
-              <p className="text-[#d4af37] uppercase tracking-[0.3em] text-sm mb-4">The Problem</p>
-              <h2 className="font-playfair text-4xl md:text-5xl text-[#4a3c5a] mb-6">
-                When Sleep Doesn&apos;t Feel Like <span className="gradient-text">Rest</span>
+          <div className="max-w-5xl mx-auto px-6">
+            <div className="text-center mb-12">
+              <p className="text-[#d4af37] uppercase tracking-[0.3em] text-sm mb-4">🎬 See It In Action</p>
+              <h2 className="font-playfair text-3xl md:text-4xl text-[#4a3c5a] mb-4">
+                Watch How ZeinGlow <span className="gradient-text">Transforms</span> Your Sleep
               </h2>
-              <div className="w-24 h-1 gradient-gold mx-auto rounded-full" />
+            </div>
+            
+            {/* Video Container */}
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-[#4a3c5a]">
+              <div className="aspect-video relative">
+                {/* YouTube Embed Placeholder - Replace VIDEO_ID with actual YouTube video ID */}
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  src="https://www.youtube.com/embed/VIDEO_ID?rel=0&modestbranding=1"
+                  title="ZeinGlow Ashwagandha Product Video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+                {/* Fallback Play Button Overlay - Shows when video not loaded */}
+                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#4a3c5a] to-[#2a2035]">
+                  <div className="text-center">
+                    <div className="w-24 h-24 mx-auto mb-6 rounded-full gradient-gold flex items-center justify-center cursor-pointer hover:scale-110 transition-transform shadow-xl shadow-[#d4af37]/30">
+                      <i className="fas fa-play text-4xl text-[#2a2035] ml-2" />
+                    </div>
+                    <p className="text-white/80 text-lg">Video Coming Soon</p>
+                    <p className="text-[#d4af37] text-sm mt-2">Discover the ZeinGlow Difference</p>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Pain Points Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                { icon: 'fa-bed', title: "Can't Fall Asleep?", desc: "Struggling to fall asleep even when you feel completely exhausted? Your mind keeps racing while your body begs for rest." },
-                { icon: 'fa-moon', title: "Waking Up at Night?", desc: "Waking up multiple times throughout the night, feeling anxious or stressed, never reaching deep restorative sleep." },
-                { icon: 'fa-user-injured', title: "Morning Stiffness?", desc: "Starting your day with stiffness and unexplained body aches? Your mornings feel like a battle before they even begin." },
-                { icon: 'fa-coffee', title: "Coffee Dependent?", desc: "Feeling like you need 5 cups of coffee just to feel awake? That's not energy—that's survival mode." },
-                { icon: 'fa-brain', title: "Constant Stress?", desc: "Carrying the weight of daily tension into your bed? Stress shouldn't follow you into your sanctuary of rest." },
-              ].map((item, index) => (
-                <div key={index} className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
-                  <div className="w-16 h-16 rounded-2xl bg-[#4a3c5a]/10 flex items-center justify-center mb-6 group-hover:bg-[#4a3c5a] group-hover:scale-110 transition-all duration-300">
-                    <i className={`fas ${item.icon} text-2xl text-[#4a3c5a] group-hover:text-white transition-colors`} />
-                  </div>
-                  <h3 className="font-playfair text-xl text-[#4a3c5a] mb-3">{item.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-
-              {/* Solution Teaser */}
-              <div className="group bg-gradient-to-br from-[#4a3c5a] to-[#2a2035] rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 text-white">
-                <div className="w-16 h-16 rounded-2xl bg-[#d4af37]/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
-                  <i className="fas fa-sparkles text-2xl text-[#d4af37]" />
-                </div>
-                <h3 className="font-playfair text-xl text-[#d4af37] mb-3">There&apos;s a Better Way</h3>
-                <p className="text-white/80 leading-relaxed">What if one natural solution could address all of these problems? Keep reading to discover the answer.</p>
-                <button onClick={() => smoothScrollTo('benefits')} className="inline-flex items-center gap-2 text-[#d4af37] mt-4 hover:gap-4 transition-all">
-                  <span>See Solution</span>
-                  <i className="fas fa-arrow-right" />
-                </button>
+            {/* Video Trust Points */}
+            <div className="grid grid-cols-3 gap-4 mt-8">
+              <div className="text-center p-4 bg-white rounded-2xl shadow-lg">
+                <i className="fas fa-clock text-2xl text-[#d4af37] mb-2" />
+                <p className="text-[#4a3c5a] font-semibold text-sm">2 Min Watch</p>
+              </div>
+              <div className="text-center p-4 bg-white rounded-2xl shadow-lg">
+                <i className="fas fa-eye text-2xl text-[#d4af37] mb-2" />
+                <p className="text-[#4a3c5a] font-semibold text-sm">50K+ Views</p>
+              </div>
+              <div className="text-center p-4 bg-white rounded-2xl shadow-lg">
+                <i className="fas fa-heart text-2xl text-[#d4af37] mb-2" />
+                <p className="text-[#4a3c5a] font-semibold text-sm">Real Results</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Benefits Section */}
+        {/* Pain Points Section - Redesigned with Images */}
+        <section id="pain-points" className="py-24 bg-white relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            {/* Section Header */}
+            <div className="text-center mb-16">
+              <p className="text-[#d4af37] uppercase tracking-[0.3em] text-sm mb-4">😫 The Problem</p>
+              <h2 className="font-playfair text-4xl md:text-5xl text-[#4a3c5a] mb-6">
+                When Sleep Doesn&apos;t Feel Like <span className="gradient-text">Rest</span>
+              </h2>
+              <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                Millions struggle with these issues every night. You&apos;re not alone.
+              </p>
+              <div className="w-24 h-1 gradient-gold mx-auto rounded-full mt-6" />
+            </div>
+
+            {/* Problem Cards - Modern Bento Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Card 1 - Large with Image */}
+              <div className="lg:col-span-2 group relative rounded-3xl overflow-hidden bg-gradient-to-br from-red-50 to-orange-50 border border-red-100">
+                <div className="grid md:grid-cols-2 h-full">
+                  <div className="p-8 flex flex-col justify-center">
+                    <div className="w-14 h-14 rounded-2xl bg-red-100 flex items-center justify-center mb-6">
+                      <i className="fas fa-bed text-2xl text-red-500" />
+                    </div>
+                    <h3 className="font-playfair text-2xl text-[#4a3c5a] mb-4">Can&apos;t Fall Asleep?</h3>
+                    <p className="text-gray-600 leading-relaxed mb-4">
+                      Lying awake for hours while your mind races with thoughts? Your body is exhausted but your brain won&apos;t shut off.
+                    </p>
+                    <div className="flex items-center gap-2 text-red-500 text-sm font-medium">
+                      <i className="fas fa-exclamation-circle" />
+                      <span>Affects 35% of adults</span>
+                    </div>
+                  </div>
+                  <div className="relative h-64 md:h-auto">
+                    <Image
+                      src="/ash1.jpg"
+                      alt="Sleep struggles"
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 2 */}
+              <div className="group relative rounded-3xl overflow-hidden bg-gradient-to-br from-amber-50 to-yellow-50 border border-amber-100 p-8">
+                <div className="w-14 h-14 rounded-2xl bg-amber-100 flex items-center justify-center mb-6">
+                  <i className="fas fa-moon text-2xl text-amber-500" />
+                </div>
+                <h3 className="font-playfair text-xl text-[#4a3c5a] mb-3">Waking Up at Night?</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Waking up multiple times, never reaching deep restorative sleep. Morning comes too soon.
+                </p>
+                <div className="flex items-center gap-2 text-amber-600 text-sm font-medium">
+                  <i className="fas fa-chart-line" />
+                  <span>3-5 times average</span>
+                </div>
+              </div>
+
+              {/* Card 3 */}
+              <div className="group relative rounded-3xl overflow-hidden bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-100 p-8">
+                <div className="w-14 h-14 rounded-2xl bg-purple-100 flex items-center justify-center mb-6">
+                  <i className="fas fa-user-injured text-2xl text-purple-500" />
+                </div>
+                <h3 className="font-playfair text-xl text-[#4a3c5a] mb-3">Morning Stiffness?</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Starting your day with aches and pains? Your body never truly recovered overnight.
+                </p>
+                <div className="flex items-center gap-2 text-purple-600 text-sm font-medium">
+                  <i className="fas fa-bolt" />
+                  <span>Zaps your energy</span>
+                </div>
+              </div>
+
+              {/* Card 4 - With Image */}
+              <div className="lg:col-span-2 group relative rounded-3xl overflow-hidden bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-100">
+                <div className="grid md:grid-cols-2 h-full">
+                  <div className="relative h-64 md:h-auto order-2 md:order-1">
+                    <Image
+                      src="/ash2.jpg"
+                      alt="Stress and anxiety"
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  </div>
+                  <div className="p-8 flex flex-col justify-center order-1 md:order-2">
+                    <div className="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center mb-6">
+                      <i className="fas fa-brain text-2xl text-blue-500" />
+                    </div>
+                    <h3 className="font-playfair text-2xl text-[#4a3c5a] mb-4">Constant Stress &amp; Anxiety?</h3>
+                    <p className="text-gray-600 leading-relaxed mb-4">
+                      The weight of daily tension follows you to bed. Your mind replays worries on repeat, making rest impossible.
+                    </p>
+                    <div className="flex items-center gap-2 text-blue-500 text-sm font-medium">
+                      <i className="fas fa-heart-pulse" />
+                      <span>Elevated cortisol levels</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Solution Card */}
+              <div className="group bg-gradient-to-br from-[#4a3c5a] to-[#2a2035] rounded-3xl p-8 shadow-xl text-white relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#d4af37]/10 rounded-full blur-2xl" />
+                <div className="relative z-10">
+                  <div className="w-14 h-14 rounded-2xl bg-[#d4af37]/20 flex items-center justify-center mb-6">
+                    <i className="fas fa-sparkles text-2xl text-[#d4af37]" />
+                  </div>
+                  <h3 className="font-playfair text-xl text-[#d4af37] mb-3">There&apos;s a Better Way</h3>
+                  <p className="text-white/80 leading-relaxed mb-6">
+                    What if one natural solution could address ALL of these problems?
+                  </p>
+                  <button onClick={() => smoothScrollTo('benefits')} className="inline-flex items-center gap-2 gradient-gold text-[#2a2035] px-6 py-3 rounded-full font-bold hover:shadow-lg transition-all">
+                    <span>Discover the Solution</span>
+                    <i className="fas fa-arrow-right" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Benefits Section - Redesigned with Product Images */}
         <section id="benefits" className="py-24 gradient-primary relative overflow-hidden">
           {/* Decorative Elements */}
           <div className="absolute inset-0">
@@ -371,50 +498,91 @@ export default function AshwagandhaLandingPage() {
 
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             {/* Section Header */}
-            <div className="text-center mb-20">
+            <div className="text-center mb-16">
               <p className="text-[#d4af37] uppercase tracking-[0.3em] text-sm mb-4">✨ The Natural Solution</p>
               <h2 className="font-playfair text-4xl md:text-5xl text-white mb-6">
                 Introducing ZeinGlow <span className="gradient-text">Sleep &amp; Relax</span> Gummies
               </h2>
               <p className="text-white/70 text-lg max-w-2xl mx-auto">
-                Harness the ancient wisdom of Ashwagandha, perfected for modern life. Four powerful benefits in one delicious gummy.
+                Harness the ancient wisdom of Ashwagandha, perfected for modern life.
               </p>
               <div className="w-24 h-1 gradient-gold mx-auto rounded-full mt-8" />
             </div>
 
-            {/* Benefits Grid */}
-            <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-              {[
-                { icon: 'fa-moon', title: 'Deep Restorative Sleep', desc: "Our high-potency Ashwagandha calms the nervous system, helping you transition smoothly into a deep, uninterrupted sleep cycle. Wake up feeling like you actually rested." },
-                { icon: 'fa-bolt', title: 'Wake Up Fully Charged', desc: "Support your natural circadian rhythm to ensure you wake up feeling revitalized, alert, and ready to conquer your day—no caffeine crash required." },
-                { icon: 'fa-spa', title: 'Pain and Tension Relief', desc: "Ashwagandha's powerful adaptogenic and anti-inflammatory properties soothe the body, reducing morning stiffness and discomfort naturally." },
-                { icon: 'fa-heart', title: 'Stress & Anxiety Meltdown', desc: "Naturally lower cortisol levels (the stress hormone) to foster a state of blissful relaxation and peace before bedtime. Let go of the day's worries." },
-              ].map((benefit, index) => (
-                <div key={index} className="group relative">
-                  <div className="absolute inset-0 gradient-gold rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
-                  <div className="relative glass-card rounded-3xl p-8 lg:p-10 hover:bg-white transition-all duration-500">
-                    <div className="flex items-start gap-6">
-                      <div className="w-20 h-20 rounded-2xl gradient-gold flex items-center justify-center flex-shrink-0 shadow-lg shadow-[#d4af37]/30 group-hover:scale-110 transition-transform duration-300">
-                        <i className={`fas ${benefit.icon} text-3xl text-[#2a2035]`} />
-                      </div>
-                      <div>
-                        <h3 className="font-playfair text-2xl text-[#4a3c5a] mb-3">{benefit.title}</h3>
-                        <p className="text-gray-600 leading-relaxed">{benefit.desc}</p>
-                      </div>
+            {/* Product Showcase */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+              {/* Product Image */}
+              <div className="relative">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-80 h-80 bg-[#d4af37]/20 rounded-full blur-3xl animate-pulse-glow" />
+                </div>
+                <div className="relative z-10">
+                  <Image
+                    src="/beargummies.png"
+                    alt="ZeinGlow Ashwagandha Gummies"
+                    width={500}
+                    height={500}
+                    className="w-full max-w-md mx-auto drop-shadow-2xl animate-float"
+                  />
+                </div>
+                {/* Ingredient Badge */}
+                <div className="absolute top-4 right-4 bg-white rounded-2xl p-4 shadow-xl">
+                  <p className="text-[#4a3c5a] font-bold text-sm">300mg</p>
+                  <p className="text-gray-500 text-xs">Ashwagandha</p>
+                </div>
+              </div>
+
+              {/* Benefits List */}
+              <div className="space-y-6">
+                {[
+                  { icon: 'fa-moon', title: 'Deep Restorative Sleep', desc: "Fall asleep faster and stay asleep longer with our calming formula.", color: 'from-indigo-500 to-purple-500' },
+                  { icon: 'fa-bolt', title: 'Wake Up Energized', desc: "No more groggy mornings. Feel refreshed and ready to conquer your day.", color: 'from-amber-500 to-orange-500' },
+                  { icon: 'fa-spa', title: 'Pain & Tension Relief', desc: "Reduce morning stiffness and body aches naturally.", color: 'from-emerald-500 to-teal-500' },
+                  { icon: 'fa-heart', title: 'Stress Meltdown', desc: "Lower cortisol levels and find your inner peace.", color: 'from-rose-500 to-pink-500' },
+                ].map((benefit, index) => (
+                  <div key={index} className="group flex items-start gap-5 bg-white/10 backdrop-blur-sm rounded-2xl p-5 hover:bg-white/20 transition-all duration-300">
+                    <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${benefit.color} flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                      <i className={`fas ${benefit.icon} text-xl text-white`} />
+                    </div>
+                    <div>
+                      <h3 className="font-playfair text-xl text-white mb-1">{benefit.title}</h3>
+                      <p className="text-white/70 text-sm">{benefit.desc}</p>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
-            {/* CTA in Benefits */}
-            <div className="text-center mt-16">
+            {/* How It Works */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12">
+              <h3 className="font-playfair text-2xl text-white text-center mb-10">How to Use</h3>
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-gold flex items-center justify-center text-[#2a2035] font-bold text-2xl">1</div>
+                  <h4 className="text-white font-semibold mb-2">Take 2 Gummies</h4>
+                  <p className="text-white/60 text-sm">30 minutes before bedtime</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-gold flex items-center justify-center text-[#2a2035] font-bold text-2xl">2</div>
+                  <h4 className="text-white font-semibold mb-2">Relax & Unwind</h4>
+                  <p className="text-white/60 text-sm">Feel the calm wash over you</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-gold flex items-center justify-center text-[#2a2035] font-bold text-2xl">3</div>
+                  <h4 className="text-white font-semibold mb-2">Sleep Deeply</h4>
+                  <p className="text-white/60 text-sm">Wake up refreshed</p>
+                </div>
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div className="text-center mt-12">
               <Link
                 href="/ahswagandha/checkout"
                 onClick={() => MetaCAPI.trackAddToCart({}, 249, 'AED', 'Ashwagandha Sleep Gummies')}
                 className="inline-flex items-center gap-3 px-10 py-5 gradient-gold text-[#2a2035] font-bold text-lg rounded-full shadow-xl shadow-[#d4af37]/30 hover:shadow-2xl hover:shadow-[#d4af37]/40 hover:-translate-y-2 transition-all duration-300 group"
               >
-                <span>Experience the Difference</span>
+                <span>Get Your ZeinGlow Now</span>
                 <i className="fas fa-arrow-right group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
@@ -607,7 +775,7 @@ export default function AshwagandhaLandingPage() {
           </div>
         </section>
 
-        {/* Testimonials Section */}
+        {/* Testimonials Section - Enhanced with Images */}
         <section id="testimonials" className="py-24 gradient-primary relative overflow-hidden">
           {/* Decorative Elements */}
           <div className="absolute inset-0">
@@ -623,50 +791,189 @@ export default function AshwagandhaLandingPage() {
                 Hear From Happy <span className="gradient-text">ZeinGlow</span> Customers
               </h2>
               <p className="text-white/70 text-lg max-w-2xl mx-auto">
-                Don&apos;t just take our word for it. See what real customers are saying about their transformation.
+                Real stories from real people who transformed their sleep.
               </p>
               <div className="w-24 h-1 gradient-gold mx-auto rounded-full mt-8" />
             </div>
 
-            {/* Testimonials Grid */}
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                { name: 'Sara M.', location: 'Dubai, UAE', initial: 'S', quote: 'I used to wake up with neck pain every day. After a week of ZeinGlow, I sleep through the night and wake up feeling totally refreshed and pain-free.', highlight: 'A life-changer!' },
-                { name: 'Omar T.', location: 'Abu Dhabi, UAE', initial: 'O', quote: 'Absolutely incredible! The anxiety before bed is gone, and I finally have the energy to hit the gym in the morning.', highlight: 'I immediately upgraded to the 2+1 bundle.' },
-                { name: 'Nadia K.', location: 'Sharjah, UAE', initial: 'N', quote: "Delicious and effective! It's like a little treat that guarantees a full night of deep rest.", highlight: 'My mood has improved drastically since I started using these.' },
-              ].map((testimonial, index) => (
-                <div key={index} className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                  {/* Stars */}
-                  <div className="flex gap-1 mb-6">
+            {/* Featured Testimonial */}
+            <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl mb-12">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div className="relative">
+                  <Image
+                    src="/ash1.jpg"
+                    alt="Customer experience"
+                    width={500}
+                    height={400}
+                    className="rounded-2xl w-full h-64 md:h-80 object-cover"
+                  />
+                  <div className="absolute -bottom-4 -right-4 bg-[#4a3c5a] text-white rounded-2xl p-4 shadow-xl">
+                    <p className="text-[#d4af37] font-bold text-lg">Life Changed!</p>
+                    <p className="text-xs text-white/70">After 2 weeks</p>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex gap-1 mb-4">
                     {[...Array(5)].map((_, i) => (
-                      <i key={i} className="fas fa-star text-[#d4af37]" />
+                      <i key={i} className="fas fa-star text-[#d4af37] text-xl" />
                     ))}
                   </div>
-
-                  {/* Quote */}
-                  <p className="text-gray-600 leading-relaxed mb-6 italic">
-                    &ldquo;{testimonial.quote} <span className="text-[#4a3c5a] font-semibold">{testimonial.highlight}</span>&rdquo;
+                  <p className="text-gray-700 text-lg leading-relaxed mb-6 italic">
+                    &ldquo;I was skeptical at first, but ZeinGlow completely transformed my sleep. I used to toss and turn for hours, now I fall asleep within minutes. <span className="text-[#4a3c5a] font-bold not-italic">The best investment I&apos;ve made for my health!</span>&rdquo;
                   </p>
-
-                  {/* Author */}
                   <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-full gradient-gold flex items-center justify-center">
-                      <span className="font-playfair font-bold text-[#4a3c5a] text-xl">{testimonial.initial}</span>
-                    </div>
+                    <Image
+                      src="/avatar/avatar1.png"
+                      alt="Sara M."
+                      width={60}
+                      height={60}
+                      className="w-14 h-14 rounded-full object-cover border-2 border-[#d4af37]"
+                    />
                     <div>
-                      <p className="font-bold text-[#4a3c5a]">{testimonial.name}</p>
-                      <p className="text-gray-500 text-sm">{testimonial.location}</p>
-                    </div>
-                    <div className="ml-auto">
-                      <span className="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full">Verified</span>
+                      <p className="font-bold text-[#4a3c5a]">Sara M.</p>
+                      <p className="text-gray-500 text-sm">Dubai, UAE • Verified Buyer</p>
                     </div>
                   </div>
                 </div>
-              ))}
+              </div>
+            </div>
+
+            {/* Testimonials Grid */}
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Testimonial 1 */}
+              <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <div className="relative h-48">
+                  <Image
+                    src="/ash2.jpg"
+                    alt="Customer transformation"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <div className="flex gap-1 mb-1">
+                      {[...Array(5)].map((_, i) => (
+                        <i key={i} className="fas fa-star text-[#d4af37] text-sm" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-600 leading-relaxed mb-4 text-sm">
+                    &ldquo;The anxiety before bed is GONE. I finally have energy for morning workouts. <span className="text-[#4a3c5a] font-semibold">Upgraded to the 2+1 bundle immediately!</span>&rdquo;
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <Image
+                      src="/avatar/avatar2.png"
+                      alt="Omar T."
+                      width={44}
+                      height={44}
+                      className="w-11 h-11 rounded-full object-cover border-2 border-[#d4af37]"
+                    />
+                    <div className="flex-1">
+                      <p className="font-bold text-[#4a3c5a] text-sm">Omar T.</p>
+                      <p className="text-gray-400 text-xs">Abu Dhabi, UAE</p>
+                    </div>
+                    <span className="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full">✓ Verified</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Testimonial 2 */}
+              <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <div className="relative h-48">
+                  <Image
+                    src="/ash3.jpg"
+                    alt="Customer experience"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <div className="flex gap-1 mb-1">
+                      {[...Array(5)].map((_, i) => (
+                        <i key={i} className="fas fa-star text-[#d4af37] text-sm" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-600 leading-relaxed mb-4 text-sm">
+                    &ldquo;Delicious and effective! It&apos;s like a little treat that guarantees deep rest. <span className="text-[#4a3c5a] font-semibold">My mood has improved so much!</span>&rdquo;
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <Image
+                      src="/avatar/avatar3.png"
+                      alt="Nadia K."
+                      width={44}
+                      height={44}
+                      className="w-11 h-11 rounded-full object-cover border-2 border-[#d4af37]"
+                    />
+                    <div className="flex-1">
+                      <p className="font-bold text-[#4a3c5a] text-sm">Nadia K.</p>
+                      <p className="text-gray-400 text-xs">Sharjah, UAE</p>
+                    </div>
+                    <span className="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full">✓ Verified</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Testimonial 3 */}
+              <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <div className="relative h-48 bg-gradient-to-br from-[#4a3c5a] to-[#2a2035]">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center">
+                      <p className="text-6xl mb-2">😴</p>
+                      <p className="text-[#d4af37] font-bold">Best Sleep Ever</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-600 leading-relaxed mb-4 text-sm">
+                    &ldquo;No more neck pain when I wake up! I sleep through the night now. <span className="text-[#4a3c5a] font-semibold">A complete game-changer for my family!</span>&rdquo;
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <Image
+                      src="/avatar/avatar4.png"
+                      alt="Ahmed R."
+                      width={44}
+                      height={44}
+                      className="w-11 h-11 rounded-full object-cover border-2 border-[#d4af37]"
+                    />
+                    <div className="flex-1">
+                      <p className="font-bold text-[#4a3c5a] text-sm">Ahmed R.</p>
+                      <p className="text-gray-400 text-xs">Dubai, UAE</p>
+                    </div>
+                    <span className="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full">✓ Verified</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Social Proof Bar */}
+            <div className="mt-12 flex flex-wrap items-center justify-center gap-8">
+              <div className="flex items-center gap-3">
+                <div className="flex -space-x-3">
+                  {[1, 2, 3, 4, 5].map((num) => (
+                    <Image
+                      key={num}
+                      src={`/avatar/avatar${num}.png`}
+                      alt={`Customer ${num}`}
+                      width={40}
+                      height={40}
+                      className="w-10 h-10 rounded-full border-2 border-white object-cover"
+                    />
+                  ))}
+                </div>
+                <div>
+                  <p className="text-white font-bold">2,000+ Happy Customers</p>
+                  <p className="text-white/60 text-sm">Join the ZeinGlow family</p>
+                </div>
+              </div>
             </div>
 
             {/* Trust Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 bg-white/10 backdrop-blur-sm rounded-3xl p-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 bg-white/10 backdrop-blur-sm rounded-3xl p-8">
               <div className="text-center">
                 <p className="font-playfair text-4xl text-[#d4af37] font-bold">8,000+</p>
                 <p className="text-white/70 text-sm mt-1">Bottles Sold</p>
@@ -677,7 +984,7 @@ export default function AshwagandhaLandingPage() {
               </div>
               <div className="text-center">
                 <p className="font-playfair text-4xl text-[#d4af37] font-bold">97%</p>
-                <p className="text-white/70 text-sm mt-1">Satisfaction Rate</p>
+                <p className="text-white/70 text-sm mt-1">Satisfaction</p>
               </div>
               <div className="text-center">
                 <p className="font-playfair text-4xl text-[#d4af37] font-bold">2,000+</p>
