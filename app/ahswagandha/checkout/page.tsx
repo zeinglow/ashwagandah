@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -19,7 +19,20 @@ interface FormErrors {
   phone?: string;
 }
 
-export default function AshwagandhaCheckout() {
+// Loading component for Suspense fallback
+function CheckoutLoading() {
+  return (
+    <div className="min-h-screen bg-[#faf8f5] flex items-center justify-center">
+      <div className="text-center">
+        <div className="w-16 h-16 border-4 border-[#d4af37] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+        <p className="text-gray-600">Loading checkout...</p>
+      </div>
+    </div>
+  );
+}
+
+// Main checkout component
+function AshwagandhaCheckoutContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   
@@ -576,6 +589,15 @@ export default function AshwagandhaCheckout() {
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       />
     </>
+  );
+}
+
+// Default export with Suspense boundary
+export default function AshwagandhaCheckout() {
+  return (
+    <Suspense fallback={<CheckoutLoading />}>
+      <AshwagandhaCheckoutContent />
+    </Suspense>
   );
 }
 
