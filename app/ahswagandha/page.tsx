@@ -269,11 +269,11 @@ export default function AshwagandhaLandingPage() {
               {/* Product Image */}
               <div className="relative z-10 animate-float">
                 <Image
-                  src="/beargummies.png"
+                  src="/ash.jpg"
                   alt="ZeinGlow Ashwagandha Gummies"
                   width={500}
                   height={600}
-                  className="w-full max-w-md mx-auto drop-shadow-2xl"
+                  className="w-full max-w-md mx-auto drop-shadow-2xl rounded-3xl"
                   priority
                 />
                 
