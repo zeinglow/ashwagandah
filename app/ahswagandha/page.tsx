@@ -1113,25 +1113,15 @@ export default function AshwagandhaLandingPage() {
 
             {/* Bottom Bar */}
             <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-white/40 text-sm">© 2024 ZeinGlow. All rights reserved.</p>
+              <p className="text-white/40 text-sm">© 2025 ZeinGlow. All rights reserved.</p>
               <div className="flex gap-6">
-                <a href="#" className="text-white/40 text-sm hover:text-[#d4af37] transition-colors">Privacy Policy</a>
-                <a href="#" className="text-white/40 text-sm hover:text-[#d4af37] transition-colors">Terms of Service</a>
-                <a href="#" className="text-white/40 text-sm hover:text-[#d4af37] transition-colors">Refund Policy</a>
+                <Link href="/ahswagandha/privacy-policy" className="text-white/40 text-sm hover:text-[#d4af37] transition-colors">Privacy Policy</Link>
+                <Link href="/ahswagandha/terms" className="text-white/40 text-sm hover:text-[#d4af37] transition-colors">Terms of Service</Link>
+                <Link href="/ahswagandha/refund-policy" className="text-white/40 text-sm hover:text-[#d4af37] transition-colors">Refund Policy</Link>
               </div>
             </div>
           </div>
         </footer>
-
-        {/* Floating WhatsApp Button */}
-        <a
-          href="https://wa.me/971503412174"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 z-50"
-        >
-          <i className="fab fa-whatsapp text-white text-2xl" />
-        </a>
 
         {/* Mobile Sticky CTA */}
         <div className="fixed bottom-0 left-0 right-0 p-4 bg-white border-t md:hidden z-40">
