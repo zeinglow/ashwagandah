@@ -475,7 +475,7 @@ export default function AshwagandhaLandingPage() {
                 <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#d4af37]/5 rounded-full blur-2xl" />
                 <div className="relative z-10">
                   <div className="w-16 h-16 rounded-2xl gradient-gold flex items-center justify-center mb-6 shadow-lg shadow-[#d4af37]/30">
-                    <i className="fas fa-sparkles text-2xl text-[#2a2035]" />
+                    <i className="fas fa-wand-magic-sparkles text-2xl text-[#2a2035]" />
                   </div>
                   <h3 className="font-playfair text-xl text-[#d4af37] mb-3">There&apos;s a Better Way</h3>
                   <p className="text-white/80 leading-relaxed mb-6 text-sm">
