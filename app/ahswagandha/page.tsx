@@ -280,23 +280,43 @@ export default function AshwagandhaLandingPage() {
                   priority
                 />
                 
-                {/* Floating Badge */}
-                <div className="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-xl animate-bounce-slow">
+                {/* Floating Badge - Sugar Free */}
+                <div className="absolute -top-4 -right-4 bg-white rounded-2xl p-3 shadow-xl animate-bounce-slow">
                   <div className="flex items-center gap-2">
-                    <div className="text-[#d4af37] text-2xl">
-                      <i className="fas fa-star" />
+                    <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                      <i className="fas fa-candy-cane text-green-600 text-lg" />
                     </div>
                     <div>
-                      <p className="font-bold text-[#4a3c5a]">4.9/5</p>
-                      <p className="text-xs text-gray-500">2,000+ Reviews</p>
+                      <p className="font-bold text-[#4a3c5a] text-sm">Sugar Free</p>
+                      <p className="text-xs text-gray-500">0% Added Sugar</p>
                     </div>
                   </div>
                 </div>
 
-                {/* Floating Badge 2 */}
-                <div className="absolute -bottom-4 -left-4 bg-[#4a3c5a] text-white rounded-2xl p-4 shadow-xl">
-                  <p className="text-[#d4af37] font-bold">Best Seller</p>
-                  <p className="text-xs text-white/70">UAE 2024</p>
+                {/* Floating Badge - Gluten Free */}
+                <div className="absolute top-1/2 -right-6 transform -translate-y-1/2 bg-white rounded-2xl p-3 shadow-xl">
+                  <div className="flex items-center gap-2">
+                    <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
+                      <i className="fas fa-wheat-awn-circle-exclamation text-amber-600 text-lg" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-[#4a3c5a] text-sm">Gluten Free</p>
+                      <p className="text-xs text-gray-500">100% Safe</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Floating Badge - Best Seller */}
+                <div className="absolute -bottom-4 -left-4 bg-[#4a3c5a] text-white rounded-2xl p-3 shadow-xl">
+                  <div className="flex items-center gap-2">
+                    <div className="w-10 h-10 rounded-full gradient-gold flex items-center justify-center">
+                      <i className="fas fa-trophy text-[#4a3c5a] text-lg" />
+                    </div>
+                    <div>
+                      <p className="text-[#d4af37] font-bold text-sm">Best Seller</p>
+                      <p className="text-xs text-white/70">UAE 2024</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
