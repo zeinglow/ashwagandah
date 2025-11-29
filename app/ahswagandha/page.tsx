@@ -324,25 +324,14 @@ export default function AshwagandhaLandingPage() {
             {/* Video Container */}
             <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-[#4a3c5a]">
               <div className="aspect-video relative">
-                {/* YouTube Embed Placeholder - Replace VIDEO_ID with actual YouTube video ID */}
                 <iframe
                   className="absolute inset-0 w-full h-full"
-                  src="https://www.youtube.com/embed/VIDEO_ID?rel=0&modestbranding=1"
+                  src="https://www.youtube.com/embed/qwLOg3yMCvI?rel=0&modestbranding=1"
                   title="ZeinGlow Ashwagandha Product Video"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 />
-                {/* Fallback Play Button Overlay - Shows when video not loaded */}
-                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#4a3c5a] to-[#2a2035]">
-                  <div className="text-center">
-                    <div className="w-24 h-24 mx-auto mb-6 rounded-full gradient-gold flex items-center justify-center cursor-pointer hover:scale-110 transition-transform shadow-xl shadow-[#d4af37]/30">
-                      <i className="fas fa-play text-4xl text-[#2a2035] ml-2" />
-                    </div>
-                    <p className="text-white/80 text-lg">Video Coming Soon</p>
-                    <p className="text-[#d4af37] text-sm mt-2">Discover the ZeinGlow Difference</p>
-                  </div>
-                </div>
               </div>
             </div>
 
