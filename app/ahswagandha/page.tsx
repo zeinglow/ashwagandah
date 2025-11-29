@@ -799,51 +799,48 @@ export default function AshwagandhaLandingPage() {
               <div className="w-24 h-1 gradient-gold mx-auto rounded-full mt-8" />
             </div>
 
-            {/* Featured Testimonial */}
-            <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl mb-12">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div className="relative">
+            {/* Testimonials Grid - 3 Equal Cards */}
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Testimonial 1 - Sara */}
+              <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <div className="relative h-48">
                   <Image
                     src="/ash1.jpg"
                     alt="Customer experience"
-                    width={500}
-                    height={400}
-                    className="rounded-2xl w-full h-64 md:h-80 object-cover"
+                    fill
+                    className="object-cover"
                   />
-                  <div className="absolute -bottom-4 -right-4 bg-[#4a3c5a] text-white rounded-2xl p-4 shadow-xl">
-                    <p className="text-[#d4af37] font-bold text-lg">Life Changed!</p>
-                    <p className="text-xs text-white/70">After 2 weeks</p>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <i key={i} className="fas fa-star text-[#d4af37] text-xl" />
-                    ))}
-                  </div>
-                  <p className="text-gray-700 text-lg leading-relaxed mb-6 italic">
-                    &ldquo;I was skeptical at first, but ZeinGlow completely transformed my sleep. I used to toss and turn for hours, now I fall asleep within minutes. <span className="text-[#4a3c5a] font-bold not-italic">The best investment I&apos;ve made for my health!</span>&rdquo;
-                  </p>
-                  <div className="flex items-center gap-4">
-                    <Image
-                      src="/avatar/avatar1.png"
-                      alt="Sara M."
-                      width={60}
-                      height={60}
-                      className="w-14 h-14 rounded-full object-cover border-2 border-[#d4af37]"
-                    />
-                    <div>
-                      <p className="font-bold text-[#4a3c5a]">Sara M.</p>
-                      <p className="text-gray-500 text-sm">Dubai, UAE • Verified Buyer</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <div className="flex gap-1 mb-1">
+                      {[...Array(5)].map((_, i) => (
+                        <i key={i} className="fas fa-star text-[#d4af37] text-sm" />
+                      ))}
                     </div>
                   </div>
                 </div>
+                <div className="p-6">
+                  <p className="text-gray-600 leading-relaxed mb-4 text-sm">
+                    &ldquo;I was skeptical at first, but ZeinGlow completely transformed my sleep. I fall asleep within minutes now. <span className="text-[#4a3c5a] font-semibold">The best investment for my health!</span>&rdquo;
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <Image
+                      src="/avatar/avatar1.png"
+                      alt="Sara M."
+                      width={44}
+                      height={44}
+                      className="w-11 h-11 rounded-full object-cover border-2 border-[#d4af37]"
+                    />
+                    <div className="flex-1">
+                      <p className="font-bold text-[#4a3c5a] text-sm">Sara M.</p>
+                      <p className="text-gray-400 text-xs">Dubai, UAE</p>
+                    </div>
+                    <span className="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full">✓ Verified</span>
+                  </div>
+                </div>
               </div>
-            </div>
 
-            {/* Testimonials Grid */}
-            <div className="grid md:grid-cols-3 gap-6">
-              {/* Testimonial 1 */}
+              {/* Testimonial 2 - Omar */}
               <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                 <div className="relative h-48">
                   <Image
@@ -882,7 +879,7 @@ export default function AshwagandhaLandingPage() {
                 </div>
               </div>
 
-              {/* Testimonial 2 */}
+              {/* Testimonial 3 - Nadia */}
               <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                 <div className="relative h-48">
                   <Image
@@ -920,7 +917,6 @@ export default function AshwagandhaLandingPage() {
                   </div>
                 </div>
               </div>
-
             </div>
 
             {/* Social Proof Bar */}
