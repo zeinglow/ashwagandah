@@ -353,12 +353,17 @@ export default function AshwagandhaLandingPage() {
           </div>
         </section>
 
-        {/* Pain Points Section - Redesigned with Images */}
-        <section id="pain-points" className="py-24 bg-white relative overflow-hidden">
+        {/* Pain Points Section - Elegant Design */}
+        <section id="pain-points" className="py-24 bg-cream relative overflow-hidden">
+          {/* Decorative Elements */}
+          <div className="absolute top-0 left-0 w-full h-1 gradient-gold" />
+          <div className="absolute top-20 right-0 w-72 h-72 bg-[#4a3c5a]/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 left-0 w-96 h-96 bg-[#d4af37]/5 rounded-full blur-3xl" />
+
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             {/* Section Header */}
             <div className="text-center mb-16">
-              <p className="text-[#d4af37] uppercase tracking-[0.3em] text-sm mb-4">😫 The Problem</p>
+              <p className="text-[#d4af37] uppercase tracking-[0.3em] text-sm mb-4">The Problem</p>
               <h2 className="font-playfair text-4xl md:text-5xl text-[#4a3c5a] mb-6">
                 When Sleep Doesn&apos;t Feel Like <span className="gradient-text">Rest</span>
               </h2>
@@ -368,107 +373,116 @@ export default function AshwagandhaLandingPage() {
               <div className="w-24 h-1 gradient-gold mx-auto rounded-full mt-6" />
             </div>
 
-            {/* Problem Cards - Modern Bento Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Card 1 - Large with Image */}
-              <div className="lg:col-span-2 group relative rounded-3xl overflow-hidden bg-gradient-to-br from-red-50 to-orange-50 border border-red-100">
-                <div className="grid md:grid-cols-2 h-full">
-                  <div className="p-8 flex flex-col justify-center">
-                    <div className="w-14 h-14 rounded-2xl bg-red-100 flex items-center justify-center mb-6">
-                      <i className="fas fa-bed text-2xl text-red-500" />
-                    </div>
-                    <h3 className="font-playfair text-2xl text-[#4a3c5a] mb-4">Can&apos;t Fall Asleep?</h3>
-                    <p className="text-gray-600 leading-relaxed mb-4">
-                      Lying awake for hours while your mind races with thoughts? Your body is exhausted but your brain won&apos;t shut off.
-                    </p>
-                    <div className="flex items-center gap-2 text-red-500 text-sm font-medium">
-                      <i className="fas fa-exclamation-circle" />
-                      <span>Affects 35% of adults</span>
-                    </div>
+            {/* Problem Cards - Elegant Grid */}
+            <div className="grid md:grid-cols-2 gap-8 mb-8">
+              {/* Card 1 - Can't Fall Asleep */}
+              <div className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-[#4a3c5a]/10">
+                <div className="relative h-64">
+                  <Image
+                    src="/cantsleep.png"
+                    alt="Can't fall asleep"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#4a3c5a]/80 via-[#4a3c5a]/20 to-transparent" />
+                  <div className="absolute bottom-4 left-6 right-6">
+                    <h3 className="font-playfair text-2xl text-white mb-1">Can&apos;t Fall Asleep?</h3>
+                    <p className="text-white/70 text-sm">Affects 35% of adults</p>
                   </div>
-                  <div className="relative h-64 md:h-auto">
-                    <Image
-                      src="/ash1.jpg"
-                      alt="Sleep struggles"
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-600 leading-relaxed">
+                    Lying awake for hours while your mind races with thoughts? Your body is exhausted but your brain won&apos;t shut off. The frustration builds as precious sleep hours slip away.
+                  </p>
+                  <div className="flex items-center gap-2 text-[#d4af37] text-sm font-medium mt-4">
+                    <i className="fas fa-bed" />
+                    <span>Restless nights, tired days</span>
                   </div>
                 </div>
               </div>
 
-              {/* Card 2 */}
-              <div className="group relative rounded-3xl overflow-hidden bg-gradient-to-br from-amber-50 to-yellow-50 border border-amber-100 p-8">
-                <div className="w-14 h-14 rounded-2xl bg-amber-100 flex items-center justify-center mb-6">
-                  <i className="fas fa-moon text-2xl text-amber-500" />
+              {/* Card 2 - Constant Stress */}
+              <div className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-[#4a3c5a]/10">
+                <div className="relative h-64">
+                  <Image
+                    src="/stress.png"
+                    alt="Stress and anxiety"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#4a3c5a]/80 via-[#4a3c5a]/20 to-transparent" />
+                  <div className="absolute bottom-4 left-6 right-6">
+                    <h3 className="font-playfair text-2xl text-white mb-1">Constant Stress &amp; Anxiety?</h3>
+                    <p className="text-white/70 text-sm">Elevated cortisol levels</p>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-600 leading-relaxed">
+                    The weight of daily tension follows you to bed. Your mind replays worries on repeat, making rest impossible. Stress shouldn&apos;t follow you into your sanctuary.
+                  </p>
+                  <div className="flex items-center gap-2 text-[#d4af37] text-sm font-medium mt-4">
+                    <i className="fas fa-brain" />
+                    <span>Mind won&apos;t stop racing</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Card 3 - Morning Stiffness */}
+              <div className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-[#4a3c5a]/10">
+                <div className="relative h-52">
+                  <Image
+                    src="/morningstifness.png"
+                    alt="Morning stiffness"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#4a3c5a]/80 via-[#4a3c5a]/20 to-transparent" />
+                  <div className="absolute bottom-4 left-6 right-6">
+                    <h3 className="font-playfair text-xl text-white">Morning Stiffness?</h3>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-600 leading-relaxed text-sm">
+                    Starting your day with aches and pains? Your body never truly recovered overnight.
+                  </p>
+                  <div className="flex items-center gap-2 text-[#d4af37] text-sm font-medium mt-3">
+                    <i className="fas fa-user-injured" />
+                    <span>Zaps your energy</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 4 - Waking Up */}
+              <div className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-[#4a3c5a]/10">
+                <div className="w-16 h-16 rounded-2xl bg-[#4a3c5a]/10 flex items-center justify-center mb-6 group-hover:bg-[#4a3c5a] transition-all duration-300">
+                  <i className="fas fa-moon text-2xl text-[#4a3c5a] group-hover:text-white transition-colors" />
                 </div>
                 <h3 className="font-playfair text-xl text-[#4a3c5a] mb-3">Waking Up at Night?</h3>
-                <p className="text-gray-600 leading-relaxed mb-4">
+                <p className="text-gray-600 leading-relaxed text-sm mb-4">
                   Waking up multiple times, never reaching deep restorative sleep. Morning comes too soon.
                 </p>
-                <div className="flex items-center gap-2 text-amber-600 text-sm font-medium">
-                  <i className="fas fa-chart-line" />
+                <div className="flex items-center gap-2 text-[#d4af37] text-sm font-medium">
+                  <i className="fas fa-clock" />
                   <span>3-5 times average</span>
-                </div>
-              </div>
-
-              {/* Card 3 */}
-              <div className="group relative rounded-3xl overflow-hidden bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-100 p-8">
-                <div className="w-14 h-14 rounded-2xl bg-purple-100 flex items-center justify-center mb-6">
-                  <i className="fas fa-user-injured text-2xl text-purple-500" />
-                </div>
-                <h3 className="font-playfair text-xl text-[#4a3c5a] mb-3">Morning Stiffness?</h3>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  Starting your day with aches and pains? Your body never truly recovered overnight.
-                </p>
-                <div className="flex items-center gap-2 text-purple-600 text-sm font-medium">
-                  <i className="fas fa-bolt" />
-                  <span>Zaps your energy</span>
-                </div>
-              </div>
-
-              {/* Card 4 - With Image */}
-              <div className="lg:col-span-2 group relative rounded-3xl overflow-hidden bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-100">
-                <div className="grid md:grid-cols-2 h-full">
-                  <div className="relative h-64 md:h-auto order-2 md:order-1">
-                    <Image
-                      src="/ash2.jpg"
-                      alt="Stress and anxiety"
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                  </div>
-                  <div className="p-8 flex flex-col justify-center order-1 md:order-2">
-                    <div className="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center mb-6">
-                      <i className="fas fa-brain text-2xl text-blue-500" />
-                    </div>
-                    <h3 className="font-playfair text-2xl text-[#4a3c5a] mb-4">Constant Stress &amp; Anxiety?</h3>
-                    <p className="text-gray-600 leading-relaxed mb-4">
-                      The weight of daily tension follows you to bed. Your mind replays worries on repeat, making rest impossible.
-                    </p>
-                    <div className="flex items-center gap-2 text-blue-500 text-sm font-medium">
-                      <i className="fas fa-heart-pulse" />
-                      <span>Elevated cortisol levels</span>
-                    </div>
-                  </div>
                 </div>
               </div>
 
               {/* Solution Card */}
               <div className="group bg-gradient-to-br from-[#4a3c5a] to-[#2a2035] rounded-3xl p-8 shadow-xl text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#d4af37]/10 rounded-full blur-2xl" />
+                <div className="absolute top-0 right-0 w-40 h-40 bg-[#d4af37]/10 rounded-full blur-3xl" />
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#d4af37]/5 rounded-full blur-2xl" />
                 <div className="relative z-10">
-                  <div className="w-14 h-14 rounded-2xl bg-[#d4af37]/20 flex items-center justify-center mb-6">
-                    <i className="fas fa-sparkles text-2xl text-[#d4af37]" />
+                  <div className="w-16 h-16 rounded-2xl gradient-gold flex items-center justify-center mb-6 shadow-lg shadow-[#d4af37]/30">
+                    <i className="fas fa-sparkles text-2xl text-[#2a2035]" />
                   </div>
                   <h3 className="font-playfair text-xl text-[#d4af37] mb-3">There&apos;s a Better Way</h3>
-                  <p className="text-white/80 leading-relaxed mb-6">
+                  <p className="text-white/80 leading-relaxed mb-6 text-sm">
                     What if one natural solution could address ALL of these problems?
                   </p>
-                  <button onClick={() => smoothScrollTo('benefits')} className="inline-flex items-center gap-2 gradient-gold text-[#2a2035] px-6 py-3 rounded-full font-bold hover:shadow-lg transition-all">
-                    <span>Discover the Solution</span>
+                  <button onClick={() => smoothScrollTo('benefits')} className="inline-flex items-center gap-2 gradient-gold text-[#2a2035] px-5 py-2.5 rounded-full font-bold hover:shadow-lg hover:shadow-[#d4af37]/30 transition-all text-sm">
+                    <span>See Solution</span>
                     <i className="fas fa-arrow-right" />
                   </button>
                 </div>
