@@ -772,7 +772,7 @@ export default function AshwagandhaLandingPage() {
             <div className="text-center mt-12">
               <div className="inline-flex items-center gap-3 bg-red-50 border border-red-200 rounded-full px-6 py-3">
                 <span className="w-3 h-3 bg-red-500 rounded-full animate-pulse" />
-                <span className="text-red-700 font-medium">High Demand Alert: Over 8,000 bottles sold this month! Stock is limited.</span>
+                <span className="text-red-700 font-medium">High Demand Alert: Over 2,000 bottles sold this month! Stock is limited.</span>
               </div>
             </div>
           </div>
@@ -921,36 +921,6 @@ export default function AshwagandhaLandingPage() {
                 </div>
               </div>
 
-              {/* Testimonial 3 */}
-              <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                <div className="relative h-48 bg-gradient-to-br from-[#4a3c5a] to-[#2a2035]">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <p className="text-6xl mb-2">😴</p>
-                      <p className="text-[#d4af37] font-bold">Best Sleep Ever</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <p className="text-gray-600 leading-relaxed mb-4 text-sm">
-                    &ldquo;No more neck pain when I wake up! I sleep through the night now. <span className="text-[#4a3c5a] font-semibold">A complete game-changer for my family!</span>&rdquo;
-                  </p>
-                  <div className="flex items-center gap-3">
-                    <Image
-                      src="/avatar/avatar4.png"
-                      alt="Ahmed R."
-                      width={44}
-                      height={44}
-                      className="w-11 h-11 rounded-full object-cover border-2 border-[#d4af37]"
-                    />
-                    <div className="flex-1">
-                      <p className="font-bold text-[#4a3c5a] text-sm">Ahmed R.</p>
-                      <p className="text-gray-400 text-xs">Dubai, UAE</p>
-                    </div>
-                    <span className="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full">✓ Verified</span>
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* Social Proof Bar */}
@@ -978,7 +948,7 @@ export default function AshwagandhaLandingPage() {
             {/* Trust Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 bg-white/10 backdrop-blur-sm rounded-3xl p-8">
               <div className="text-center">
-                <p className="font-playfair text-4xl text-[#d4af37] font-bold">8,000+</p>
+                <p className="font-playfair text-4xl text-[#d4af37] font-bold">2,000+</p>
                 <p className="text-white/70 text-sm mt-1">Bottles Sold</p>
               </div>
               <div className="text-center">
@@ -1074,7 +1044,7 @@ export default function AshwagandhaLandingPage() {
               <i className="fas fa-arrow-right group-hover:translate-x-1 transition-transform" />
             </Link>
             <p className="text-white/50 text-sm mt-6">
-              Join 8,000+ happy customers sleeping better tonight
+              Join 2,000+ happy customers sleeping better tonight
             </p>
           </div>
         </section>
