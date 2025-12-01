@@ -211,99 +211,147 @@ export default function AshwagandhaLandingPage() {
             <div className="absolute top-2/3 right-1/3 w-4 h-4 bg-[#d4af37]/20 rounded-full animate-float-slow" style={{ animationDelay: '0.5s' }} />
           </div>
 
-          <div className="max-w-7xl mx-auto px-6 py-32 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
-            {/* Hero Content */}
-            <div className="text-center lg:text-left">
-              {/* Hook Question */}
-              <p className="text-[#d4af37] text-sm md:text-base uppercase tracking-[0.3em] mb-6 animate-fade-in-up">
-                Are You Tired of Tossing &amp; Turning?
-              </p>
-
-              {/* Main Headline */}
-              <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
-                Sleep Deeply, Wake Up <span className="gradient-text">Energized</span>, and Live <span className="gradient-text">Pain-Free</span>
-              </h1>
-
-              {/* Subtitle */}
-              <p className="text-white/70 text-lg md:text-xl font-light mb-8 max-w-xl mx-auto lg:mx-0">
-                Discover the ancient power of Ashwagandha in a delicious, modern gummy. Transform your nights and revolutionize your days.
-              </p>
-
-              {/* Trust Badges */}
-              <div className="flex flex-wrap justify-center lg:justify-start gap-6 mb-10">
-                <div className="flex items-center gap-2 text-white/80">
-                  <i className="fas fa-leaf text-[#d4af37]" />
-                  <span className="text-sm">100% Natural</span>
-                </div>
-                <div className="flex items-center gap-2 text-white/80">
-                  <i className="fas fa-flask text-[#d4af37]" />
-                  <span className="text-sm">Clinically Studied</span>
-                </div>
-                <div className="flex items-center gap-2 text-white/80">
-                  <i className="fas fa-seedling text-[#d4af37]" />
-                  <span className="text-sm">Non-GMO</span>
-                </div>
-              </div>
-
-              {/* CTA Button */}
-              <div>
-                <Link
-                  href="/ahswagandha/checkout"
-                  onClick={() => MetaCAPI.trackAddToCart({}, 249, 'AED', 'Ashwagandha Sleep Gummies')}
-                  className="inline-flex items-center gap-3 px-8 py-4 gradient-gold text-[#2a2035] font-bold text-lg rounded-full shadow-xl shadow-[#d4af37]/30 hover:shadow-2xl hover:shadow-[#d4af37]/40 hover:-translate-y-2 transition-all duration-300 group"
-                >
-                  <span>Secure Your Best Sleep Now</span>
-                  <i className="fas fa-arrow-right group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <p className="text-white/50 text-sm mt-4">
-                  <i className="fas fa-bolt text-[#d4af37] mr-1" />
-                  Limited-Time Offers Available
+          <div className="max-w-7xl mx-auto px-6 py-24 md:py-32 relative z-10">
+            {/* Mobile Layout: Title → Image → Description → CTA */}
+            {/* Desktop Layout: Side by Side */}
+            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
+              
+              {/* Title Section - Always First */}
+              <div className="text-center lg:text-left order-1 lg:order-1 w-full lg:col-span-1 lg:row-span-1">
+                {/* Hook Question */}
+                <p className="text-[#d4af37] text-sm md:text-base uppercase tracking-[0.3em] mb-4 md:mb-6">
+                  Are You Tired of Tossing &amp; Turning?
                 </p>
-              </div>
-            </div>
 
-            {/* Hero Image */}
-            <div className="relative">
-              {/* Glow Effect Behind Product */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-80 h-80 bg-[#d4af37]/20 rounded-full blur-3xl animate-pulse-glow" />
-              </div>
-
-              {/* Product Image */}
-              <div className="relative z-10 animate-float">
-                <Image
-                  src="/ash.jpg"
-                  alt="ZeinGlow Ashwagandha Gummies"
-                  width={500}
-                  height={600}
-                  className="w-full max-w-md mx-auto drop-shadow-2xl rounded-3xl"
-                  priority
-                />
+                {/* Main Headline */}
+                <h1 className="font-playfair text-3xl md:text-5xl lg:text-6xl text-white leading-tight mb-4 lg:mb-6">
+                  Sleep Deeply, Wake Up <span className="gradient-text">Energized</span>, and Live <span className="gradient-text">Pain-Free</span>
+                </h1>
                 
-                {/* Floating Badge - Sugar Free */}
-                <div className="absolute -top-4 -right-4 bg-white rounded-2xl p-3 shadow-xl animate-bounce-slow">
-                  <div className="flex items-center gap-2">
-                    <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-                      <i className="fas fa-cubes-stacked text-green-600 text-lg" />
+                {/* Desktop Only: Description & CTA inline with title */}
+                <div className="hidden lg:block">
+                  {/* Subtitle */}
+                  <p className="text-white/70 text-lg md:text-xl font-light mb-8 max-w-xl">
+                    Discover the ancient power of Ashwagandha in a delicious, modern gummy. Transform your nights and revolutionize your days.
+                  </p>
+
+                  {/* Trust Badges */}
+                  <div className="flex flex-wrap justify-start gap-6 mb-10">
+                    <div className="flex items-center gap-2 text-white/80">
+                      <i className="fas fa-leaf text-[#d4af37]" />
+                      <span className="text-sm">100% Natural</span>
                     </div>
-                    <div>
-                      <p className="font-bold text-[#4a3c5a] text-sm">Sugar Free</p>
-                      <p className="text-xs text-gray-500">0% Added Sugar</p>
+                    <div className="flex items-center gap-2 text-white/80">
+                      <i className="fas fa-flask text-[#d4af37]" />
+                      <span className="text-sm">Clinically Studied</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-white/80">
+                      <i className="fas fa-seedling text-[#d4af37]" />
+                      <span className="text-sm">Non-GMO</span>
+                    </div>
+                  </div>
+
+                  {/* CTA Button */}
+                  <div>
+                    <Link
+                      href="/ahswagandha/checkout"
+                      onClick={() => MetaCAPI.trackAddToCart({}, 249, 'AED', 'Ashwagandha Sleep Gummies')}
+                      className="inline-flex items-center gap-3 px-8 py-4 gradient-gold text-[#2a2035] font-bold text-lg rounded-full shadow-xl shadow-[#d4af37]/30 hover:shadow-2xl hover:shadow-[#d4af37]/40 hover:-translate-y-2 transition-all duration-300 group"
+                    >
+                      <span>Secure Your Best Sleep Now</span>
+                      <i className="fas fa-arrow-right group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                    <p className="text-white/50 text-sm mt-4">
+                      <i className="fas fa-bolt text-[#d4af37] mr-1" />
+                      Limited-Time Offers Available
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Hero Image - Second on Mobile, Right side on Desktop */}
+              <div className="relative order-2 lg:order-2 w-full max-w-sm mx-auto lg:max-w-none">
+                {/* Glow Effect Behind Product */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-64 md:w-80 h-64 md:h-80 bg-[#d4af37]/20 rounded-full blur-3xl animate-pulse-glow" />
+                </div>
+
+                {/* Product Image */}
+                <div className="relative z-10 animate-float">
+                  <Image
+                    src="/ash.jpg"
+                    alt="ZeinGlow Ashwagandha Gummies"
+                    width={500}
+                    height={600}
+                    className="w-full max-w-xs md:max-w-md mx-auto drop-shadow-2xl rounded-3xl"
+                    priority
+                  />
+                  
+                  {/* Floating Badge - Sugar Free */}
+                  <div className="absolute -top-2 -right-2 md:-top-4 md:-right-4 bg-white rounded-xl md:rounded-2xl p-2 md:p-3 shadow-xl animate-bounce-slow">
+                    <div className="flex items-center gap-1.5 md:gap-2">
+                      <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center">
+                        <i className="fas fa-cubes-stacked text-green-600 text-sm md:text-lg" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-[#4a3c5a] text-xs md:text-sm">Sugar Free</p>
+                        <p className="text-[10px] md:text-xs text-gray-500">0% Added Sugar</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Floating Badge - Gluten Free */}
+                  <div className="absolute -bottom-2 -left-2 md:-bottom-4 md:-left-4 bg-white rounded-xl md:rounded-2xl p-2 md:p-3 shadow-xl">
+                    <div className="flex items-center gap-1.5 md:gap-2">
+                      <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-amber-100 flex items-center justify-center">
+                        <i className="fas fa-wheat-awn-circle-exclamation text-amber-600 text-sm md:text-lg" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-[#4a3c5a] text-xs md:text-sm">Gluten Free</p>
+                        <p className="text-[10px] md:text-xs text-gray-500">100% Safe</p>
+                      </div>
                     </div>
                   </div>
                 </div>
+              </div>
 
-                {/* Floating Badge - Gluten Free */}
-                <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl p-3 shadow-xl">
-                  <div className="flex items-center gap-2">
-                    <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
-                      <i className="fas fa-wheat-awn-circle-exclamation text-amber-600 text-lg" />
-                    </div>
-                    <div>
-                      <p className="font-bold text-[#4a3c5a] text-sm">Gluten Free</p>
-                      <p className="text-xs text-gray-500">100% Safe</p>
-                    </div>
+              {/* Mobile Only: Description & CTA after Image */}
+              <div className="order-3 lg:hidden text-center w-full">
+                {/* Subtitle */}
+                <p className="text-white/70 text-base font-light mb-6 max-w-md mx-auto">
+                  Discover the ancient power of Ashwagandha in a delicious, modern gummy. Transform your nights and revolutionize your days.
+                </p>
+
+                {/* Trust Badges - Compact for Mobile */}
+                <div className="flex flex-wrap justify-center gap-4 mb-8">
+                  <div className="flex items-center gap-1.5 text-white/80">
+                    <i className="fas fa-leaf text-[#d4af37] text-sm" />
+                    <span className="text-xs">100% Natural</span>
                   </div>
+                  <div className="flex items-center gap-1.5 text-white/80">
+                    <i className="fas fa-flask text-[#d4af37] text-sm" />
+                    <span className="text-xs">Clinically Studied</span>
+                  </div>
+                  <div className="flex items-center gap-1.5 text-white/80">
+                    <i className="fas fa-seedling text-[#d4af37] text-sm" />
+                    <span className="text-xs">Non-GMO</span>
+                  </div>
+                </div>
+
+                {/* CTA Button - Full Width on Mobile */}
+                <div className="px-4">
+                  <Link
+                    href="/ahswagandha/checkout"
+                    onClick={() => MetaCAPI.trackAddToCart({}, 249, 'AED', 'Ashwagandha Sleep Gummies')}
+                    className="flex items-center justify-center gap-3 w-full px-6 py-4 gradient-gold text-[#2a2035] font-bold text-base rounded-full shadow-xl shadow-[#d4af37]/30 active:scale-95 transition-all duration-200"
+                  >
+                    <span>Secure Your Best Sleep Now</span>
+                    <i className="fas fa-arrow-right" />
+                  </Link>
+                  <p className="text-white/50 text-xs mt-3">
+                    <i className="fas fa-bolt text-[#d4af37] mr-1" />
+                    Limited-Time Offers Available
+                  </p>
                 </div>
               </div>
             </div>
